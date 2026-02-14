@@ -22,7 +22,7 @@
     "authors": [
         {
             "name": "Dimas",
-            "email": "your@email.com"
+            "email": "dimasdev@nusantara.dev"
         }
     ],
     "require": {
@@ -36,7 +36,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Nusantara\\": "src/"
+            "Nusantara\\": "src/",
+            "Nusantara\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {

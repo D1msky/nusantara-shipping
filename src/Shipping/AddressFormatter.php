@@ -47,8 +47,14 @@ final class AddressFormatter
         ];
 
         $line = str_replace(array_keys($replace), array_values($replace), $template);
+
+        // Clean up empty placeholders: remove repeated separators and leading/trailing separators
+        $escaped = preg_quote($separator, '/');
+        $line = preg_replace('/(' . $escaped . ')+/', $separator, $line);
         $line = preg_replace('/\s+/', ' ', trim($line));
-        return str_replace($separator . $separator, $separator, $line);
+        $line = trim($line, ' ' . trim($separator));
+
+        return $line;
     }
 
     /** @return array{province: array, regency: array, district: array, village: array}|null */

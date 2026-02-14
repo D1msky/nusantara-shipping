@@ -26,11 +26,17 @@ enum RegionLevel: string
      */
     public static function fromCode(string $code): self
     {
-        $parts = substr_count(trim($code, '.'), '.') + 1;
-        return match (true) {
-            $parts <= 1 => self::Province,
-            $parts === 2 => self::Regency,
-            $parts === 3 => self::District,
+        $code = trim($code);
+        if ($code === '') {
+            return self::Province;
+        }
+
+        $dotCount = substr_count(trim($code, '.'), '.');
+
+        return match ($dotCount) {
+            0 => self::Province,
+            1 => self::Regency,
+            2 => self::District,
             default => self::Village,
         };
     }

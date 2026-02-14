@@ -32,14 +32,14 @@ final class PostalCodeResolver
     {
         $code = trim(str_replace(' ', '', $regionCode));
         $parts = explode('.', $code);
-        $codes = [];
+        $unique = [];
 
         if (count($parts) === 2) {
             foreach ($repository->districts($code)->all() as $d) {
                 foreach ($repository->villages($d['code'])->all() as $v) {
                     $pc = $v['postal_code'] ?? null;
                     if ($pc !== null && $pc !== '') {
-                        $codes[$pc] = true;
+                        $unique[(string) $pc] = true;
                     }
                 }
             }
@@ -47,12 +47,12 @@ final class PostalCodeResolver
             foreach ($repository->villages($code)->all() as $v) {
                 $pc = $v['postal_code'] ?? null;
                 if ($pc !== null && $pc !== '') {
-                    $codes[$pc] = true;
+                    $unique[(string) $pc] = true;
                 }
             }
         }
 
-        $out = array_keys($codes);
+        $out = array_map('strval', array_keys($unique));
         sort($out);
         return $out;
     }

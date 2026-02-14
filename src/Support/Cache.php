@@ -11,13 +11,16 @@ final class Cache
 {
     private const PREFIX = 'nusantara:';
 
-    private ?CacheRepository $store = null;
+    private CacheRepository $store;
+
+    /** @var array<int, string> track all keys written so flush can clear them */
+    private static array $trackedKeys = [];
 
     public function __construct()
     {
-        $store = config('nusantara.cache_store');
-        $this->store = $store !== null && $store !== ''
-            ? CacheFacade::store($store)
+        $storeName = config('nusantara.cache_store');
+        $this->store = $storeName !== null && $storeName !== ''
+            ? CacheFacade::store($storeName)
             : CacheFacade::store();
     }
 
@@ -30,18 +33,70 @@ final class Cache
             return $callback();
         }
 
+        self::trackKey($fullKey);
+
         return $this->store->remember($fullKey, $ttl, $callback);
     }
 
     public function forget(string $key): bool
     {
-        return $this->store->forget(self::PREFIX . $key);
+        $fullKey = self::PREFIX . $key;
+        self::removeTrackedKey($fullKey);
+
+        return $this->store->forget($fullKey);
     }
 
     public function flush(): bool
     {
-        $this->store->forget(self::PREFIX . 'provinces');
+        // Flush the registry key first to get all tracked keys
+        $registryKey = self::PREFIX . '_keys';
+        $keys = $this->store->get($registryKey, []);
+
+        if (is_array($keys)) {
+            foreach ($keys as $key) {
+                $this->store->forget($key);
+            }
+        }
+
+        // Also flush any statically tracked keys from this process
+        foreach (self::$trackedKeys as $key) {
+            $this->store->forget($key);
+        }
+
+        // Clear the registry and static tracker
+        $this->store->forget($registryKey);
+        self::$trackedKeys = [];
+
         return true;
+    }
+
+    private static function trackKey(string $fullKey): void
+    {
+        if (! in_array($fullKey, self::$trackedKeys, true)) {
+            self::$trackedKeys[] = $fullKey;
+        }
+    }
+
+    private static function removeTrackedKey(string $fullKey): void
+    {
+        self::$trackedKeys = array_values(array_filter(
+            self::$trackedKeys,
+            fn (string $k) => $k !== $fullKey,
+        ));
+    }
+
+    /**
+     * Persist tracked keys to cache so flush() works across requests.
+     */
+    public function persistKeyRegistry(): void
+    {
+        $registryKey = self::PREFIX . '_keys';
+        $ttl = (int) config('nusantara.cache_ttl', 86400);
+        if ($ttl > 0) {
+            $existing = $this->store->get($registryKey, []);
+            $merged = array_unique(array_merge(is_array($existing) ? $existing : [], self::$trackedKeys));
+            $this->store->put($registryKey, $merged, $ttl * 2);
+        }
     }
 
     public static function keyProvinces(): string
