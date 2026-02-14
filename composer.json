@@ -1,0 +1,59 @@
+{
+    "name": "dimasdev/nusantara",
+    "description": "Indonesia region data (Kepmendagri 2025) for Laravel — shipping address formatting, postal code lookup, fuzzy search, dual-mode storage (file/database). Usable worldwide in Laravel apps.",
+    "keywords": [
+        "laravel",
+        "indonesia",
+        "nusantara",
+        "region",
+        "wilayah",
+        "provinsi",
+        "kabupaten",
+        "kecamatan",
+        "kelurahan",
+        "shipping",
+        "address",
+        "postal-code",
+        "kode-pos",
+        "address-formatter",
+        "fuzzy-search"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dimas",
+            "email": "your@email.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/database": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nusantara\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nusantara\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nusantara\\NusantaraServiceProvider"
+            ],
+            "aliases": {
+                "Nusantara": "Nusantara\\NusantaraFacade"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
