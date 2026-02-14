@@ -5,14 +5,31 @@ declare(strict_types=1);
 namespace Nusantara\Data;
 
 use Nusantara\Support\Cache;
+use Nusantara\Support\NormalizesCode;
 use Nusantara\Support\RegionCollection;
 
 final class FileRepository implements RepositoryInterface
 {
+    use NormalizesCode;
+
     private string $dataPath;
 
-    /** @var array<string, array>|null */
-    private ?array $provinces = null;
+    private Cache $cache;
+
+    /** @var array<int, array>|null in-memory provinces (small, always loaded) */
+    private ?array $provincesData = null;
+
+    /** @var array<string, array<int, array>>|null in-memory regencies keyed by province_code */
+    private ?array $regenciesIndex = null;
+
+    /** @var array<string, array<int, array>>|null in-memory districts keyed by regency_code */
+    private ?array $districtsIndex = null;
+
+    /** @var array<string, array<int, array>>|null in-memory villages keyed by district_code */
+    private ?array $villagesIndex = null;
+
+    /** @var array<string, array<int, array>>|null in-memory villages keyed by postal_code */
+    private ?array $postalIndex = null;
 
     public function __construct()
     {
@@ -20,48 +37,49 @@ final class FileRepository implements RepositoryInterface
         $this->dataPath = $base !== null && $base !== ''
             ? rtrim($base, DIRECTORY_SEPARATOR)
             : dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'data';
+        $this->cache = new Cache();
     }
 
     public function provinces(): RegionCollection
     {
-        $cache = new Cache();
-        $data = $cache->get('provinces', fn () => $this->loadProvinces());
+        $data = $this->cache->get('provinces', fn () => $this->loadProvinces());
+
         return new RegionCollection($data);
     }
 
     public function regencies(string $provinceCode): RegionCollection
     {
         $code = $this->normalizeCode($provinceCode, 1);
-        $cache = new Cache();
-        $data = $cache->get('regencies:' . $code, fn () => $this->loadRegencies($code));
+        $data = $this->cache->get('regencies:' . $code, fn () => $this->loadRegenciesFor($code));
+
         return new RegionCollection($data);
     }
 
     public function districts(string $regencyCode): RegionCollection
     {
         $code = $this->normalizeCode($regencyCode, 2);
-        $cache = new Cache();
-        $data = $cache->get('districts:' . $code, fn () => $this->loadDistricts($code));
+        $data = $this->cache->get('districts:' . $code, fn () => $this->loadDistrictsFor($code));
+
         return new RegionCollection($data);
     }
 
     public function villages(string $districtCode): RegionCollection
     {
         $code = $this->normalizeCode($districtCode, 3);
-        $cache = new Cache();
-        $data = $cache->get('villages:' . $code, fn () => $this->loadVillages($code));
+        $data = $this->cache->get('villages:' . $code, fn () => $this->loadVillagesFor($code));
+
         return new RegionCollection($data);
     }
 
     public function findProvince(string $code): ?array
     {
         $code = $this->normalizeCode($code, 1);
-        $all = $this->provinces()->all();
-        foreach ($all as $item) {
+        foreach ($this->provinces()->all() as $item) {
             if (($item['code'] ?? '') === $code) {
                 return $item;
             }
         }
+
         return null;
     }
 
@@ -69,12 +87,12 @@ final class FileRepository implements RepositoryInterface
     {
         $code = $this->normalizeCode($code, 2);
         $provinceCode = explode('.', $code)[0] ?? '';
-        $all = $this->regencies($provinceCode)->all();
-        foreach ($all as $item) {
+        foreach ($this->regencies($provinceCode)->all() as $item) {
             if (($item['code'] ?? '') === $code) {
                 return $item;
             }
         }
+
         return null;
     }
 
@@ -82,26 +100,25 @@ final class FileRepository implements RepositoryInterface
     {
         $code = $this->normalizeCode($code, 3);
         $regencyCode = implode('.', array_slice(explode('.', $code), 0, 2));
-        $all = $this->districts($regencyCode)->all();
-        foreach ($all as $item) {
+        foreach ($this->districts($regencyCode)->all() as $item) {
             if (($item['code'] ?? '') === $code) {
                 return $item;
             }
         }
+
         return null;
     }
 
     public function findVillage(string $code): ?array
     {
         $code = $this->normalizeCode($code, 4);
-        $parts = explode('.', $code);
-        $districtCode = implode('.', array_slice($parts, 0, 3));
-        $all = $this->villages($districtCode)->all();
-        foreach ($all as $item) {
+        $districtCode = implode('.', array_slice(explode('.', $code), 0, 3));
+        foreach ($this->villages($districtCode)->all() as $item) {
             if (($item['code'] ?? '') === $code) {
                 return $item;
             }
         }
+
         return null;
     }
 
@@ -111,8 +128,10 @@ final class FileRepository implements RepositoryInterface
         if ($term === '') {
             return new RegionCollection([]);
         }
+
         $results = [];
         $level = $level ? strtolower($level) : null;
+        $maxResults = (int) (config('nusantara.search.max_results') ?? 20);
 
         if ($level === null || $level === 'province') {
             foreach ($this->provinces()->all() as $p) {
@@ -121,34 +140,43 @@ final class FileRepository implements RepositoryInterface
                 }
             }
         }
+
         if ($level === null || $level === 'regency') {
-            foreach ($this->provinces()->all() as $p) {
-                foreach ($this->regencies($p['code'])->all() as $r) {
+            $this->ensureRegenciesIndex();
+            foreach ($this->regenciesIndex as $items) {
+                foreach ($items as $r) {
                     if ($this->nameMatches($r['name'] ?? '', $term)) {
                         $results[] = array_merge($r, ['level' => 'regency']);
-                    }
-                }
-            }
-        }
-        if ($level === null || $level === 'district') {
-            foreach ($this->provinces()->all() as $p) {
-                foreach ($this->regencies($p['code'])->all() as $r) {
-                    foreach ($this->districts($r['code'])->all() as $d) {
-                        if ($this->nameMatches($d['name'] ?? '', $term)) {
-                            $results[] = array_merge($d, ['level' => 'district']);
+                        if (count($results) >= $maxResults) {
+                            return new RegionCollection($results);
                         }
                     }
                 }
             }
         }
+
+        if ($level === null || $level === 'district') {
+            $this->ensureDistrictsIndex();
+            foreach ($this->districtsIndex as $items) {
+                foreach ($items as $d) {
+                    if ($this->nameMatches($d['name'] ?? '', $term)) {
+                        $results[] = array_merge($d, ['level' => 'district']);
+                        if (count($results) >= $maxResults) {
+                            return new RegionCollection($results);
+                        }
+                    }
+                }
+            }
+        }
+
         if ($level === null || $level === 'village') {
-            foreach ($this->provinces()->all() as $p) {
-                foreach ($this->regencies($p['code'])->all() as $r) {
-                    foreach ($this->districts($r['code'])->all() as $d) {
-                        foreach ($this->villages($d['code'])->all() as $v) {
-                            if ($this->nameMatches($v['name'] ?? '', $term)) {
-                                $results[] = array_merge($v, ['level' => 'village']);
-                            }
+            $this->ensureVillagesIndex();
+            foreach ($this->villagesIndex as $items) {
+                foreach ($items as $v) {
+                    if ($this->nameMatches($v['name'] ?? '', $term)) {
+                        $results[] = array_merge($v, ['level' => 'village']);
+                        if (count($results) >= $maxResults) {
+                            return new RegionCollection($results);
                         }
                     }
                 }
@@ -164,100 +192,168 @@ final class FileRepository implements RepositoryInterface
         if (strlen($postalCode) !== 5) {
             return new RegionCollection([]);
         }
-        $cache = new Cache();
-        $data = $cache->get('postal:' . $postalCode, function () use ($postalCode) {
-            $found = [];
-            foreach ($this->provinces()->all() as $p) {
-                foreach ($this->regencies($p['code'])->all() as $r) {
-                    foreach ($this->districts($r['code'])->all() as $d) {
-                        foreach ($this->villages($d['code'])->all() as $v) {
-                            if (($v['postal_code'] ?? '') === $postalCode) {
-                                $found[] = array_merge($v, [
-                                    'level' => 'village',
-                                    'province' => $p,
-                                    'regency' => $r,
-                                    'district' => $d,
-                                ]);
-                            }
-                        }
-                    }
-                }
+
+        $data = $this->cache->get('postal:' . $postalCode, function () use ($postalCode) {
+            $this->ensurePostalIndex();
+            $villages = $this->postalIndex[$postalCode] ?? [];
+
+            if (empty($villages)) {
+                return [];
             }
+
+            $found = [];
+            foreach ($villages as $v) {
+                $parts = explode('.', $v['district_code'] ?? '');
+                $regencyCode = implode('.', array_slice($parts, 0, 2));
+                $provinceCode = $parts[0] ?? '';
+
+                $p = $this->findProvince($provinceCode);
+                $r = $this->findRegency($regencyCode);
+                $d = $this->findDistrict($v['district_code'] ?? '');
+
+                $found[] = array_merge($v, [
+                    'level' => 'village',
+                    'province' => $p,
+                    'regency' => $r,
+                    'district' => $d,
+                ]);
+            }
+
             return $found;
         });
+
         return new RegionCollection($data);
     }
 
+    // ---- Lazy data loading with indexed lookups ----
+
     private function loadProvinces(): array
     {
+        if ($this->provincesData !== null) {
+            return $this->provincesData;
+        }
+
         $file = $this->dataPath . DIRECTORY_SEPARATOR . 'provinces.php';
         if (! is_file($file)) {
-            return [];
+            return $this->provincesData = [];
         }
+
         $data = require $file;
-        return is_array($data) ? $data : [];
+        $this->provincesData = is_array($data) ? $data : [];
+
+        return $this->provincesData;
     }
 
-    private function loadRegencies(string $provinceCode): array
+    private function loadRegenciesFor(string $provinceCode): array
     {
+        $this->ensureRegenciesIndex();
+
+        return $this->regenciesIndex[$provinceCode] ?? [];
+    }
+
+    private function loadDistrictsFor(string $regencyCode): array
+    {
+        $this->ensureDistrictsIndex();
+
+        return $this->districtsIndex[$regencyCode] ?? [];
+    }
+
+    private function loadVillagesFor(string $districtCode): array
+    {
+        $this->ensureVillagesIndex();
+
+        return $this->villagesIndex[$districtCode] ?? [];
+    }
+
+    private function ensureRegenciesIndex(): void
+    {
+        if ($this->regenciesIndex !== null) {
+            return;
+        }
+
         $file = $this->dataPath . DIRECTORY_SEPARATOR . 'regencies.php';
+        $this->regenciesIndex = [];
+
         if (! is_file($file)) {
-            return [];
+            return;
         }
+
         $all = require $file;
         if (! is_array($all)) {
-            return [];
+            return;
         }
-        $code = $provinceCode;
-        return array_values(array_filter($all, fn (array $r) => ($r['province_code'] ?? '') === $code));
+
+        foreach ($all as $row) {
+            $pc = $row['province_code'] ?? '';
+            $this->regenciesIndex[$pc][] = $row;
+        }
     }
 
-    private function loadDistricts(string $regencyCode): array
+    private function ensureDistrictsIndex(): void
     {
+        if ($this->districtsIndex !== null) {
+            return;
+        }
+
         $file = $this->dataPath . DIRECTORY_SEPARATOR . 'districts.php';
+        $this->districtsIndex = [];
+
         if (! is_file($file)) {
-            return [];
+            return;
         }
+
         $all = require $file;
         if (! is_array($all)) {
-            return [];
+            return;
         }
-        return array_values(array_filter($all, fn (array $d) => ($d['regency_code'] ?? '') === $regencyCode));
+
+        foreach ($all as $row) {
+            $rc = $row['regency_code'] ?? '';
+            $this->districtsIndex[$rc][] = $row;
+        }
     }
 
-    private function loadVillages(string $districtCode): array
+    private function ensureVillagesIndex(): void
     {
+        if ($this->villagesIndex !== null) {
+            return;
+        }
+
         $file = $this->dataPath . DIRECTORY_SEPARATOR . 'villages.php';
+        $this->villagesIndex = [];
+
         if (! is_file($file)) {
-            return [];
+            return;
         }
+
         $all = require $file;
         if (! is_array($all)) {
-            return [];
+            return;
         }
-        return array_values(array_filter($all, fn (array $v) => ($v['district_code'] ?? '') === $districtCode));
+
+        foreach ($all as $row) {
+            $dc = $row['district_code'] ?? '';
+            $this->villagesIndex[$dc][] = $row;
+        }
     }
 
-    private function normalizeCode(string $code, int $maxParts): string
+    private function ensurePostalIndex(): void
     {
-        $code = trim(str_replace(' ', '', $code));
-        if (str_contains($code, '.')) {
-            $parts = explode('.', $code);
-            return implode('.', array_slice($parts, 0, $maxParts));
+        if ($this->postalIndex !== null) {
+            return;
         }
-        if (strlen($code) === 2 && $maxParts >= 1) {
-            return $code;
+
+        $this->ensureVillagesIndex();
+        $this->postalIndex = [];
+
+        foreach ($this->villagesIndex as $villages) {
+            foreach ($villages as $v) {
+                $pc = $v['postal_code'] ?? null;
+                if ($pc !== null && $pc !== '') {
+                    $this->postalIndex[(string) $pc][] = $v;
+                }
+            }
         }
-        if (strlen($code) === 4 && $maxParts >= 2) {
-            return substr($code, 0, 2) . '.' . substr($code, 2, 2);
-        }
-        if (strlen($code) === 6 && $maxParts >= 3) {
-            return substr($code, 0, 2) . '.' . substr($code, 2, 2) . '.' . substr($code, 4, 2);
-        }
-        if (strlen($code) === 10 && $maxParts >= 4) {
-            return substr($code, 0, 2) . '.' . substr($code, 2, 2) . '.' . substr($code, 4, 2) . '.' . substr($code, 6, 4);
-        }
-        return $code;
     }
 
     private function nameMatches(string $name, string $term): bool

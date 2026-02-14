@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Nusantara\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -34,6 +35,11 @@ class Regency extends Model
     public function districts(): HasMany
     {
         return $this->hasMany(District::class, 'regency_code', 'code');
+    }
+
+    public function scopeSearch(Builder $query, string $term): Builder
+    {
+        return $query->where('name', 'like', '%' . addcslashes($term, '%_\\') . '%');
     }
 
     public function getTitleNameAttribute(): string
