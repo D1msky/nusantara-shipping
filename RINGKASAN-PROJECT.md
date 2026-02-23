@@ -8,7 +8,7 @@
 
 **Nusantara** adalah paket Laravel yang menyediakan **data wilayah administratif Indonesia** (Kepmendagri 2025) dengan fitur siap pakai untuk form alamat, shipping, kode pos, dan pencarian fuzzy.
 
-- **Package:** `d1msky/nusantara`
+- **Package:** `d1msky/nusantara-shipping`
 - **Stack:** PHP 8.1+, Laravel 10/11/12
 - **Lisensi:** MIT
 

@@ -1,6 +1,6 @@
 # Nusantara — Indonesia Region Data for Laravel
 
-[![Tests](https://github.com/D1msky/nusantara/actions/workflows/tests.yml/badge.svg)](https://github.com/D1msky/nusantara/actions/workflows/tests.yml)
+[![Tests](https://github.com/D1msky/nusantara-shipping/actions/workflows/tests.yml/badge.svg)](https://github.com/D1msky/nusantara-shipping/actions/workflows/tests.yml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **Official Indonesian administrative region data (Kepmendagri 2025) for Laravel** — with shipping address formatting, postal code lookup, fuzzy search, and dual-mode storage (file or database). Built for Laravel apps **anywhere in the world** that need to handle Indonesian addresses (e.g. e‑commerce, logistics, forms).
@@ -32,7 +32,7 @@ Use it for: dropdowns (provinces → regencies → districts → villages), addr
 ## Installation
 
 ```bash
-composer require d1msky/nusantara
+composer require d1msky/nusantara-shipping
 ```
 
 Publish config (optional):

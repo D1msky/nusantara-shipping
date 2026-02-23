@@ -1,5 +1,5 @@
 {
-    "name": "d1msky/nusantara",
+    "name": "d1msky/nusantara-shipping",
     "description": "Indonesia region data (Kepmendagri 2025) for Laravel — shipping address formatting, postal code lookup, fuzzy search, dual-mode storage (file/database). Usable worldwide in Laravel apps.",
     "keywords": [
         "laravel",
