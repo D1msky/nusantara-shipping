@@ -24,7 +24,8 @@ class AddressFormatterTest extends TestCase
         $addr = $this->formatter->format($this->repo, '32.73.01.1001');
         $this->assertNotNull($addr);
         $this->assertStringContainsString('Cihapit', $addr);
-        $this->assertStringContainsString('Bandung Wetan', $addr);
+        // District for 32.73.01 is Bandung Kulon (per data source)
+        $this->assertStringContainsString('Bandung Kulon', $addr);
         $this->assertStringContainsString('40114', $addr);
     }
 

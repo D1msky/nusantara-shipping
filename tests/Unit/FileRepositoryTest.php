@@ -28,7 +28,11 @@ class FileRepositoryTest extends TestCase
     {
         $regencies = $this->repo->regencies('32');
         $this->assertGreaterThan(0, $regencies->count());
-        $this->assertEquals('32.73', $regencies->first()['code'] ?? null);
+        // Data is ordered by code; 32.01 (Kabupaten Bogor) is the first regency in province 32
+        $this->assertEquals('32.01', $regencies->first()['code'] ?? null);
+        // Ensure a well-known regency (Kota Bandung) is present in the collection
+        $codes = array_column($regencies->all(), 'code');
+        $this->assertContains('32.73', $codes);
     }
 
     public function test_can_load_districts_by_regency_code(): void

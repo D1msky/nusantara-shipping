@@ -62,7 +62,11 @@ class NusantaraTest extends TestCase
         $nusantara = $this->app->make(Nusantara::class);
         $regencies = $nusantara->regencies('32');
         $this->assertGreaterThan(0, $regencies->count());
-        $this->assertSame('32.73', $regencies->first()['code']);
+        // Data is ordered by code; 32.01 (Kabupaten Bogor) is the first regency in province 32
+        $this->assertSame('32.01', $regencies->first()['code']);
+        // Ensure a well-known regency (Kota Bandung) is present in the collection
+        $codes = array_column($regencies->all(), 'code');
+        $this->assertContains('32.73', $codes);
     }
 
     public function test_regencies_by_province_name(): void
