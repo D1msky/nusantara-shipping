@@ -19,7 +19,7 @@ class NusantaraSeeder extends Seeder
         $base = config('nusantara.data_path');
         $this->dataPath = $base !== null && $base !== ''
             ? rtrim($base, DIRECTORY_SEPARATOR)
-            : dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . 'data';
+            : dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'data';
     }
 
     public function run(?string $only = null): void

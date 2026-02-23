@@ -177,12 +177,89 @@ Then: `Nusantara::shippingAddress($code, style: 'my_courier')`.
 
 ## Data source and updates
 
-Region data follows **Kepmendagri** (Indonesian Ministry of Home Affairs). Package ships with **sample data** so it works out of the box. For full datasets:
+Region data follows **Kepmendagri** (Indonesian Ministry of Home Affairs). The package ships with **sample data** so it works out of the box. For full or up-to-date datasets, use the `nusantara:update-data` command.
 
-- Recommended: [cahyadsn/wilayah](https://github.com/cahyadsn/wilayah) (Kepmendagri 2025)
-- Alternative: [hanifabd/wilayah-indonesia-area](https://github.com/hanifabd/wilayah-indonesia-area) (JSON)
+### Command
 
-Use `php artisan nusantara:update-data --source=<path_or_base_url>` with a local folder or base URL that serves `provinces.json` (and optionally regencies, districts, villages). The command converts JSON to the PHP format expected by the package. See the command help and repo docs for details.
+```bash
+php artisan nusantara:update-data --source=<path_or_base_url>
+```
+
+- **Without `--source`:** prints usage and recommended sources (no files changed).
+- **With `--source`:** fetches or reads JSON from the given path/URL, converts it to the PHP format used by the package, and writes `provinces.php`, `regencies.php`, `districts.php`, and `villages.php` into the package `data/` folder (or `config('nusantara.data_path')` if set).
+
+### Input: path or URL
+
+| Type | Example | Description |
+|------|---------|-------------|
+| **Local folder** | `--source=/path/to/data` | Folder must contain at least `provinces.json`. Optional: `regencies.json`, `districts.json`, `villages.json`. |
+| **Base URL** | `--source=https://example.com/data` | Command will request `{url}/provinces.json`, `{url}/regencies.json`, etc. Each must return a JSON array. |
+
+For a **local folder**, the path must be absolute or relative to the current working directory. For a **URL**, use a base URL that serves the JSON files directly (e.g. raw GitHub or a CDN).
+
+### Required and optional files
+
+| File | Required | Description |
+|------|----------|-------------|
+| `provinces.json` | **Yes** | Array of province objects. |
+| `regencies.json` | No | Array of regency/kabupaten/kota objects. |
+| `districts.json` | No | Array of district/kecamatan objects. |
+| `villages.json` | No | Array of village/kelurahan/desa objects. |
+
+If a file is missing, that level is skipped; existing PHP data for that level is not overwritten.
+
+### Expected JSON structure
+
+Each file must be a **JSON array of objects**. The command normalizes common field names:
+
+- **Provinces:** `code` / `id` / `kode`, `name` / `nama`; optional: `latitude`/`lat`, `longitude`/`lng`/`lon`.
+- **Regencies:** `code` / `id` / `kode`, `name` / `nama`, `province_code` / `provinceCode` / `kode_provinsi` / `province_id` (or derived from code); optional: `latitude`, `longitude`.
+- **Districts:** `code` / `id` / `kode`, `name` / `nama`, `regency_code` / `regencyCode` / `kode_kabupaten` (or derived from code); optional: `latitude`, `longitude`.
+- **Villages:** `code` / `id` / `kode`, `name` / `nama`, `district_code` / `districtCode` / `kode_kecamatan` (or derived from code); optional: `postal_code` / `postalCode` / `kode_pos` / `zip`.
+
+Codes can be dotted (e.g. `32.73`) or plain (e.g. `3273`); the command normalizes to dotted format where applicable.
+
+### Example: URL (raw GitHub)
+
+```bash
+php artisan nusantara:update-data --source=https://raw.githubusercontent.com/yusufsyaifudin/wilayah-indonesia/master/data/list_of_area
+```
+
+This URL serves `provinces.json`, `regencies.json`, `districts.json`, and `villages.json` directly.
+
+### Example: local folder
+
+1. Clone a repo that contains JSON (e.g. in a `data` or `data/list_of_area` folder).
+2. Run:
+
+```bash
+php artisan nusantara:update-data --source=/absolute/path/to/folder/with/provinces.json
+# or, from project root:
+php artisan nusantara:update-data --source=./vendor/some/repo/data
+```
+
+The folder must contain at least `provinces.json`.
+
+### After updating data
+
+- **File driver (`NUSANTARA_DRIVER=file`):** Data is read from the updated PHP files; no further step.
+- **Database driver (`NUSANTARA_DRIVER=database`):** Run the seeder to fill the database from the updated files:
+
+```bash
+php artisan nusantara:seed
+```
+
+Then check counts:
+
+```bash
+php artisan nusantara:stats
+```
+
+### Recommended public sources
+
+- [yusufsyaifudin/wilayah-indonesia](https://github.com/yusufsyaifudin/wilayah-indonesia) — JSON in `data/list_of_area/` (provinces, regencies, districts, villages).
+- [cahyadsn/wilayah](https://github.com/cahyadsn/wilayah) — Kepmendagri; provides SQL; for JSON you need to export or use a repo that exposes JSON.
+- [hanifabd/wilayah-indonesia-area](https://github.com/hanifabd/wilayah-indonesia-area) — data in other formats (e.g. zip); use a source that exposes `.json` files if you want to use `--source=<url>` directly.
 
 ---
 

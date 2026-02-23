@@ -30,8 +30,12 @@ final class Cache
             return $callback();
         }
 
-        if ($this->supportsTags()) {
-            return $this->store->tags(['nusantara'])->remember($fullKey, $ttl, $callback);
+        try {
+            if ($this->supportsTags()) {
+                return $this->store->tags(['nusantara'])->remember($fullKey, $ttl, $callback);
+            }
+        } catch (\BadMethodCallException $e) {
+            // Store has tags() but driver does not support tagging (e.g. database, file)
         }
 
         return $this->store->remember($fullKey, $ttl, $callback);
@@ -40,17 +44,25 @@ final class Cache
     public function forget(string $key): bool
     {
         $fullKey = self::PREFIX . $key;
-        if ($this->supportsTags()) {
-            return $this->store->tags(['nusantara'])->forget($fullKey);
+        try {
+            if ($this->supportsTags()) {
+                return $this->store->tags(['nusantara'])->forget($fullKey);
+            }
+        } catch (\BadMethodCallException $e) {
+            // Store does not support tagging
         }
         return $this->store->forget($fullKey);
     }
 
     public function flush(): bool
     {
-        if ($this->supportsTags()) {
-            $this->store->tags(['nusantara'])->flush();
-            return true;
+        try {
+            if ($this->supportsTags()) {
+                $this->store->tags(['nusantara'])->flush();
+                return true;
+            }
+        } catch (\BadMethodCallException $e) {
+            // Store does not support tagging
         }
 
         $this->flushFallback();
