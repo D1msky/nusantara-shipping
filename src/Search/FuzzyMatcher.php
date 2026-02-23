@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Nusantara\Search;
 
 use Nusantara\Data\RepositoryInterface;
+use Nusantara\Support\Cache;
 use Nusantara\Support\RegionCollection;
 
 final class FuzzyMatcher
@@ -30,6 +31,17 @@ final class FuzzyMatcher
             return new RegionCollection([]);
         }
 
+        // Check search cache
+        $cache = new Cache();
+        $cacheKey = 'search:' . md5($term . '|' . ($level ?? '*'));
+
+        return $cache->get($cacheKey, function () use ($repository, $term, $level) {
+            return $this->performSearch($repository, $term, $level);
+        });
+    }
+
+    private function performSearch(RepositoryInterface $repository, string $term, ?string $level): RegionCollection
+    {
         $termLower = mb_strtolower($term);
         $normalized = $this->normalizeInput($termLower);
 
@@ -74,17 +86,19 @@ final class FuzzyMatcher
                 $scored[] = $item;
             }
         }
+
         usort($scored, fn ($a, $b) => ($b['_score'] ?? 0) <=> ($a['_score'] ?? 0));
         $scored = array_slice($scored, 0, $this->maxResults);
+
         foreach ($scored as &$s) {
             unset($s['_score']);
         }
+
         return new RegionCollection($scored);
     }
 
     /**
      * @param array<int, array> $items
-     * @return RegionCollection
      */
     private function limitAndSort(array $items, string $reference, int $max): RegionCollection
     {
@@ -94,19 +108,23 @@ final class FuzzyMatcher
             $nb = $b['name'] ?? '';
             $sa = $this->scoreSimilarity($refLower, mb_strtolower($na), $na);
             $sb = $this->scoreSimilarity($refLower, mb_strtolower($nb), $nb);
+
             return $sb <=> $sa;
         });
+
         return new RegionCollection(array_slice($items, 0, $max));
     }
 
     private function collectCandidates(RepositoryInterface $repository, ?string $level): array
     {
         $out = [];
+
         if ($level === null || $level === 'province') {
             foreach ($repository->provinces()->all() as $p) {
                 $out[] = array_merge($p, ['level' => 'province']);
             }
         }
+
         if ($level === null || $level === 'regency') {
             foreach ($repository->provinces()->all() as $p) {
                 foreach ($repository->regencies($p['code'])->all() as $r) {
@@ -114,6 +132,7 @@ final class FuzzyMatcher
                 }
             }
         }
+
         if ($level === null || $level === 'district') {
             foreach ($repository->provinces()->all() as $p) {
                 foreach ($repository->regencies($p['code'])->all() as $r) {
@@ -123,9 +142,10 @@ final class FuzzyMatcher
                 }
             }
         }
-        if ($level === null || $level === 'village') {
-            // Skip full village iteration (83k+ records); rely on alias + substring search only
-        }
+
+        // Village-level fuzzy is skipped for performance (83k+ records).
+        // Village search is handled by alias match and substring search above.
+
         return $out;
     }
 
@@ -134,13 +154,16 @@ final class FuzzyMatcher
         if ($name === '' || $term === '') {
             return 0;
         }
+
         if (str_contains($name, $term) || str_contains($originalName, $term)) {
             return 95;
         }
+
         similar_text($term, $name, $pct);
         $lev = levenshtein(mb_substr($term, 0, 255), mb_substr($name, 0, 255));
         $maxLen = max(mb_strlen($term), mb_strlen($name), 1);
         $levScore = (int) max(0, 100 - ($lev / $maxLen) * 100);
+
         return (int) max($pct, $levScore);
     }
 

@@ -13,19 +13,15 @@ class UpdateDataCommand extends Command
 
     protected $description = 'Update region data from official source (e.g. cahyadsn/wilayah or hanifabd/wilayah-indonesia-area)';
 
-    private string $dataPath;
+    private string $dataPath = '';
 
-    public function __construct()
+    public function handle(): int
     {
-        parent::__construct();
         $base = config('nusantara.data_path');
         $this->dataPath = $base !== null && $base !== ''
             ? rtrim($base, DIRECTORY_SEPARATOR)
             : dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'data';
-    }
 
-    public function handle(): int
-    {
         $source = $this->option('source');
         if ($source) {
             return $this->fetchFromSource($source);
