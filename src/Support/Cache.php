@@ -30,18 +30,47 @@ final class Cache
             return $callback();
         }
 
+        if ($this->supportsTags()) {
+            return $this->store->tags(['nusantara'])->remember($fullKey, $ttl, $callback);
+        }
+
         return $this->store->remember($fullKey, $ttl, $callback);
     }
 
     public function forget(string $key): bool
     {
-        return $this->store->forget(self::PREFIX . $key);
+        $fullKey = self::PREFIX . $key;
+        if ($this->supportsTags()) {
+            return $this->store->tags(['nusantara'])->forget($fullKey);
+        }
+        return $this->store->forget($fullKey);
     }
 
     public function flush(): bool
     {
-        $this->store->forget(self::PREFIX . 'provinces');
+        if ($this->supportsTags()) {
+            $this->store->tags(['nusantara'])->flush();
+            return true;
+        }
+
+        $this->flushFallback();
+
         return true;
+    }
+
+    private function supportsTags(): bool
+    {
+        return method_exists($this->store, 'tags');
+    }
+
+    /**
+     * Fallback when store does not support tags (e.g. file, database): clear known key patterns.
+     * Caller may have used dynamic keys (e.g. regencies:32); we only clear the static "provinces" key.
+     * For full flush, use a taggable cache store (Redis, Memcached) or restart cache.
+     */
+    private function flushFallback(): void
+    {
+        $this->store->forget(self::PREFIX . 'provinces');
     }
 
     public static function keyProvinces(): string

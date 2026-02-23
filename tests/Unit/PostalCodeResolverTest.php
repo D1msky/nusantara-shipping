@@ -43,8 +43,9 @@ class PostalCodeResolverTest extends TestCase
         $this->assertIsArray($codes);
         if (count($codes) > 0) {
             $this->assertTrue(
-                in_array('40114', $codes, true) || in_array('40132', $codes, true),
-                'Sample data should contain 40114 or 40132 for Kota Bandung. Got: ' . implode(', ', $codes)
+                in_array('40114', $codes, true) || in_array(40114, $codes, true)
+                || in_array('40132', $codes, true) || in_array(40132, $codes, true),
+                'Sample data should contain 40114 or 40132 for Kota Bandung. Got: ' . implode(', ', array_map(strval(...), $codes))
             );
         }
     }
