@@ -6,3 +6,6 @@
 /.gitignore         export-ignore
 /phpunit.xml        export-ignore
 /tools              export-ignore
+
+# villages.php keeps its rows inside a multi-line string literal; a CRLF checkout would change the data
+/data/*.php         text eol=lf

@@ -83,6 +83,18 @@ class VillageIndexTest extends TestCase
         $this->assertSame(7, $loaded->count());
     }
 
+    public function test_crlf_line_endings_are_normalized(): void
+    {
+        // e.g. a git checkout on Windows with core.autocrlf=true converts the data file to CRLF
+        $index = VillageIndex::fromData(str_replace("\n", "\r\n", "\n32.73.01.1001\tSUKARASA\t40152\n32.73.02.1002\tLEBAK GEDE\t40132\n73.71.01.1001\tMA'RANG\t\n"));
+
+        $this->assertSame(['LEBAK GEDE'], array_column($index->byPostalCode('40132'), 'name'));
+        $this->assertSame('40152', $index->find('32.73.01.1001')['postal_code'] ?? null);
+        $this->assertNull($index->find('73.71.01.1001')['postal_code']);
+        $this->assertSame(['32.73.01.1001'], array_column($index->forDistrict('32.73.01'), 'code'));
+        $this->assertSame(3, $index->count());
+    }
+
     public function test_legacy_array_data_is_accepted(): void
     {
         $index = VillageIndex::fromData([
