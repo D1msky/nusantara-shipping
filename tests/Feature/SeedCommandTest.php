@@ -3,6 +3,10 @@
 namespace Nusantara\Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Nusantara\Data\VillageIndex;
+use Nusantara\Models\District;
+use Nusantara\Models\Province;
+use Nusantara\Models\Village;
 use Nusantara\Tests\TestCase;
 
 class SeedCommandTest extends TestCase
@@ -54,5 +58,18 @@ class SeedCommandTest extends TestCase
     {
         $this->artisan('nusantara:seed')
             ->assertSuccessful();
+    }
+
+    public function test_seeding_is_idempotent_and_keeps_one_row_per_code(): void
+    {
+        $this->artisan('nusantara:seed')->assertSuccessful();
+        $this->artisan('nusantara:seed')->assertSuccessful();
+
+        $dataPath = dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR;
+        $districts = require $dataPath . 'districts.php';
+        $this->assertSame(count(require $dataPath . 'provinces.php'), Province::count());
+        $this->assertSame(count(array_unique(array_column($districts, 'code'))), District::count());
+        $this->assertSame(VillageIndex::fromData(require $dataPath . 'villages.php')->count(), Village::count());
+        $this->assertSame('40152', Village::find('32.73.01.1001')?->postal_code);
     }
 }

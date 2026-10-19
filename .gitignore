@@ -2,3 +2,6 @@
 .phpunit.result.cache
 .phpunit.cache/
 composer.lock
+/build/
+/.idea/
+/packages/

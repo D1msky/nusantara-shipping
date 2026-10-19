@@ -25,11 +25,10 @@ final class FileRepository implements RepositoryInterface
     /** @var array<string, array<int, array>>|null in-memory districts keyed by regency_code */
     private ?array $districtsIndex = null;
 
-    /** @var array<string, array<int, array>>|null in-memory villages keyed by district_code */
-    private ?array $villagesIndex = null;
+    private ?VillageIndex $villageIndex = null;
 
-    /** @var array<string, array<int, array>>|null in-memory villages keyed by postal_code */
-    private ?array $postalIndex = null;
+    /** @var array<string, array{stamp: string|null, value: mixed}> per-process, keyed by file path */
+    private static array $loaded = [];
 
     public function __construct()
     {
@@ -69,6 +68,21 @@ final class FileRepository implements RepositoryInterface
         $data = $this->cache->get('villages:' . $code, fn () => $this->loadVillagesFor($code));
 
         return new RegionCollection($data);
+    }
+
+    public function allRegencies(): RegionCollection
+    {
+        // Read straight from the data file: with OPcache this is cheaper than unserializing a large cache entry.
+        $this->ensureRegenciesIndex();
+
+        return new RegionCollection(array_merge(...array_values($this->regenciesIndex)));
+    }
+
+    public function allDistricts(): RegionCollection
+    {
+        $this->ensureDistrictsIndex();
+
+        return new RegionCollection(array_merge(...array_values($this->districtsIndex)));
     }
 
     public function findProvince(string $code): ?array
@@ -132,6 +146,7 @@ final class FileRepository implements RepositoryInterface
         $results = [];
         $level = $level ? strtolower($level) : null;
         $maxResults = (int) (config('nusantara.search.max_results') ?? 20);
+        $term = mb_strtolower($term);
 
         if ($level === null || $level === 'province') {
             foreach ($this->provinces()->all() as $p) {
@@ -170,16 +185,8 @@ final class FileRepository implements RepositoryInterface
         }
 
         if ($level === null || $level === 'village') {
-            $this->ensureVillagesIndex();
-            foreach ($this->villagesIndex as $items) {
-                foreach ($items as $v) {
-                    if ($this->nameMatches($v['name'] ?? '', $term)) {
-                        $results[] = array_merge($v, ['level' => 'village']);
-                        if (count($results) >= $maxResults) {
-                            return new RegionCollection($results);
-                        }
-                    }
-                }
+            foreach ($this->villageIndex()->search($term, $maxResults - count($results)) as $v) {
+                $results[] = array_merge($v, ['level' => 'village']);
             }
         }
 
@@ -194,8 +201,7 @@ final class FileRepository implements RepositoryInterface
         }
 
         $data = $this->cache->get('postal:' . $postalCode, function () use ($postalCode) {
-            $this->ensurePostalIndex();
-            $villages = $this->postalIndex[$postalCode] ?? [];
+            $villages = $this->villageIndex()->byPostalCode($postalCode);
 
             if (empty($villages)) {
                 return [];
@@ -260,104 +266,59 @@ final class FileRepository implements RepositoryInterface
 
     private function loadVillagesFor(string $districtCode): array
     {
-        $this->ensureVillagesIndex();
-
-        return $this->villagesIndex[$districtCode] ?? [];
+        return $this->villageIndex()->forDistrict($districtCode);
     }
 
     private function ensureRegenciesIndex(): void
     {
-        if ($this->regenciesIndex !== null) {
-            return;
-        }
-
-        $file = $this->dataPath . DIRECTORY_SEPARATOR . 'regencies.php';
-        $this->regenciesIndex = [];
-
-        if (! is_file($file)) {
-            return;
-        }
-
-        $all = require $file;
-        if (! is_array($all)) {
-            return;
-        }
-
-        foreach ($all as $row) {
-            $pc = $row['province_code'] ?? '';
-            $this->regenciesIndex[$pc][] = $row;
-        }
+        $this->regenciesIndex ??= $this->derived('regencies.php', fn (mixed $rows) => $this->groupBy($rows, 'province_code'));
     }
 
     private function ensureDistrictsIndex(): void
     {
-        if ($this->districtsIndex !== null) {
-            return;
-        }
-
-        $file = $this->dataPath . DIRECTORY_SEPARATOR . 'districts.php';
-        $this->districtsIndex = [];
-
-        if (! is_file($file)) {
-            return;
-        }
-
-        $all = require $file;
-        if (! is_array($all)) {
-            return;
-        }
-
-        foreach ($all as $row) {
-            $rc = $row['regency_code'] ?? '';
-            $this->districtsIndex[$rc][] = $row;
-        }
+        $this->districtsIndex ??= $this->derived('districts.php', fn (mixed $rows) => $this->groupBy($rows, 'regency_code'));
     }
 
-    private function ensureVillagesIndex(): void
+    private function villageIndex(): VillageIndex
     {
-        if ($this->villagesIndex !== null) {
-            return;
-        }
-
-        $file = $this->dataPath . DIRECTORY_SEPARATOR . 'villages.php';
-        $this->villagesIndex = [];
-
-        if (! is_file($file)) {
-            return;
-        }
-
-        $all = require $file;
-        if (! is_array($all)) {
-            return;
-        }
-
-        foreach ($all as $row) {
-            $dc = $row['district_code'] ?? '';
-            $this->villagesIndex[$dc][] = $row;
-        }
+        return $this->villageIndex ??= $this->derived('villages.php', fn (mixed $data) => VillageIndex::fromData($data));
     }
 
-    private function ensurePostalIndex(): void
+    /** @return array<string, array<int, array>> */
+    private function groupBy(mixed $rows, string $column): array
     {
-        if ($this->postalIndex !== null) {
-            return;
+        $groups = [];
+        foreach (is_array($rows) ? $rows : [] as $row) {
+            $groups[$row[$column] ?? ''][] = $row;
         }
 
-        $this->ensureVillagesIndex();
-        $this->postalIndex = [];
-
-        foreach ($this->villagesIndex as $villages) {
-            foreach ($villages as $v) {
-                $pc = $v['postal_code'] ?? null;
-                if ($pc !== null && $pc !== '') {
-                    $this->postalIndex[(string) $pc][] = $v;
-                }
-            }
-        }
+        return $groups;
     }
 
+    /**
+     * Structure built once per process from a data file and shared by every instance, so
+     * long-running workers (Octane, queue) that create a repository per request/job don't
+     * re-read the files on each cache miss. Keyed on mtime + size so files rewritten by
+     * nusantara:update-data are picked up.
+     *
+     * @param callable(mixed): mixed $build receives the file's return value (null when missing)
+     */
+    private function derived(string $file, callable $build): mixed
+    {
+        $path = $this->dataPath . DIRECTORY_SEPARATOR . $file;
+        clearstatcache(true, $path);
+        $stamp = is_file($path) ? filemtime($path) . ':' . filesize($path) : null;
+
+        if ((self::$loaded[$path]['stamp'] ?? false) !== $stamp) {
+            self::$loaded[$path] = ['stamp' => $stamp, 'value' => $build($stamp !== null ? require $path : null)];
+        }
+
+        return self::$loaded[$path]['value'];
+    }
+
+    /** @param string $term already lower-cased by the caller, so it is not re-lowered for every row */
     private function nameMatches(string $name, string $term): bool
     {
-        return str_contains(mb_strtolower($name), mb_strtolower($term));
+        return str_contains(mb_strtolower($name), $term);
     }
 }

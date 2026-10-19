@@ -182,20 +182,20 @@ final class Nusantara
     public function nearestRegency(float $latitude, float $longitude): ?array
     {
         $repo = $this->repository();
+        $provinces = array_column($repo->provinces()->all(), null, 'code');
         $best = null;
         $bestKm = PHP_FLOAT_MAX;
-        foreach ($repo->provinces()->all() as $p) {
-            foreach ($repo->regencies($p['code'])->all() as $r) {
-                $lat = $r['latitude'] ?? $p['latitude'] ?? null;
-                $lon = $r['longitude'] ?? $p['longitude'] ?? null;
-                if ($lat === null || $lon === null) {
-                    continue;
-                }
-                $km = $this->haversineKm((float) $lat, (float) $lon, $latitude, $longitude);
-                if ($km < $bestKm) {
-                    $bestKm = $km;
-                    $best = ['code' => $r['code'], 'name' => $r['name'], 'distance_km' => round($km, 2)];
-                }
+        foreach ($repo->allRegencies()->all() as $r) {
+            $p = $provinces[$r['province_code'] ?? ''] ?? [];
+            $lat = $r['latitude'] ?? $p['latitude'] ?? null;
+            $lon = $r['longitude'] ?? $p['longitude'] ?? null;
+            if ($lat === null || $lon === null) {
+                continue;
+            }
+            $km = $this->haversineKm((float) $lat, (float) $lon, $latitude, $longitude);
+            if ($km < $bestKm) {
+                $bestKm = $km;
+                $best = ['code' => $r['code'], 'name' => $r['name'], 'distance_km' => round($km, 2)];
             }
         }
         return $best;

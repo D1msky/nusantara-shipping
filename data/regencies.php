@@ -1,4119 +1,521 @@
 <?php
 
 // Source: Kepmendagri / nusantara:update-data
-// Last updated: 2026-02-23
+// Last updated: 2026-10-19
 
-return array (
-  0 => 
-  array (
-    'code' => '11.01',
-    'province_code' => '11',
-    'name' => 'KABUPATEN SIMEULUE',
-    'latitude' => 2.61667,
-    'longitude' => 96.08333,
-  ),
-  1 => 
-  array (
-    'code' => '11.02',
-    'province_code' => '11',
-    'name' => 'KABUPATEN ACEH SINGKIL',
-    'latitude' => 2.41667,
-    'longitude' => 97.91667,
-  ),
-  2 => 
-  array (
-    'code' => '11.03',
-    'province_code' => '11',
-    'name' => 'KABUPATEN ACEH SELATAN',
-    'latitude' => 3.16667,
-    'longitude' => 97.41667,
-  ),
-  3 => 
-  array (
-    'code' => '11.04',
-    'province_code' => '11',
-    'name' => 'KABUPATEN ACEH TENGGARA',
-    'latitude' => 3.36667,
-    'longitude' => 97.7,
-  ),
-  4 => 
-  array (
-    'code' => '11.05',
-    'province_code' => '11',
-    'name' => 'KABUPATEN ACEH TIMUR',
-    'latitude' => 4.63333,
-    'longitude' => 97.63333,
-  ),
-  5 => 
-  array (
-    'code' => '11.06',
-    'province_code' => '11',
-    'name' => 'KABUPATEN ACEH TENGAH',
-    'latitude' => 4.51,
-    'longitude' => 96.855,
-  ),
-  6 => 
-  array (
-    'code' => '11.07',
-    'province_code' => '11',
-    'name' => 'KABUPATEN ACEH BARAT',
-    'latitude' => 4.45,
-    'longitude' => 96.16667,
-  ),
-  7 => 
-  array (
-    'code' => '11.08',
-    'province_code' => '11',
-    'name' => 'KABUPATEN ACEH BESAR',
-    'latitude' => 5.38333,
-    'longitude' => 95.51667,
-  ),
-  8 => 
-  array (
-    'code' => '11.09',
-    'province_code' => '11',
-    'name' => 'KABUPATEN PIDIE',
-    'latitude' => 5.08,
-    'longitude' => 96.11,
-  ),
-  9 => 
-  array (
-    'code' => '11.10',
-    'province_code' => '11',
-    'name' => 'KABUPATEN BIREUEN',
-    'latitude' => 5.08333,
-    'longitude' => 96.58333,
-  ),
-  10 => 
-  array (
-    'code' => '11.11',
-    'province_code' => '11',
-    'name' => 'KABUPATEN ACEH UTARA',
-    'latitude' => 4.97,
-    'longitude' => 97.14,
-  ),
-  11 => 
-  array (
-    'code' => '11.12',
-    'province_code' => '11',
-    'name' => 'KABUPATEN ACEH BARAT DAYA',
-    'latitude' => 3.83333,
-    'longitude' => 96.88333,
-  ),
-  12 => 
-  array (
-    'code' => '11.13',
-    'province_code' => '11',
-    'name' => 'KABUPATEN GAYO LUES',
-    'latitude' => 3.95,
-    'longitude' => 97.39,
-  ),
-  13 => 
-  array (
-    'code' => '11.14',
-    'province_code' => '11',
-    'name' => 'KABUPATEN ACEH TAMIANG',
-    'latitude' => 4.25,
-    'longitude' => 97.96667,
-  ),
-  14 => 
-  array (
-    'code' => '11.15',
-    'province_code' => '11',
-    'name' => 'KABUPATEN NAGAN RAYA',
-    'latitude' => 4.16667,
-    'longitude' => 96.51667,
-  ),
-  15 => 
-  array (
-    'code' => '11.16',
-    'province_code' => '11',
-    'name' => 'KABUPATEN ACEH JAYA',
-    'latitude' => 4.86,
-    'longitude' => 95.64,
-  ),
-  16 => 
-  array (
-    'code' => '11.17',
-    'province_code' => '11',
-    'name' => 'KABUPATEN BENER MERIAH',
-    'latitude' => 4.73015,
-    'longitude' => 96.86156,
-  ),
-  17 => 
-  array (
-    'code' => '11.18',
-    'province_code' => '11',
-    'name' => 'KABUPATEN PIDIE JAYA',
-    'latitude' => 5.15,
-    'longitude' => 96.21667,
-  ),
-  18 => 
-  array (
-    'code' => '11.71',
-    'province_code' => '11',
-    'name' => 'KOTA BANDA ACEH',
-    'latitude' => 5.54167,
-    'longitude' => 95.33333,
-  ),
-  19 => 
-  array (
-    'code' => '11.72',
-    'province_code' => '11',
-    'name' => 'KOTA SABANG',
-    'latitude' => 5.82164,
-    'longitude' => 95.31086,
-  ),
-  20 => 
-  array (
-    'code' => '11.73',
-    'province_code' => '11',
-    'name' => 'KOTA LANGSA',
-    'latitude' => 4.47,
-    'longitude' => 97.93,
-  ),
-  21 => 
-  array (
-    'code' => '11.74',
-    'province_code' => '11',
-    'name' => 'KOTA LHOKSEUMAWE',
-    'latitude' => 5.13333,
-    'longitude' => 97.06667,
-  ),
-  22 => 
-  array (
-    'code' => '11.75',
-    'province_code' => '11',
-    'name' => 'KOTA SUBULUSSALAM',
-    'latitude' => 2.75,
-    'longitude' => 97.93333,
-  ),
-  23 => 
-  array (
-    'code' => '12.01',
-    'province_code' => '12',
-    'name' => 'KABUPATEN NIAS',
-    'latitude' => 1.03333,
-    'longitude' => 97.76667,
-  ),
-  24 => 
-  array (
-    'code' => '12.02',
-    'province_code' => '12',
-    'name' => 'KABUPATEN MANDAILING NATAL',
-    'latitude' => 0.78378,
-    'longitude' => 99.25495,
-  ),
-  25 => 
-  array (
-    'code' => '12.03',
-    'province_code' => '12',
-    'name' => 'KABUPATEN TAPANULI SELATAN',
-    'latitude' => 1.51667,
-    'longitude' => 99.25,
-  ),
-  26 => 
-  array (
-    'code' => '12.04',
-    'province_code' => '12',
-    'name' => 'KABUPATEN TAPANULI TENGAH',
-    'latitude' => 1.9,
-    'longitude' => 98.66667,
-  ),
-  27 => 
-  array (
-    'code' => '12.05',
-    'province_code' => '12',
-    'name' => 'KABUPATEN TAPANULI UTARA',
-    'latitude' => 2.0028,
-    'longitude' => 99.0707,
-  ),
-  28 => 
-  array (
-    'code' => '12.06',
-    'province_code' => '12',
-    'name' => 'KABUPATEN TOBA SAMOSIR',
-    'latitude' => 2.39793,
-    'longitude' => 99.21678,
-  ),
-  29 => 
-  array (
-    'code' => '12.07',
-    'province_code' => '12',
-    'name' => 'KABUPATEN LABUHAN BATU',
-    'latitude' => 2.26667,
-    'longitude' => 100.1,
-  ),
-  30 => 
-  array (
-    'code' => '12.08',
-    'province_code' => '12',
-    'name' => 'KABUPATEN ASAHAN',
-    'latitude' => 2.78333,
-    'longitude' => 99.55,
-  ),
-  31 => 
-  array (
-    'code' => '12.09',
-    'province_code' => '12',
-    'name' => 'KABUPATEN SIMALUNGUN',
-    'latitude' => 2.9,
-    'longitude' => 99.0,
-  ),
-  32 => 
-  array (
-    'code' => '12.10',
-    'province_code' => '12',
-    'name' => 'KABUPATEN DAIRI',
-    'latitude' => 2.86667,
-    'longitude' => 98.23333,
-  ),
-  33 => 
-  array (
-    'code' => '12.11',
-    'province_code' => '12',
-    'name' => 'KABUPATEN KARO',
-    'latitude' => 3.11667,
-    'longitude' => 98.3,
-  ),
-  34 => 
-  array (
-    'code' => '12.12',
-    'province_code' => '12',
-    'name' => 'KABUPATEN DELI SERDANG',
-    'latitude' => 3.41667,
-    'longitude' => 98.66667,
-  ),
-  35 => 
-  array (
-    'code' => '12.13',
-    'province_code' => '12',
-    'name' => 'KABUPATEN LANGKAT',
-    'latitude' => 3.71667,
-    'longitude' => 98.21667,
-  ),
-  36 => 
-  array (
-    'code' => '12.14',
-    'province_code' => '12',
-    'name' => 'KABUPATEN NIAS SELATAN',
-    'latitude' => 0.77,
-    'longitude' => 97.75,
-  ),
-  37 => 
-  array (
-    'code' => '12.15',
-    'province_code' => '12',
-    'name' => 'KABUPATEN HUMBANG HASUNDUTAN',
-    'latitude' => 2.26551,
-    'longitude' => 98.50376,
-  ),
-  38 => 
-  array (
-    'code' => '12.16',
-    'province_code' => '12',
-    'name' => 'KABUPATEN PAKPAK BHARAT',
-    'latitude' => 2.56667,
-    'longitude' => 98.28333,
-  ),
-  39 => 
-  array (
-    'code' => '12.17',
-    'province_code' => '12',
-    'name' => 'KABUPATEN SAMOSIR',
-    'latitude' => 2.64025,
-    'longitude' => 98.71525,
-  ),
-  40 => 
-  array (
-    'code' => '12.18',
-    'province_code' => '12',
-    'name' => 'KABUPATEN SERDANG BEDAGAI',
-    'latitude' => 3.36667,
-    'longitude' => 99.03333,
-  ),
-  41 => 
-  array (
-    'code' => '12.19',
-    'province_code' => '12',
-    'name' => 'KABUPATEN BATU BARA',
-    'latitude' => 3.16166,
-    'longitude' => 99.52652,
-  ),
-  42 => 
-  array (
-    'code' => '12.20',
-    'province_code' => '12',
-    'name' => 'KABUPATEN PADANG LAWAS UTARA',
-    'latitude' => 1.46011,
-    'longitude' => 99.67346,
-  ),
-  43 => 
-  array (
-    'code' => '12.21',
-    'province_code' => '12',
-    'name' => 'KABUPATEN PADANG LAWAS',
-    'latitude' => 1.44684,
-    'longitude' => 99.99207,
-  ),
-  44 => 
-  array (
-    'code' => '12.22',
-    'province_code' => '12',
-    'name' => 'KABUPATEN LABUHAN BATU SELATAN',
-    'latitude' => 1.983,
-    'longitude' => 100.0976,
-  ),
-  45 => 
-  array (
-    'code' => '12.23',
-    'province_code' => '12',
-    'name' => 'KABUPATEN LABUHAN BATU UTARA',
-    'latitude' => 2.33349,
-    'longitude' => 99.63776,
-  ),
-  46 => 
-  array (
-    'code' => '12.24',
-    'province_code' => '12',
-    'name' => 'KABUPATEN NIAS UTARA',
-    'latitude' => 1.33037,
-    'longitude' => 97.31964,
-  ),
-  47 => 
-  array (
-    'code' => '12.25',
-    'province_code' => '12',
-    'name' => 'KABUPATEN NIAS BARAT',
-    'latitude' => 1.05966,
-    'longitude' => 97.58606,
-  ),
-  48 => 
-  array (
-    'code' => '12.71',
-    'province_code' => '12',
-    'name' => 'KOTA SIBOLGA',
-    'latitude' => 1.73333,
-    'longitude' => 98.8,
-  ),
-  49 => 
-  array (
-    'code' => '12.72',
-    'province_code' => '12',
-    'name' => 'KOTA TANJUNG BALAI',
-    'latitude' => 2.95833,
-    'longitude' => 99.79167,
-  ),
-  50 => 
-  array (
-    'code' => '12.73',
-    'province_code' => '12',
-    'name' => 'KOTA PEMATANG SIANTAR',
-    'latitude' => 2.96667,
-    'longitude' => 99.05,
-  ),
-  51 => 
-  array (
-    'code' => '12.74',
-    'province_code' => '12',
-    'name' => 'KOTA TEBING TINGGI',
-    'latitude' => 3.325,
-    'longitude' => 99.14167,
-  ),
-  52 => 
-  array (
-    'code' => '12.75',
-    'province_code' => '12',
-    'name' => 'KOTA MEDAN',
-    'latitude' => 3.65,
-    'longitude' => 98.66667,
-  ),
-  53 => 
-  array (
-    'code' => '12.76',
-    'province_code' => '12',
-    'name' => 'KOTA BINJAI',
-    'latitude' => 3.8,
-    'longitude' => 108.23333,
-  ),
-  54 => 
-  array (
-    'code' => '12.77',
-    'province_code' => '12',
-    'name' => 'KOTA PADANG SIDEMPUAN',
-    'latitude' => 1.37375,
-    'longitude' => 99.26843,
-  ),
-  55 => 
-  array (
-    'code' => '12.78',
-    'province_code' => '12',
-    'name' => 'KOTA GUNUNGSITOLI',
-    'latitude' => 1.32731,
-    'longitude' => 97.55018,
-  ),
-  56 => 
-  array (
-    'code' => '13.01',
-    'province_code' => '13',
-    'name' => 'KABUPATEN KEPULAUAN MENTAWAI',
-    'latitude' => 1.98917,
-    'longitude' => 99.51889,
-  ),
-  57 => 
-  array (
-    'code' => '13.02',
-    'province_code' => '13',
-    'name' => 'KABUPATEN PESISIR SELATAN',
-    'latitude' => -1.58333,
-    'longitude' => 100.85,
-  ),
-  58 => 
-  array (
-    'code' => '13.03',
-    'province_code' => '13',
-    'name' => 'KABUPATEN SOLOK',
-    'latitude' => -0.96667,
-    'longitude' => 100.81667,
-  ),
-  59 => 
-  array (
-    'code' => '13.04',
-    'province_code' => '13',
-    'name' => 'KABUPATEN SIJUNJUNG',
-    'latitude' => -1.1827,
-    'longitude' => 101.6056,
-  ),
-  60 => 
-  array (
-    'code' => '13.05',
-    'province_code' => '13',
-    'name' => 'KABUPATEN TANAH DATAR',
-    'latitude' => -0.4555,
-    'longitude' => 100.5771,
-  ),
-  61 => 
-  array (
-    'code' => '13.06',
-    'province_code' => '13',
-    'name' => 'KABUPATEN PADANG PARIAMAN',
-    'latitude' => -0.6,
-    'longitude' => 100.28333,
-  ),
-  62 => 
-  array (
-    'code' => '13.07',
-    'province_code' => '13',
-    'name' => 'KABUPATEN AGAM',
-    'latitude' => -0.25,
-    'longitude' => 100.16667,
-  ),
-  63 => 
-  array (
-    'code' => '13.08',
-    'province_code' => '13',
-    'name' => 'KABUPATEN LIMA PULUH KOTA',
-    'latitude' => -0.0168,
-    'longitude' => 100.5872,
-  ),
-  64 => 
-  array (
-    'code' => '13.09',
-    'province_code' => '13',
-    'name' => 'KABUPATEN PASAMAN',
-    'latitude' => 0.42503,
-    'longitude' => 99.94606,
-  ),
-  65 => 
-  array (
-    'code' => '13.10',
-    'province_code' => '13',
-    'name' => 'KABUPATEN SOLOK SELATAN',
-    'latitude' => -1.23333,
-    'longitude' => 101.417,
-  ),
-  66 => 
-  array (
-    'code' => '13.11',
-    'province_code' => '13',
-    'name' => 'KABUPATEN DHARMASRAYA',
-    'latitude' => -1.05,
-    'longitude' => 101.367,
-  ),
-  67 => 
-  array (
-    'code' => '13.12',
-    'province_code' => '13',
-    'name' => 'KABUPATEN PASAMAN BARAT',
-    'latitude' => 0.28152,
-    'longitude' => 99.51965,
-  ),
-  68 => 
-  array (
-    'code' => '13.71',
-    'province_code' => '13',
-    'name' => 'KOTA PADANG',
-    'latitude' => -0.98333,
-    'longitude' => 100.45,
-  ),
-  69 => 
-  array (
-    'code' => '13.72',
-    'province_code' => '13',
-    'name' => 'KOTA SOLOK',
-    'latitude' => -0.76667,
-    'longitude' => 100.61667,
-  ),
-  70 => 
-  array (
-    'code' => '13.73',
-    'province_code' => '13',
-    'name' => 'KOTA SAWAH LUNTO',
-    'latitude' => -0.6,
-    'longitude' => 100.75,
-  ),
-  71 => 
-  array (
-    'code' => '13.74',
-    'province_code' => '13',
-    'name' => 'KOTA PADANG PANJANG',
-    'latitude' => -0.45,
-    'longitude' => 100.43333,
-  ),
-  72 => 
-  array (
-    'code' => '13.75',
-    'province_code' => '13',
-    'name' => 'KOTA BUKITTINGGI',
-    'latitude' => -0.275,
-    'longitude' => 100.375,
-  ),
-  73 => 
-  array (
-    'code' => '13.76',
-    'province_code' => '13',
-    'name' => 'KOTA PAYAKUMBUH',
-    'latitude' => -0.23333,
-    'longitude' => 100.63333,
-  ),
-  74 => 
-  array (
-    'code' => '13.77',
-    'province_code' => '13',
-    'name' => 'KOTA PARIAMAN',
-    'latitude' => -0.62682,
-    'longitude' => 100.12047,
-  ),
-  75 => 
-  array (
-    'code' => '14.01',
-    'province_code' => '14',
-    'name' => 'KABUPATEN KUANTAN SINGINGI',
-    'latitude' => -0.47532,
-    'longitude' => 101.45857,
-  ),
-  76 => 
-  array (
-    'code' => '14.02',
-    'province_code' => '14',
-    'name' => 'KABUPATEN INDRAGIRI HULU',
-    'latitude' => -0.55,
-    'longitude' => 102.31667,
-  ),
-  77 => 
-  array (
-    'code' => '14.03',
-    'province_code' => '14',
-    'name' => 'KABUPATEN INDRAGIRI HILIR',
-    'latitude' => -0.33333,
-    'longitude' => 103.16667,
-  ),
-  78 => 
-  array (
-    'code' => '14.04',
-    'province_code' => '14',
-    'name' => 'KABUPATEN PELALAWAN',
-    'latitude' => 0.20822,
-    'longitude' => 102.18607,
-  ),
-  79 => 
-  array (
-    'code' => '14.05',
-    'province_code' => '14',
-    'name' => 'KABUPATEN SIAK',
-    'latitude' => 0.97453,
-    'longitude' => 102.01355,
-  ),
-  80 => 
-  array (
-    'code' => '14.06',
-    'province_code' => '14',
-    'name' => 'KABUPATEN KAMPAR',
-    'latitude' => 0.2344,
-    'longitude' => 101.2131,
-  ),
-  81 => 
-  array (
-    'code' => '14.07',
-    'province_code' => '14',
-    'name' => 'KABUPATEN ROKAN HULU',
-    'latitude' => 0.88333,
-    'longitude' => 100.48333,
-  ),
-  82 => 
-  array (
-    'code' => '14.08',
-    'province_code' => '14',
-    'name' => 'KABUPATEN BENGKALIS',
-    'latitude' => 0.9838,
-    'longitude' => 102.5096,
-  ),
-  83 => 
-  array (
-    'code' => '14.09',
-    'province_code' => '14',
-    'name' => 'KABUPATEN ROKAN HILIR',
-    'latitude' => 2.16599,
-    'longitude' => 100.82514,
-  ),
-  84 => 
-  array (
-    'code' => '14.10',
-    'province_code' => '14',
-    'name' => 'KABUPATEN KEPULAUAN MERANTI',
-    'latitude' => 0.97488,
-    'longitude' => 102.69539,
-  ),
-  85 => 
-  array (
-    'code' => '14.71',
-    'province_code' => '14',
-    'name' => 'KOTA PEKANBARU',
-    'latitude' => 0.53333,
-    'longitude' => 101.46667,
-  ),
-  86 => 
-  array (
-    'code' => '14.73',
-    'province_code' => '14',
-    'name' => 'KOTA DUMAI',
-    'latitude' => 1.61592,
-    'longitude' => 101.4917,
-  ),
-  87 => 
-  array (
-    'code' => '15.01',
-    'province_code' => '15',
-    'name' => 'KABUPATEN KERINCI',
-    'latitude' => -2.03333,
-    'longitude' => 101.53333,
-  ),
-  88 => 
-  array (
-    'code' => '15.02',
-    'province_code' => '15',
-    'name' => 'KABUPATEN MERANGIN',
-    'latitude' => -2.06933,
-    'longitude' => 102.13303,
-  ),
-  89 => 
-  array (
-    'code' => '15.03',
-    'province_code' => '15',
-    'name' => 'KABUPATEN SAROLANGUN',
-    'latitude' => -2.3,
-    'longitude' => 102.65,
-  ),
-  90 => 
-  array (
-    'code' => '15.04',
-    'province_code' => '15',
-    'name' => 'KABUPATEN BATANG HARI',
-    'latitude' => -1.75,
-    'longitude' => 103.11667,
-  ),
-  91 => 
-  array (
-    'code' => '15.05',
-    'province_code' => '15',
-    'name' => 'KABUPATEN MUARO JAMBI',
-    'latitude' => -1.55214,
-    'longitude' => 103.82163,
-  ),
-  92 => 
-  array (
-    'code' => '15.06',
-    'province_code' => '15',
-    'name' => 'KABUPATEN TANJUNG JABUNG TIMUR',
-    'latitude' => -1.13198,
-    'longitude' => 103.61755,
-  ),
-  93 => 
-  array (
-    'code' => '15.07',
-    'province_code' => '15',
-    'name' => 'KABUPATEN TANJUNG JABUNG BARAT',
-    'latitude' => -1.1544,
-    'longitude' => 103.24402,
-  ),
-  94 => 
-  array (
-    'code' => '15.08',
-    'province_code' => '15',
-    'name' => 'KABUPATEN TEBO',
-    'latitude' => -1.45576,
-    'longitude' => 102.37473,
-  ),
-  95 => 
-  array (
-    'code' => '15.09',
-    'province_code' => '15',
-    'name' => 'KABUPATEN BUNGO',
-    'latitude' => -1.50222,
-    'longitude' => 101.96,
-  ),
-  96 => 
-  array (
-    'code' => '15.71',
-    'province_code' => '15',
-    'name' => 'KOTA JAMBI',
-    'latitude' => -1.61667,
-    'longitude' => 103.65,
-  ),
-  97 => 
-  array (
-    'code' => '15.72',
-    'province_code' => '15',
-    'name' => 'KOTA SUNGAI PENUH',
-    'latitude' => -2.10896,
-    'longitude' => 101.32175,
-  ),
-  98 => 
-  array (
-    'code' => '16.01',
-    'province_code' => '16',
-    'name' => 'KABUPATEN OGAN KOMERING ULU',
-    'latitude' => -4.13333,
-    'longitude' => 104.03333,
-  ),
-  99 => 
-  array (
-    'code' => '16.02',
-    'province_code' => '16',
-    'name' => 'KABUPATEN OGAN KOMERING ILIR',
-    'latitude' => -3.36667,
-    'longitude' => 105.36667,
-  ),
-  100 => 
-  array (
-    'code' => '16.03',
-    'province_code' => '16',
-    'name' => 'KABUPATEN MUARA ENIM',
-    'latitude' => -4.2327,
-    'longitude' => 103.6141,
-  ),
-  101 => 
-  array (
-    'code' => '16.04',
-    'province_code' => '16',
-    'name' => 'KABUPATEN LAHAT',
-    'latitude' => -3.7864,
-    'longitude' => 103.5428,
-  ),
-  102 => 
-  array (
-    'code' => '16.05',
-    'province_code' => '16',
-    'name' => 'KABUPATEN MUSI RAWAS',
-    'latitude' => -3.08333,
-    'longitude' => 103.2,
-  ),
-  103 => 
-  array (
-    'code' => '16.06',
-    'province_code' => '16',
-    'name' => 'KABUPATEN MUSI BANYU ASIN',
-    'latitude' => -2.41667,
-    'longitude' => 103.75,
-  ),
-  104 => 
-  array (
-    'code' => '16.07',
-    'province_code' => '16',
-    'name' => 'KABUPATEN BANYU ASIN',
-    'latitude' => -2.88333,
-    'longitude' => 104.38306,
-  ),
-  105 => 
-  array (
-    'code' => '16.08',
-    'province_code' => '16',
-    'name' => 'KABUPATEN OGAN KOMERING ULU SELATAN',
-    'latitude' => -4.65728,
-    'longitude' => 104.00659,
-  ),
-  106 => 
-  array (
-    'code' => '16.09',
-    'province_code' => '16',
-    'name' => 'KABUPATEN OGAN KOMERING ULU TIMUR',
-    'latitude' => -3.85679,
-    'longitude' => 104.75209,
-  ),
-  107 => 
-  array (
-    'code' => '16.10',
-    'province_code' => '16',
-    'name' => 'KABUPATEN OGAN ILIR',
-    'latitude' => -3.43186,
-    'longitude' => 104.62727,
-  ),
-  108 => 
-  array (
-    'code' => '16.11',
-    'province_code' => '16',
-    'name' => 'KABUPATEN EMPAT LAWANG',
-    'latitude' => 3.22667,
-    'longitude' => 99.09256,
-  ),
-  109 => 
-  array (
-    'code' => '16.12',
-    'province_code' => '16',
-    'name' => 'KABUPATEN PENUKAL ABAB LEMATANG ILIR',
-    'latitude' => -3.21342,
-    'longitude' => 104.08722,
-  ),
-  110 => 
-  array (
-    'code' => '16.13',
-    'province_code' => '16',
-    'name' => 'KABUPATEN MUSI RAWAS UTARA',
-    'latitude' => -2.48533,
-    'longitude' => 103.29346,
-  ),
-  111 => 
-  array (
-    'code' => '16.71',
-    'province_code' => '16',
-    'name' => 'KOTA PALEMBANG',
-    'latitude' => -3.0,
-    'longitude' => 104.71667,
-  ),
-  112 => 
-  array (
-    'code' => '16.72',
-    'province_code' => '16',
-    'name' => 'KOTA PRABUMULIH',
-    'latitude' => -3.46202,
-    'longitude' => 104.2229,
-  ),
-  113 => 
-  array (
-    'code' => '16.73',
-    'province_code' => '16',
-    'name' => 'KOTA PAGAR ALAM',
-    'latitude' => -4.13055,
-    'longitude' => 103.26822,
-  ),
-  114 => 
-  array (
-    'code' => '16.74',
-    'province_code' => '16',
-    'name' => 'KOTA LUBUK LINGGAU',
-    'latitude' => -3.29308,
-    'longitude' => 102.85503,
-  ),
-  115 => 
-  array (
-    'code' => '17.01',
-    'province_code' => '17',
-    'name' => 'KABUPATEN BENGKULU SELATAN',
-    'latitude' => -4.35,
-    'longitude' => 103.03333,
-  ),
-  116 => 
-  array (
-    'code' => '17.02',
-    'province_code' => '17',
-    'name' => 'KABUPATEN REJANG LEBONG',
-    'latitude' => -3.43333,
-    'longitude' => 102.71667,
-  ),
-  117 => 
-  array (
-    'code' => '17.03',
-    'province_code' => '17',
-    'name' => 'KABUPATEN BENGKULU UTARA',
-    'latitude' => -3.33333,
-    'longitude' => 102.05,
-  ),
-  118 => 
-  array (
-    'code' => '17.04',
-    'province_code' => '17',
-    'name' => 'KABUPATEN KAUR',
-    'latitude' => -4.78179,
-    'longitude' => 103.36109,
-  ),
-  119 => 
-  array (
-    'code' => '17.05',
-    'province_code' => '17',
-    'name' => 'KABUPATEN SELUMA',
-    'latitude' => -3.96644,
-    'longitude' => 102.47429,
-  ),
-  120 => 
-  array (
-    'code' => '17.06',
-    'province_code' => '17',
-    'name' => 'KABUPATEN MUKOMUKO',
-    'latitude' => -3.07438,
-    'longitude' => 101.54766,
-  ),
-  121 => 
-  array (
-    'code' => '17.07',
-    'province_code' => '17',
-    'name' => 'KABUPATEN LEBONG',
-    'latitude' => -3.24278,
-    'longitude' => 102.3349,
-  ),
-  122 => 
-  array (
-    'code' => '17.08',
-    'province_code' => '17',
-    'name' => 'KABUPATEN KEPAHIANG',
-    'latitude' => -3.60194,
-    'longitude' => 102.56424,
-  ),
-  123 => 
-  array (
-    'code' => '17.09',
-    'province_code' => '17',
-    'name' => 'KABUPATEN BENGKULU TENGAH',
-    'latitude' => -3.20679,
-    'longitude' => 102.12616,
-  ),
-  124 => 
-  array (
-    'code' => '17.71',
-    'province_code' => '17',
-    'name' => 'KOTA BENGKULU',
-    'latitude' => -3.81667,
-    'longitude' => 102.31667,
-  ),
-  125 => 
-  array (
-    'code' => '18.01',
-    'province_code' => '18',
-    'name' => 'KABUPATEN LAMPUNG BARAT',
-    'latitude' => -5.14904,
-    'longitude' => 104.19309,
-  ),
-  126 => 
-  array (
-    'code' => '18.02',
-    'province_code' => '18',
-    'name' => 'KABUPATEN TANGGAMUS',
-    'latitude' => -5.38508,
-    'longitude' => 104.62349,
-  ),
-  127 => 
-  array (
-    'code' => '18.03',
-    'province_code' => '18',
-    'name' => 'KABUPATEN LAMPUNG SELATAN',
-    'latitude' => -5.4531,
-    'longitude' => 104.9877,
-  ),
-  128 => 
-  array (
-    'code' => '18.04',
-    'province_code' => '18',
-    'name' => 'KABUPATEN LAMPUNG TIMUR',
-    'latitude' => -5.10273,
-    'longitude' => 105.68003,
-  ),
-  129 => 
-  array (
-    'code' => '18.05',
-    'province_code' => '18',
-    'name' => 'KABUPATEN LAMPUNG TENGAH',
-    'latitude' => -4.86667,
-    'longitude' => 105.26667,
-  ),
-  130 => 
-  array (
-    'code' => '18.06',
-    'province_code' => '18',
-    'name' => 'KABUPATEN LAMPUNG UTARA',
-    'latitude' => -4.81667,
-    'longitude' => 104.8,
-  ),
-  131 => 
-  array (
-    'code' => '18.07',
-    'province_code' => '18',
-    'name' => 'KABUPATEN WAY KANAN',
-    'latitude' => -4.44705,
-    'longitude' => 104.52753,
-  ),
-  132 => 
-  array (
-    'code' => '18.08',
-    'province_code' => '18',
-    'name' => 'KABUPATEN TULANGBAWANG',
-    'latitude' => -4.20604,
-    'longitude' => 105.57999,
-  ),
-  133 => 
-  array (
-    'code' => '18.09',
-    'province_code' => '18',
-    'name' => 'KABUPATEN PESAWARAN',
-    'latitude' => -5.4298,
-    'longitude' => 105.17899,
-  ),
-  134 => 
-  array (
-    'code' => '18.10',
-    'province_code' => '18',
-    'name' => 'KABUPATEN PRINGSEWU',
-    'latitude' => -5.42211,
-    'longitude' => 104.93454,
-  ),
-  135 => 
-  array (
-    'code' => '18.11',
-    'province_code' => '18',
-    'name' => 'KABUPATEN MESUJI',
-    'latitude' => -4.0439,
-    'longitude' => 105.4013,
-  ),
-  136 => 
-  array (
-    'code' => '18.12',
-    'province_code' => '18',
-    'name' => 'KABUPATEN TULANG BAWANG BARAT',
-    'latitude' => -4.43975,
-    'longitude' => 105.0444,
-  ),
-  137 => 
-  array (
-    'code' => '18.13',
-    'province_code' => '18',
-    'name' => 'KABUPATEN PESISIR BARAT',
-    'latitude' => -5.19323,
-    'longitude' => 103.93976,
-  ),
-  138 => 
-  array (
-    'code' => '18.71',
-    'province_code' => '18',
-    'name' => 'KOTA BANDAR LAMPUNG',
-    'latitude' => -5.41667,
-    'longitude' => 105.25,
-  ),
-  139 => 
-  array (
-    'code' => '18.72',
-    'province_code' => '18',
-    'name' => 'KOTA METRO',
-    'latitude' => -5.11856,
-    'longitude' => 105.29949,
-  ),
-  140 => 
-  array (
-    'code' => '19.01',
-    'province_code' => '19',
-    'name' => 'KABUPATEN BANGKA',
-    'latitude' => -1.91667,
-    'longitude' => 105.93333,
-  ),
-  141 => 
-  array (
-    'code' => '19.02',
-    'province_code' => '19',
-    'name' => 'KABUPATEN BELITUNG',
-    'latitude' => -2.86667,
-    'longitude' => 107.7,
-  ),
-  142 => 
-  array (
-    'code' => '19.03',
-    'province_code' => '19',
-    'name' => 'KABUPATEN BANGKA BARAT',
-    'latitude' => -1.95839,
-    'longitude' => 105.53741,
-  ),
-  143 => 
-  array (
-    'code' => '19.04',
-    'province_code' => '19',
-    'name' => 'KABUPATEN BANGKA TENGAH',
-    'latitude' => -2.33989,
-    'longitude' => 106.1142,
-  ),
-  144 => 
-  array (
-    'code' => '19.05',
-    'province_code' => '19',
-    'name' => 'KABUPATEN BANGKA SELATAN',
-    'latitude' => -2.66803,
-    'longitude' => 106.01257,
-  ),
-  145 => 
-  array (
-    'code' => '19.06',
-    'province_code' => '19',
-    'name' => 'KABUPATEN BELITUNG TIMUR',
-    'latitude' => -2.9627,
-    'longitude' => 108.15216,
-  ),
-  146 => 
-  array (
-    'code' => '19.71',
-    'province_code' => '19',
-    'name' => 'KOTA PANGKAL PINANG',
-    'latitude' => -2.13333,
-    'longitude' => 106.13333,
-  ),
-  147 => 
-  array (
-    'code' => '21.01',
-    'province_code' => '21',
-    'name' => 'KABUPATEN KARIMUN',
-    'latitude' => 0.80764,
-    'longitude' => 103.41911,
-  ),
-  148 => 
-  array (
-    'code' => '21.02',
-    'province_code' => '21',
-    'name' => 'KABUPATEN BINTAN',
-    'latitude' => 0.95,
-    'longitude' => 104.61944,
-  ),
-  149 => 
-  array (
-    'code' => '21.03',
-    'province_code' => '21',
-    'name' => 'KABUPATEN NATUNA',
-    'latitude' => 4.71417,
-    'longitude' => 107.97639,
-  ),
-  150 => 
-  array (
-    'code' => '21.04',
-    'province_code' => '21',
-    'name' => 'KABUPATEN LINGGA',
-    'latitude' => 0.2,
-    'longitude' => 104.61667,
-  ),
-  151 => 
-  array (
-    'code' => '21.05',
-    'province_code' => '21',
-    'name' => 'KABUPATEN KEPULAUAN ANAMBAS',
-    'latitude' => 3.0,
-    'longitude' => 106.0,
-  ),
-  152 => 
-  array (
-    'code' => '21.71',
-    'province_code' => '21',
-    'name' => 'KOTA BATAM',
-    'latitude' => 1.05211,
-    'longitude' => 104.02851,
-  ),
-  153 => 
-  array (
-    'code' => '21.72',
-    'province_code' => '21',
-    'name' => 'KOTA TANJUNG PINANG',
-    'latitude' => 0.91683,
-    'longitude' => 104.44329,
-  ),
-  154 => 
-  array (
-    'code' => '31.01',
-    'province_code' => '31',
-    'name' => 'KABUPATEN KEPULAUAN SERIBU',
-    'latitude' => -5.5985,
-    'longitude' => 106.55271,
-  ),
-  155 => 
-  array (
-    'code' => '31.71',
-    'province_code' => '31',
-    'name' => 'KOTA JAKARTA SELATAN',
-    'latitude' => -6.266,
-    'longitude' => 106.8135,
-  ),
-  156 => 
-  array (
-    'code' => '31.72',
-    'province_code' => '31',
-    'name' => 'KOTA JAKARTA TIMUR',
-    'latitude' => -6.2521,
-    'longitude' => 106.884,
-  ),
-  157 => 
-  array (
-    'code' => '31.73',
-    'province_code' => '31',
-    'name' => 'KOTA JAKARTA PUSAT',
-    'latitude' => -6.1777,
-    'longitude' => 106.8403,
-  ),
-  158 => 
-  array (
-    'code' => '31.74',
-    'province_code' => '31',
-    'name' => 'KOTA JAKARTA BARAT',
-    'latitude' => -6.1676,
-    'longitude' => 106.7673,
-  ),
-  159 => 
-  array (
-    'code' => '31.75',
-    'province_code' => '31',
-    'name' => 'KOTA JAKARTA UTARA',
-    'latitude' => -6.1339,
-    'longitude' => 106.8823,
-  ),
-  160 => 
-  array (
-    'code' => '32.01',
-    'province_code' => '32',
-    'name' => 'KABUPATEN BOGOR',
-    'latitude' => -6.58333,
-    'longitude' => 106.71667,
-  ),
-  161 => 
-  array (
-    'code' => '32.02',
-    'province_code' => '32',
-    'name' => 'KABUPATEN SUKABUMI',
-    'latitude' => -7.06667,
-    'longitude' => 106.7,
-  ),
-  162 => 
-  array (
-    'code' => '32.03',
-    'province_code' => '32',
-    'name' => 'KABUPATEN CIANJUR',
-    'latitude' => -6.7725,
-    'longitude' => 107.08306,
-  ),
-  163 => 
-  array (
-    'code' => '32.04',
-    'province_code' => '32',
-    'name' => 'KABUPATEN BANDUNG',
-    'latitude' => -7.1,
-    'longitude' => 107.6,
-  ),
-  164 => 
-  array (
-    'code' => '32.05',
-    'province_code' => '32',
-    'name' => 'KABUPATEN GARUT',
-    'latitude' => -7.38333,
-    'longitude' => 107.76667,
-  ),
-  165 => 
-  array (
-    'code' => '32.06',
-    'province_code' => '32',
-    'name' => 'KABUPATEN TASIKMALAYA',
-    'latitude' => -7.5,
-    'longitude' => 108.13333,
-  ),
-  166 => 
-  array (
-    'code' => '32.07',
-    'province_code' => '32',
-    'name' => 'KABUPATEN CIAMIS',
-    'latitude' => -7.28333,
-    'longitude' => 108.41667,
-  ),
-  167 => 
-  array (
-    'code' => '32.08',
-    'province_code' => '32',
-    'name' => 'KABUPATEN KUNINGAN',
-    'latitude' => -7.0,
-    'longitude' => 108.55,
-  ),
-  168 => 
-  array (
-    'code' => '32.09',
-    'province_code' => '32',
-    'name' => 'KABUPATEN CIREBON',
-    'latitude' => -6.8,
-    'longitude' => 108.56667,
-  ),
-  169 => 
-  array (
-    'code' => '32.10',
-    'province_code' => '32',
-    'name' => 'KABUPATEN MAJALENGKA',
-    'latitude' => -6.81667,
-    'longitude' => 108.28333,
-  ),
-  170 => 
-  array (
-    'code' => '32.11',
-    'province_code' => '32',
-    'name' => 'KABUPATEN SUMEDANG',
-    'latitude' => -6.81667,
-    'longitude' => 107.98333,
-  ),
-  171 => 
-  array (
-    'code' => '32.12',
-    'province_code' => '32',
-    'name' => 'KABUPATEN INDRAMAYU',
-    'latitude' => -6.45,
-    'longitude' => 108.16667,
-  ),
-  172 => 
-  array (
-    'code' => '32.13',
-    'province_code' => '32',
-    'name' => 'KABUPATEN SUBANG',
-    'latitude' => -6.50833,
-    'longitude' => 107.7025,
-  ),
-  173 => 
-  array (
-    'code' => '32.14',
-    'province_code' => '32',
-    'name' => 'KABUPATEN PURWAKARTA',
-    'latitude' => -6.58333,
-    'longitude' => 107.45,
-  ),
-  174 => 
-  array (
-    'code' => '32.15',
-    'province_code' => '32',
-    'name' => 'KABUPATEN KARAWANG',
-    'latitude' => -6.26667,
-    'longitude' => 107.41667,
-  ),
-  175 => 
-  array (
-    'code' => '32.16',
-    'province_code' => '32',
-    'name' => 'KABUPATEN BEKASI',
-    'latitude' => -6.24667,
-    'longitude' => 107.10833,
-  ),
-  176 => 
-  array (
-    'code' => '32.17',
-    'province_code' => '32',
-    'name' => 'KABUPATEN BANDUNG BARAT',
-    'latitude' => -6.83333,
-    'longitude' => 107.48333,
-  ),
-  177 => 
-  array (
-    'code' => '32.18',
-    'province_code' => '32',
-    'name' => 'KABUPATEN PANGANDARAN',
-    'latitude' => -7.6673,
-    'longitude' => 108.64037,
-  ),
-  178 => 
-  array (
-    'code' => '32.71',
-    'province_code' => '32',
-    'name' => 'KOTA BOGOR',
-    'latitude' => -6.59167,
-    'longitude' => 106.8,
-  ),
-  179 => 
-  array (
-    'code' => '32.72',
-    'province_code' => '32',
-    'name' => 'KOTA SUKABUMI',
-    'latitude' => -6.95,
-    'longitude' => 106.93333,
-  ),
-  180 => 
-  array (
-    'code' => '32.73',
-    'province_code' => '32',
-    'name' => 'KOTA BANDUNG',
-    'latitude' => -6.9175,
-    'longitude' => 107.62444,
-  ),
-  181 => 
-  array (
-    'code' => '32.74',
-    'province_code' => '32',
-    'name' => 'KOTA CIREBON',
-    'latitude' => -6.75,
-    'longitude' => 108.55,
-  ),
-  182 => 
-  array (
-    'code' => '32.75',
-    'province_code' => '32',
-    'name' => 'KOTA BEKASI',
-    'latitude' => -6.28333,
-    'longitude' => 106.98333,
-  ),
-  183 => 
-  array (
-    'code' => '32.76',
-    'province_code' => '32',
-    'name' => 'KOTA DEPOK',
-    'latitude' => -6.4,
-    'longitude' => 106.81667,
-  ),
-  184 => 
-  array (
-    'code' => '32.77',
-    'province_code' => '32',
-    'name' => 'KOTA CIMAHI',
-    'latitude' => -6.89167,
-    'longitude' => 107.55,
-  ),
-  185 => 
-  array (
-    'code' => '32.78',
-    'province_code' => '32',
-    'name' => 'KOTA TASIKMALAYA',
-    'latitude' => -7.35,
-    'longitude' => 108.21667,
-  ),
-  186 => 
-  array (
-    'code' => '32.79',
-    'province_code' => '32',
-    'name' => 'KOTA BANJAR',
-    'latitude' => -7.36996,
-    'longitude' => 108.53209,
-  ),
-  187 => 
-  array (
-    'code' => '33.01',
-    'province_code' => '33',
-    'name' => 'KABUPATEN CILACAP',
-    'latitude' => -7.57417,
-    'longitude' => 108.98861,
-  ),
-  188 => 
-  array (
-    'code' => '33.02',
-    'province_code' => '33',
-    'name' => 'KABUPATEN BANYUMAS',
-    'latitude' => -7.45,
-    'longitude' => 109.16667,
-  ),
-  189 => 
-  array (
-    'code' => '33.03',
-    'province_code' => '33',
-    'name' => 'KABUPATEN PURBALINGGA',
-    'latitude' => -7.28417,
-    'longitude' => 109.35028,
-  ),
-  190 => 
-  array (
-    'code' => '33.04',
-    'province_code' => '33',
-    'name' => 'KABUPATEN BANJARNEGARA',
-    'latitude' => -7.35111,
-    'longitude' => 109.5875,
-  ),
-  191 => 
-  array (
-    'code' => '33.05',
-    'province_code' => '33',
-    'name' => 'KABUPATEN KEBUMEN',
-    'latitude' => -7.63917,
-    'longitude' => 109.66056,
-  ),
-  192 => 
-  array (
-    'code' => '33.06',
-    'province_code' => '33',
-    'name' => 'KABUPATEN PURWOREJO',
-    'latitude' => -7.7,
-    'longitude' => 109.96667,
-  ),
-  193 => 
-  array (
-    'code' => '33.07',
-    'province_code' => '33',
-    'name' => 'KABUPATEN WONOSOBO',
-    'latitude' => -7.36139,
-    'longitude' => 109.92667,
-  ),
-  194 => 
-  array (
-    'code' => '33.08',
-    'province_code' => '33',
-    'name' => 'KABUPATEN MAGELANG',
-    'latitude' => -7.4275,
-    'longitude' => 110.16194,
-  ),
-  195 => 
-  array (
-    'code' => '33.09',
-    'province_code' => '33',
-    'name' => 'KABUPATEN BOYOLALI',
-    'latitude' => -7.5,
-    'longitude' => 110.7,
-  ),
-  196 => 
-  array (
-    'code' => '33.10',
-    'province_code' => '33',
-    'name' => 'KABUPATEN KLATEN',
-    'latitude' => -7.68333,
-    'longitude' => 110.61667,
-  ),
-  197 => 
-  array (
-    'code' => '33.11',
-    'province_code' => '33',
-    'name' => 'KABUPATEN SUKOHARJO',
-    'latitude' => -7.68333,
-    'longitude' => 110.83333,
-  ),
-  198 => 
-  array (
-    'code' => '33.12',
-    'province_code' => '33',
-    'name' => 'KABUPATEN WONOGIRI',
-    'latitude' => -7.91667,
-    'longitude' => 111.0,
-  ),
-  199 => 
-  array (
-    'code' => '33.13',
-    'province_code' => '33',
-    'name' => 'KABUPATEN KARANGANYAR',
-    'latitude' => -7.62806,
-    'longitude' => 111.0625,
-  ),
-  200 => 
-  array (
-    'code' => '33.14',
-    'province_code' => '33',
-    'name' => 'KABUPATEN SRAGEN',
-    'latitude' => -7.41278,
-    'longitude' => 110.935,
-  ),
-  201 => 
-  array (
-    'code' => '33.15',
-    'province_code' => '33',
-    'name' => 'KABUPATEN GROBOGAN',
-    'latitude' => -7.11667,
-    'longitude' => 110.91667,
-  ),
-  202 => 
-  array (
-    'code' => '33.16',
-    'province_code' => '33',
-    'name' => 'KABUPATEN BLORA',
-    'latitude' => -7.06667,
-    'longitude' => 111.38333,
-  ),
-  203 => 
-  array (
-    'code' => '33.17',
-    'province_code' => '33',
-    'name' => 'KABUPATEN REMBANG',
-    'latitude' => -6.78333,
-    'longitude' => 111.46667,
-  ),
-  204 => 
-  array (
-    'code' => '33.18',
-    'province_code' => '33',
-    'name' => 'KABUPATEN PATI',
-    'latitude' => -6.76667,
-    'longitude' => 111.1,
-  ),
-  205 => 
-  array (
-    'code' => '33.19',
-    'province_code' => '33',
-    'name' => 'KABUPATEN KUDUS',
-    'latitude' => -6.8,
-    'longitude' => 110.86667,
-  ),
-  206 => 
-  array (
-    'code' => '33.20',
-    'province_code' => '33',
-    'name' => 'KABUPATEN JEPARA',
-    'latitude' => -6.58333,
-    'longitude' => 110.76667,
-  ),
-  207 => 
-  array (
-    'code' => '33.21',
-    'province_code' => '33',
-    'name' => 'KABUPATEN DEMAK',
-    'latitude' => -6.8993,
-    'longitude' => 110.6122,
-  ),
-  208 => 
-  array (
-    'code' => '33.22',
-    'province_code' => '33',
-    'name' => 'KABUPATEN SEMARANG',
-    'latitude' => -7.20667,
-    'longitude' => 110.44139,
-  ),
-  209 => 
-  array (
-    'code' => '33.23',
-    'province_code' => '33',
-    'name' => 'KABUPATEN TEMANGGUNG',
-    'latitude' => -7.25,
-    'longitude' => 110.11667,
-  ),
-  210 => 
-  array (
-    'code' => '33.24',
-    'province_code' => '33',
-    'name' => 'KABUPATEN KENDAL',
-    'latitude' => -7.0256,
-    'longitude' => 110.1685,
-  ),
-  211 => 
-  array (
-    'code' => '33.25',
-    'province_code' => '33',
-    'name' => 'KABUPATEN BATANG',
-    'latitude' => -7.03333,
-    'longitude' => 109.88333,
-  ),
-  212 => 
-  array (
-    'code' => '33.26',
-    'province_code' => '33',
-    'name' => 'KABUPATEN PEKALONGAN',
-    'latitude' => -7.0319,
-    'longitude' => 109.624,
-  ),
-  213 => 
-  array (
-    'code' => '33.27',
-    'province_code' => '33',
-    'name' => 'KABUPATEN PEMALANG',
-    'latitude' => -7.03333,
-    'longitude' => 109.4,
-  ),
-  214 => 
-  array (
-    'code' => '33.28',
-    'province_code' => '33',
-    'name' => 'KABUPATEN TEGAL',
-    'latitude' => -7.03333,
-    'longitude' => 109.16667,
-  ),
-  215 => 
-  array (
-    'code' => '33.29',
-    'province_code' => '33',
-    'name' => 'KABUPATEN BREBES',
-    'latitude' => -7.05,
-    'longitude' => 108.9,
-  ),
-  216 => 
-  array (
-    'code' => '33.71',
-    'province_code' => '33',
-    'name' => 'KOTA MAGELANG',
-    'latitude' => -7.5,
-    'longitude' => 110.225,
-  ),
-  217 => 
-  array (
-    'code' => '33.72',
-    'province_code' => '33',
-    'name' => 'KOTA SURAKARTA',
-    'latitude' => -7.55,
-    'longitude' => 110.81667,
-  ),
-  218 => 
-  array (
-    'code' => '33.73',
-    'province_code' => '33',
-    'name' => 'KOTA SALATIGA',
-    'latitude' => -7.33278,
-    'longitude' => 110.48333,
-  ),
-  219 => 
-  array (
-    'code' => '33.74',
-    'province_code' => '33',
-    'name' => 'KOTA SEMARANG',
-    'latitude' => -7.03333,
-    'longitude' => 110.38333,
-  ),
-  220 => 
-  array (
-    'code' => '33.75',
-    'province_code' => '33',
-    'name' => 'KOTA PEKALONGAN',
-    'latitude' => -6.9,
-    'longitude' => 109.68333,
-  ),
-  221 => 
-  array (
-    'code' => '33.76',
-    'province_code' => '33',
-    'name' => 'KOTA TEGAL',
-    'latitude' => -6.8686,
-    'longitude' => 109.1129,
-  ),
-  222 => 
-  array (
-    'code' => '34.01',
-    'province_code' => '34',
-    'name' => 'KABUPATEN KULON PROGO',
-    'latitude' => -7.645,
-    'longitude' => 110.02694,
-  ),
-  223 => 
-  array (
-    'code' => '34.02',
-    'province_code' => '34',
-    'name' => 'KABUPATEN BANTUL',
-    'latitude' => -7.9,
-    'longitude' => 110.36667,
-  ),
-  224 => 
-  array (
-    'code' => '34.03',
-    'province_code' => '34',
-    'name' => 'KABUPATEN GUNUNG KIDUL',
-    'latitude' => -7.98333,
-    'longitude' => 110.61667,
-  ),
-  225 => 
-  array (
-    'code' => '34.04',
-    'province_code' => '34',
-    'name' => 'KABUPATEN SLEMAN',
-    'latitude' => -7.68167,
-    'longitude' => 110.32333,
-  ),
-  226 => 
-  array (
-    'code' => '34.71',
-    'province_code' => '34',
-    'name' => 'KOTA YOGYAKARTA',
-    'latitude' => -7.8,
-    'longitude' => 110.375,
-  ),
-  227 => 
-  array (
-    'code' => '35.01',
-    'province_code' => '35',
-    'name' => 'KABUPATEN PACITAN',
-    'latitude' => -8.13333,
-    'longitude' => 111.16667,
-  ),
-  228 => 
-  array (
-    'code' => '35.02',
-    'province_code' => '35',
-    'name' => 'KABUPATEN PONOROGO',
-    'latitude' => -7.93333,
-    'longitude' => 111.5,
-  ),
-  229 => 
-  array (
-    'code' => '35.03',
-    'province_code' => '35',
-    'name' => 'KABUPATEN TRENGGALEK',
-    'latitude' => -8.16667,
-    'longitude' => 111.61667,
-  ),
-  230 => 
-  array (
-    'code' => '35.04',
-    'province_code' => '35',
-    'name' => 'KABUPATEN TULUNGAGUNG',
-    'latitude' => -8.11667,
-    'longitude' => 111.91667,
-  ),
-  231 => 
-  array (
-    'code' => '35.05',
-    'province_code' => '35',
-    'name' => 'KABUPATEN BLITAR',
-    'latitude' => -8.13333,
-    'longitude' => 112.25,
-  ),
-  232 => 
-  array (
-    'code' => '35.06',
-    'province_code' => '35',
-    'name' => 'KABUPATEN KEDIRI',
-    'latitude' => -7.83333,
-    'longitude' => 112.16667,
-  ),
-  233 => 
-  array (
-    'code' => '35.07',
-    'province_code' => '35',
-    'name' => 'KABUPATEN MALANG',
-    'latitude' => -8.16667,
-    'longitude' => 112.66667,
-  ),
-  234 => 
-  array (
-    'code' => '35.08',
-    'province_code' => '35',
-    'name' => 'KABUPATEN LUMAJANG',
-    'latitude' => -8.11667,
-    'longitude' => 113.15,
-  ),
-  235 => 
-  array (
-    'code' => '35.09',
-    'province_code' => '35',
-    'name' => 'KABUPATEN JEMBER',
-    'latitude' => -8.25,
-    'longitude' => 113.65,
-  ),
-  236 => 
-  array (
-    'code' => '35.10',
-    'province_code' => '35',
-    'name' => 'KABUPATEN BANYUWANGI',
-    'latitude' => -8.33333,
-    'longitude' => 114.2,
-  ),
-  237 => 
-  array (
-    'code' => '35.11',
-    'province_code' => '35',
-    'name' => 'KABUPATEN BONDOWOSO',
-    'latitude' => -7.9404,
-    'longitude' => 113.9834,
-  ),
-  238 => 
-  array (
-    'code' => '35.12',
-    'province_code' => '35',
-    'name' => 'KABUPATEN SITUBONDO',
-    'latitude' => -7.71667,
-    'longitude' => 114.05,
-  ),
-  239 => 
-  array (
-    'code' => '35.13',
-    'province_code' => '35',
-    'name' => 'KABUPATEN PROBOLINGGO',
-    'latitude' => -7.86667,
-    'longitude' => 113.31667,
-  ),
-  240 => 
-  array (
-    'code' => '35.14',
-    'province_code' => '35',
-    'name' => 'KABUPATEN PASURUAN',
-    'latitude' => -7.73333,
-    'longitude' => 112.83333,
-  ),
-  241 => 
-  array (
-    'code' => '35.15',
-    'province_code' => '35',
-    'name' => 'KABUPATEN SIDOARJO',
-    'latitude' => -7.45,
-    'longitude' => 112.7,
-  ),
-  242 => 
-  array (
-    'code' => '35.16',
-    'province_code' => '35',
-    'name' => 'KABUPATEN MOJOKERTO',
-    'latitude' => -7.55,
-    'longitude' => 112.5,
-  ),
-  243 => 
-  array (
-    'code' => '35.17',
-    'province_code' => '35',
-    'name' => 'KABUPATEN JOMBANG',
-    'latitude' => -7.55,
-    'longitude' => 112.25,
-  ),
-  244 => 
-  array (
-    'code' => '35.18',
-    'province_code' => '35',
-    'name' => 'KABUPATEN NGANJUK',
-    'latitude' => -7.6,
-    'longitude' => 111.93333,
-  ),
-  245 => 
-  array (
-    'code' => '35.19',
-    'province_code' => '35',
-    'name' => 'KABUPATEN MADIUN',
-    'latitude' => -7.61667,
-    'longitude' => 111.65,
-  ),
-  246 => 
-  array (
-    'code' => '35.20',
-    'province_code' => '35',
-    'name' => 'KABUPATEN MAGETAN',
-    'latitude' => -7.64472,
-    'longitude' => 111.35917,
-  ),
-  247 => 
-  array (
-    'code' => '35.21',
-    'province_code' => '35',
-    'name' => 'KABUPATEN NGAWI',
-    'latitude' => -7.47444,
-    'longitude' => 111.33444,
-  ),
-  248 => 
-  array (
-    'code' => '35.22',
-    'province_code' => '35',
-    'name' => 'KABUPATEN BOJONEGORO',
-    'latitude' => -7.25,
-    'longitude' => 111.8,
-  ),
-  249 => 
-  array (
-    'code' => '35.23',
-    'province_code' => '35',
-    'name' => 'KABUPATEN TUBAN',
-    'latitude' => -6.96667,
-    'longitude' => 111.9,
-  ),
-  250 => 
-  array (
-    'code' => '35.24',
-    'province_code' => '35',
-    'name' => 'KABUPATEN LAMONGAN',
-    'latitude' => -7.13333,
-    'longitude' => 112.31667,
-  ),
-  251 => 
-  array (
-    'code' => '35.25',
-    'province_code' => '35',
-    'name' => 'KABUPATEN GRESIK',
-    'latitude' => -7.1933,
-    'longitude' => 112.553,
-  ),
-  252 => 
-  array (
-    'code' => '35.26',
-    'province_code' => '35',
-    'name' => 'KABUPATEN BANGKALAN',
-    'latitude' => -7.05,
-    'longitude' => 112.93333,
-  ),
-  253 => 
-  array (
-    'code' => '35.27',
-    'province_code' => '35',
-    'name' => 'KABUPATEN SAMPANG',
-    'latitude' => -7.05,
-    'longitude' => 113.25,
-  ),
-  254 => 
-  array (
-    'code' => '35.28',
-    'province_code' => '35',
-    'name' => 'KABUPATEN PAMEKASAN',
-    'latitude' => -7.06667,
-    'longitude' => 113.5,
-  ),
-  255 => 
-  array (
-    'code' => '35.29',
-    'province_code' => '35',
-    'name' => 'KABUPATEN SUMENEP',
-    'latitude' => -7.11667,
-    'longitude' => 114.33333,
-  ),
-  256 => 
-  array (
-    'code' => '35.71',
-    'province_code' => '35',
-    'name' => 'KOTA KEDIRI',
-    'latitude' => -7.83333,
-    'longitude' => 112.01667,
-  ),
-  257 => 
-  array (
-    'code' => '35.72',
-    'province_code' => '35',
-    'name' => 'KOTA BLITAR',
-    'latitude' => -8.1,
-    'longitude' => 112.16667,
-  ),
-  258 => 
-  array (
-    'code' => '35.73',
-    'province_code' => '35',
-    'name' => 'KOTA MALANG',
-    'latitude' => -7.975,
-    'longitude' => 112.63333,
-  ),
-  259 => 
-  array (
-    'code' => '35.74',
-    'province_code' => '35',
-    'name' => 'KOTA PROBOLINGGO',
-    'latitude' => -7.78333,
-    'longitude' => 113.21667,
-  ),
-  260 => 
-  array (
-    'code' => '35.75',
-    'province_code' => '35',
-    'name' => 'KOTA PASURUAN',
-    'latitude' => -7.65,
-    'longitude' => 112.9,
-  ),
-  261 => 
-  array (
-    'code' => '35.76',
-    'province_code' => '35',
-    'name' => 'KOTA MOJOKERTO',
-    'latitude' => -7.46667,
-    'longitude' => 112.43333,
-  ),
-  262 => 
-  array (
-    'code' => '35.77',
-    'province_code' => '35',
-    'name' => 'KOTA MADIUN',
-    'latitude' => -7.63333,
-    'longitude' => 111.53333,
-  ),
-  263 => 
-  array (
-    'code' => '35.78',
-    'province_code' => '35',
-    'name' => 'KOTA SURABAYA',
-    'latitude' => -7.26667,
-    'longitude' => 112.71667,
-  ),
-  264 => 
-  array (
-    'code' => '35.79',
-    'province_code' => '35',
-    'name' => 'KOTA BATU',
-    'latitude' => -7.83272,
-    'longitude' => 112.53751,
-  ),
-  265 => 
-  array (
-    'code' => '36.01',
-    'province_code' => '36',
-    'name' => 'KABUPATEN PANDEGLANG',
-    'latitude' => -6.63333,
-    'longitude' => 105.75,
-  ),
-  266 => 
-  array (
-    'code' => '36.02',
-    'province_code' => '36',
-    'name' => 'KABUPATEN LEBAK',
-    'latitude' => -6.65,
-    'longitude' => 106.21667,
-  ),
-  267 => 
-  array (
-    'code' => '36.03',
-    'province_code' => '36',
-    'name' => 'KABUPATEN TANGERANG',
-    'latitude' => -6.2,
-    'longitude' => 106.46667,
-  ),
-  268 => 
-  array (
-    'code' => '36.04',
-    'province_code' => '36',
-    'name' => 'KABUPATEN SERANG',
-    'latitude' => -6.15,
-    'longitude' => 106.0,
-  ),
-  269 => 
-  array (
-    'code' => '36.71',
-    'province_code' => '36',
-    'name' => 'KOTA TANGERANG',
-    'latitude' => -6.17944,
-    'longitude' => 106.62991,
-  ),
-  270 => 
-  array (
-    'code' => '36.72',
-    'province_code' => '36',
-    'name' => 'KOTA CILEGON',
-    'latitude' => -6.01667,
-    'longitude' => 106.01667,
-  ),
-  271 => 
-  array (
-    'code' => '36.73',
-    'province_code' => '36',
-    'name' => 'KOTA SERANG',
-    'latitude' => -6.12563,
-    'longitude' => 106.14999,
-  ),
-  272 => 
-  array (
-    'code' => '36.74',
-    'province_code' => '36',
-    'name' => 'KOTA TANGERANG SELATAN',
-    'latitude' => -6.29373,
-    'longitude' => 106.71244,
-  ),
-  273 => 
-  array (
-    'code' => '51.01',
-    'province_code' => '51',
-    'name' => 'KABUPATEN JEMBRANA',
-    'latitude' => -8.3,
-    'longitude' => 114.66667,
-  ),
-  274 => 
-  array (
-    'code' => '51.02',
-    'province_code' => '51',
-    'name' => 'KABUPATEN TABANAN',
-    'latitude' => -8.43333,
-    'longitude' => 115.06667,
-  ),
-  275 => 
-  array (
-    'code' => '51.03',
-    'province_code' => '51',
-    'name' => 'KABUPATEN BADUNG',
-    'latitude' => -8.51667,
-    'longitude' => 115.2,
-  ),
-  276 => 
-  array (
-    'code' => '51.04',
-    'province_code' => '51',
-    'name' => 'KABUPATEN GIANYAR',
-    'latitude' => -8.46667,
-    'longitude' => 115.28333,
-  ),
-  277 => 
-  array (
-    'code' => '51.05',
-    'province_code' => '51',
-    'name' => 'KABUPATEN KLUNGKUNG',
-    'latitude' => -8.55,
-    'longitude' => 115.4,
-  ),
-  278 => 
-  array (
-    'code' => '51.06',
-    'province_code' => '51',
-    'name' => 'KABUPATEN BANGLI',
-    'latitude' => -8.28333,
-    'longitude' => 115.35,
-  ),
-  279 => 
-  array (
-    'code' => '51.07',
-    'province_code' => '51',
-    'name' => 'KABUPATEN KARANG ASEM',
-    'latitude' => -8.3891,
-    'longitude' => 115.5393,
-  ),
-  280 => 
-  array (
-    'code' => '51.08',
-    'province_code' => '51',
-    'name' => 'KABUPATEN BULELENG',
-    'latitude' => -8.25,
-    'longitude' => 114.96667,
-  ),
-  281 => 
-  array (
-    'code' => '51.71',
-    'province_code' => '51',
-    'name' => 'KOTA DENPASAR',
-    'latitude' => -8.66667,
-    'longitude' => 115.21663,
-  ),
-  282 => 
-  array (
-    'code' => '52.01',
-    'province_code' => '52',
-    'name' => 'KABUPATEN LOMBOK BARAT',
-    'latitude' => -8.69583,
-    'longitude' => 116.11667,
-  ),
-  283 => 
-  array (
-    'code' => '52.02',
-    'province_code' => '52',
-    'name' => 'KABUPATEN LOMBOK TENGAH',
-    'latitude' => -8.7,
-    'longitude' => 116.3,
-  ),
-  284 => 
-  array (
-    'code' => '52.03',
-    'province_code' => '52',
-    'name' => 'KABUPATEN LOMBOK TIMUR',
-    'latitude' => -8.53333,
-    'longitude' => 116.53333,
-  ),
-  285 => 
-  array (
-    'code' => '52.04',
-    'province_code' => '52',
-    'name' => 'KABUPATEN SUMBAWA',
-    'latitude' => -8.7439,
-    'longitude' => 117.3324,
-  ),
-  286 => 
-  array (
-    'code' => '52.05',
-    'province_code' => '52',
-    'name' => 'KABUPATEN DOMPU',
-    'latitude' => -8.5094,
-    'longitude' => 118.4816,
-  ),
-  287 => 
-  array (
-    'code' => '52.06',
-    'province_code' => '52',
-    'name' => 'KABUPATEN BIMA',
-    'latitude' => -8.6,
-    'longitude' => 118.61667,
-  ),
-  288 => 
-  array (
-    'code' => '52.07',
-    'province_code' => '52',
-    'name' => 'KABUPATEN SUMBAWA BARAT',
-    'latitude' => -8.75159,
-    'longitude' => 116.92132,
-  ),
-  289 => 
-  array (
-    'code' => '52.08',
-    'province_code' => '52',
-    'name' => 'KABUPATEN LOMBOK UTARA',
-    'latitude' => -8.35214,
-    'longitude' => 116.40152,
-  ),
-  290 => 
-  array (
-    'code' => '52.71',
-    'province_code' => '52',
-    'name' => 'KOTA MATARAM',
-    'latitude' => -8.5833,
-    'longitude' => 116.1167,
-  ),
-  291 => 
-  array (
-    'code' => '52.72',
-    'province_code' => '52',
-    'name' => 'KOTA BIMA',
-    'latitude' => -8.46728,
-    'longitude' => 118.75259,
-  ),
-  292 => 
-  array (
-    'code' => '53.01',
-    'province_code' => '53',
-    'name' => 'KABUPATEN SUMBA BARAT',
-    'latitude' => -9.56667,
-    'longitude' => 119.45,
-  ),
-  293 => 
-  array (
-    'code' => '53.02',
-    'province_code' => '53',
-    'name' => 'KABUPATEN SUMBA TIMUR',
-    'latitude' => -9.88333,
-    'longitude' => 120.25,
-  ),
-  294 => 
-  array (
-    'code' => '53.03',
-    'province_code' => '53',
-    'name' => 'KABUPATEN KUPANG',
-    'latitude' => -9.91667,
-    'longitude' => 123.83333,
-  ),
-  295 => 
-  array (
-    'code' => '53.04',
-    'province_code' => '53',
-    'name' => 'KABUPATEN TIMOR TENGAH SELATAN',
-    'latitude' => -9.83333,
-    'longitude' => 124.4,
-  ),
-  296 => 
-  array (
-    'code' => '53.05',
-    'province_code' => '53',
-    'name' => 'KABUPATEN TIMOR TENGAH UTARA',
-    'latitude' => -9.33136,
-    'longitude' => 124.51904,
-  ),
-  297 => 
-  array (
-    'code' => '53.06',
-    'province_code' => '53',
-    'name' => 'KABUPATEN BELU',
-    'latitude' => -9.41258,
-    'longitude' => 124.95066,
-  ),
-  298 => 
-  array (
-    'code' => '53.07',
-    'province_code' => '53',
-    'name' => 'KABUPATEN ALOR',
-    'latitude' => -8.3,
-    'longitude' => 124.56667,
-  ),
-  299 => 
-  array (
-    'code' => '53.08',
-    'province_code' => '53',
-    'name' => 'KABUPATEN LEMBATA',
-    'latitude' => -8.41396,
-    'longitude' => 123.55225,
-  ),
-  300 => 
-  array (
-    'code' => '53.09',
-    'province_code' => '53',
-    'name' => 'KABUPATEN FLORES TIMUR',
-    'latitude' => -8.24224,
-    'longitude' => 122.96817,
-  ),
-  301 => 
-  array (
-    'code' => '53.10',
-    'province_code' => '53',
-    'name' => 'KABUPATEN SIKKA',
-    'latitude' => -8.66667,
-    'longitude' => 122.36667,
-  ),
-  302 => 
-  array (
-    'code' => '53.11',
-    'province_code' => '53',
-    'name' => 'KABUPATEN ENDE',
-    'latitude' => -8.84056,
-    'longitude' => 121.66389,
-  ),
-  303 => 
-  array (
-    'code' => '53.12',
-    'province_code' => '53',
-    'name' => 'KABUPATEN NGADA',
-    'latitude' => -8.66667,
-    'longitude' => 121.0,
-  ),
-  304 => 
-  array (
-    'code' => '53.13',
-    'province_code' => '53',
-    'name' => 'KABUPATEN MANGGARAI',
-    'latitude' => -8.56667,
-    'longitude' => 120.41667,
-  ),
-  305 => 
-  array (
-    'code' => '53.14',
-    'province_code' => '53',
-    'name' => 'KABUPATEN ROTE NDAO',
-    'latitude' => -10.73617,
-    'longitude' => 123.12054,
-  ),
-  306 => 
-  array (
-    'code' => '53.15',
-    'province_code' => '53',
-    'name' => 'KABUPATEN MANGGARAI BARAT',
-    'latitude' => -8.64484,
-    'longitude' => 119.88281,
-  ),
-  307 => 
-  array (
-    'code' => '53.16',
-    'province_code' => '53',
-    'name' => 'KABUPATEN SUMBA TENGAH',
-    'latitude' => -9.62941,
-    'longitude' => 119.61914,
-  ),
-  308 => 
-  array (
-    'code' => '53.17',
-    'province_code' => '53',
-    'name' => 'KABUPATEN SUMBA BARAT DAYA',
-    'latitude' => -9.56216,
-    'longitude' => 119.08905,
-  ),
-  309 => 
-  array (
-    'code' => '53.18',
-    'province_code' => '53',
-    'name' => 'KABUPATEN NAGEKEO',
-    'latitude' => -8.8721,
-    'longitude' => 121.20963,
-  ),
-  310 => 
-  array (
-    'code' => '53.19',
-    'province_code' => '53',
-    'name' => 'KABUPATEN MANGGARAI TIMUR',
-    'latitude' => -8.55533,
-    'longitude' => 120.59761,
-  ),
-  311 => 
-  array (
-    'code' => '53.20',
-    'province_code' => '53',
-    'name' => 'KABUPATEN SABU RAIJUA',
-    'latitude' => -10.56286,
-    'longitude' => 121.78894,
-  ),
-  312 => 
-  array (
-    'code' => '53.21',
-    'province_code' => '53',
-    'name' => 'KABUPATEN MALAKA',
-    'latitude' => -9.5632,
-    'longitude' => 124.89481,
-  ),
-  313 => 
-  array (
-    'code' => '53.71',
-    'province_code' => '53',
-    'name' => 'KOTA KUPANG',
-    'latitude' => -10.21667,
-    'longitude' => 123.6,
-  ),
-  314 => 
-  array (
-    'code' => '61.01',
-    'province_code' => '61',
-    'name' => 'KABUPATEN SAMBAS',
-    'latitude' => 1.41667,
-    'longitude' => 109.33333,
-  ),
-  315 => 
-  array (
-    'code' => '61.02',
-    'province_code' => '61',
-    'name' => 'KABUPATEN BENGKAYANG',
-    'latitude' => 1.06911,
-    'longitude' => 109.66393,
-  ),
-  316 => 
-  array (
-    'code' => '61.03',
-    'province_code' => '61',
-    'name' => 'KABUPATEN LANDAK',
-    'latitude' => 0.42373,
-    'longitude' => 109.75917,
-  ),
-  317 => 
-  array (
-    'code' => '61.04',
-    'province_code' => '61',
-    'name' => 'KABUPATEN MEMPAWAH',
-    'latitude' => 0.25,
-    'longitude' => 109.16667,
-  ),
-  318 => 
-  array (
-    'code' => '61.05',
-    'province_code' => '61',
-    'name' => 'KABUPATEN SANGGAU',
-    'latitude' => 0.25472,
-    'longitude' => 110.45,
-  ),
-  319 => 
-  array (
-    'code' => '61.06',
-    'province_code' => '61',
-    'name' => 'KABUPATEN KETAPANG',
-    'latitude' => -1.58333,
-    'longitude' => 110.5,
-  ),
-  320 => 
-  array (
-    'code' => '61.07',
-    'province_code' => '61',
-    'name' => 'KABUPATEN SINTANG',
-    'latitude' => -0.08333,
-    'longitude' => 112.08333,
-  ),
-  321 => 
-  array (
-    'code' => '61.08',
-    'province_code' => '61',
-    'name' => 'KABUPATEN KAPUAS HULU',
-    'latitude' => 0.81667,
-    'longitude' => 112.76667,
-  ),
-  322 => 
-  array (
-    'code' => '61.09',
-    'province_code' => '61',
-    'name' => 'KABUPATEN SEKADAU',
-    'latitude' => 0.03485,
-    'longitude' => 110.95066,
-  ),
-  323 => 
-  array (
-    'code' => '61.10',
-    'province_code' => '61',
-    'name' => 'KABUPATEN MELAWI',
-    'latitude' => -0.33617,
-    'longitude' => 111.698,
-  ),
-  324 => 
-  array (
-    'code' => '61.11',
-    'province_code' => '61',
-    'name' => 'KABUPATEN KAYONG UTARA',
-    'latitude' => -1.43711,
-    'longitude' => 110.79781,
-  ),
-  325 => 
-  array (
-    'code' => '61.12',
-    'province_code' => '61',
-    'name' => 'KABUPATEN KUBU RAYA',
-    'latitude' => 0.01637,
-    'longitude' => 109.33731,
-  ),
-  326 => 
-  array (
-    'code' => '61.71',
-    'province_code' => '61',
-    'name' => 'KOTA PONTIANAK',
-    'latitude' => -0.08333,
-    'longitude' => 109.36667,
-  ),
-  327 => 
-  array (
-    'code' => '61.72',
-    'province_code' => '61',
-    'name' => 'KOTA SINGKAWANG',
-    'latitude' => 0.90734,
-    'longitude' => 109.00103,
-  ),
-  328 => 
-  array (
-    'code' => '62.01',
-    'province_code' => '62',
-    'name' => 'KABUPATEN KOTAWARINGIN BARAT',
-    'latitude' => -2.4,
-    'longitude' => 111.73333,
-  ),
-  329 => 
-  array (
-    'code' => '62.02',
-    'province_code' => '62',
-    'name' => 'KABUPATEN KOTAWARINGIN TIMUR',
-    'latitude' => -2.08333,
-    'longitude' => 112.75,
-  ),
-  330 => 
-  array (
-    'code' => '62.03',
-    'province_code' => '62',
-    'name' => 'KABUPATEN KAPUAS',
-    'latitude' => -2.01667,
-    'longitude' => 114.38333,
-  ),
-  331 => 
-  array (
-    'code' => '62.04',
-    'province_code' => '62',
-    'name' => 'KABUPATEN BARITO SELATAN',
-    'latitude' => -1.86667,
-    'longitude' => 114.73333,
-  ),
-  332 => 
-  array (
-    'code' => '62.05',
-    'province_code' => '62',
-    'name' => 'KABUPATEN BARITO UTARA',
-    'latitude' => -0.98333,
-    'longitude' => 115.1,
-  ),
-  333 => 
-  array (
-    'code' => '62.06',
-    'province_code' => '62',
-    'name' => 'KABUPATEN SUKAMARA',
-    'latitude' => -2.62675,
-    'longitude' => 111.23681,
-  ),
-  334 => 
-  array (
-    'code' => '62.07',
-    'province_code' => '62',
-    'name' => 'KABUPATEN LAMANDAU',
-    'latitude' => -1.83828,
-    'longitude' => 111.2869,
-  ),
-  335 => 
-  array (
-    'code' => '62.08',
-    'province_code' => '62',
-    'name' => 'KABUPATEN SERUYAN',
-    'latitude' => -2.33333,
-    'longitude' => 112.25,
-  ),
-  336 => 
-  array (
-    'code' => '62.09',
-    'province_code' => '62',
-    'name' => 'KABUPATEN KATINGAN',
-    'latitude' => -2.06667,
-    'longitude' => 113.4,
-  ),
-  337 => 
-  array (
-    'code' => '62.10',
-    'province_code' => '62',
-    'name' => 'KABUPATEN PULANG PISAU',
-    'latitude' => -3.11858,
-    'longitude' => 113.8623,
-  ),
-  338 => 
-  array (
-    'code' => '62.11',
-    'province_code' => '62',
-    'name' => 'KABUPATEN GUNUNG MAS',
-    'latitude' => -0.95,
-    'longitude' => 113.5,
-  ),
-  339 => 
-  array (
-    'code' => '62.12',
-    'province_code' => '62',
-    'name' => 'KABUPATEN BARITO TIMUR',
-    'latitude' => -1.93333,
-    'longitude' => 115.1,
-  ),
-  340 => 
-  array (
-    'code' => '62.13',
-    'province_code' => '62',
-    'name' => 'KABUPATEN MURUNG RAYA',
-    'latitude' => -0.01667,
-    'longitude' => 114.26667,
-  ),
-  341 => 
-  array (
-    'code' => '62.71',
-    'province_code' => '62',
-    'name' => 'KOTA PALANGKA RAYA',
-    'latitude' => -1.76979,
-    'longitude' => 113.73126,
-  ),
-  342 => 
-  array (
-    'code' => '63.01',
-    'province_code' => '63',
-    'name' => 'KABUPATEN TANAH LAUT',
-    'latitude' => -3.88333,
-    'longitude' => 114.86667,
-  ),
-  343 => 
-  array (
-    'code' => '63.02',
-    'province_code' => '63',
-    'name' => 'KABUPATEN KOTA BARU',
-    'latitude' => -3.0,
-    'longitude' => 116.0,
-  ),
-  344 => 
-  array (
-    'code' => '63.03',
-    'province_code' => '63',
-    'name' => 'KABUPATEN BANJAR',
-    'latitude' => -3.31667,
-    'longitude' => 115.08333,
-  ),
-  345 => 
-  array (
-    'code' => '63.04',
-    'province_code' => '63',
-    'name' => 'KABUPATEN BARITO KUALA',
-    'latitude' => -3.08333,
-    'longitude' => 114.61667,
-  ),
-  346 => 
-  array (
-    'code' => '63.05',
-    'province_code' => '63',
-    'name' => 'KABUPATEN TAPIN',
-    'latitude' => -2.91667,
-    'longitude' => 115.03333,
-  ),
-  347 => 
-  array (
-    'code' => '63.06',
-    'province_code' => '63',
-    'name' => 'KABUPATEN HULU SUNGAI SELATAN',
-    'latitude' => -2.75,
-    'longitude' => 115.2,
-  ),
-  348 => 
-  array (
-    'code' => '63.07',
-    'province_code' => '63',
-    'name' => 'KABUPATEN HULU SUNGAI TENGAH',
-    'latitude' => -2.61667,
-    'longitude' => 115.41667,
-  ),
-  349 => 
-  array (
-    'code' => '63.08',
-    'province_code' => '63',
-    'name' => 'KABUPATEN HULU SUNGAI UTARA',
-    'latitude' => -2.45,
-    'longitude' => 115.13333,
-  ),
-  350 => 
-  array (
-    'code' => '63.09',
-    'province_code' => '63',
-    'name' => 'KABUPATEN TABALONG',
-    'latitude' => -1.88333,
-    'longitude' => 115.5,
-  ),
-  351 => 
-  array (
-    'code' => '63.10',
-    'province_code' => '63',
-    'name' => 'KABUPATEN TANAH BUMBU',
-    'latitude' => -3.45413,
-    'longitude' => 115.70372,
-  ),
-  352 => 
-  array (
-    'code' => '63.11',
-    'province_code' => '63',
-    'name' => 'KABUPATEN BALANGAN',
-    'latitude' => -2.32314,
-    'longitude' => 115.62922,
-  ),
-  353 => 
-  array (
-    'code' => '63.71',
-    'province_code' => '63',
-    'name' => 'KOTA BANJARMASIN',
-    'latitude' => -3.32444,
-    'longitude' => 114.59102,
-  ),
-  354 => 
-  array (
-    'code' => '63.72',
-    'province_code' => '63',
-    'name' => 'KOTA BANJAR BARU',
-    'latitude' => -3.41667,
-    'longitude' => 114.83333,
-  ),
-  355 => 
-  array (
-    'code' => '64.01',
-    'province_code' => '64',
-    'name' => 'KABUPATEN PASER',
-    'latitude' => -1.43517,
-    'longitude' => 116.23535,
-  ),
-  356 => 
-  array (
-    'code' => '64.02',
-    'province_code' => '64',
-    'name' => 'KABUPATEN KUTAI BARAT',
-    'latitude' => -0.59417,
-    'longitude' => 115.51575,
-  ),
-  357 => 
-  array (
-    'code' => '64.03',
-    'province_code' => '64',
-    'name' => 'KABUPATEN KUTAI KARTANEGARA',
-    'latitude' => -0.44019,
-    'longitude' => 116.98139,
-  ),
-  358 => 
-  array (
-    'code' => '64.04',
-    'province_code' => '64',
-    'name' => 'KABUPATEN KUTAI TIMUR',
-    'latitude' => 1.03769,
-    'longitude' => 117.83112,
-  ),
-  359 => 
-  array (
-    'code' => '64.05',
-    'province_code' => '64',
-    'name' => 'KABUPATEN BERAU',
-    'latitude' => 2.0,
-    'longitude' => 117.3,
-  ),
-  360 => 
-  array (
-    'code' => '64.09',
-    'province_code' => '64',
-    'name' => 'KABUPATEN PENAJAM PASER UTARA',
-    'latitude' => -1.25,
-    'longitude' => 116.83333,
-  ),
-  361 => 
-  array (
-    'code' => '64.11',
-    'province_code' => '64',
-    'name' => 'KABUPATEN MAHAKAM HULU',
-    'latitude' => 0.37822,
-    'longitude' => 115.38048,
-  ),
-  362 => 
-  array (
-    'code' => '64.71',
-    'province_code' => '64',
-    'name' => 'KOTA BALIKPAPAN',
-    'latitude' => -1.16667,
-    'longitude' => 116.88333,
-  ),
-  363 => 
-  array (
-    'code' => '64.72',
-    'province_code' => '64',
-    'name' => 'KOTA SAMARINDA',
-    'latitude' => -0.43333,
-    'longitude' => 117.18333,
-  ),
-  364 => 
-  array (
-    'code' => '64.74',
-    'province_code' => '64',
-    'name' => 'KOTA BONTANG',
-    'latitude' => 0.12526,
-    'longitude' => 117.49603,
-  ),
-  365 => 
-  array (
-    'code' => '65.01',
-    'province_code' => '65',
-    'name' => 'KABUPATEN MALINAU',
-    'latitude' => 2.45,
-    'longitude' => 115.68333,
-  ),
-  366 => 
-  array (
-    'code' => '65.02',
-    'province_code' => '65',
-    'name' => 'KABUPATEN BULUNGAN',
-    'latitude' => 3.0,
-    'longitude' => 117.16667,
-  ),
-  367 => 
-  array (
-    'code' => '65.03',
-    'province_code' => '65',
-    'name' => 'KABUPATEN TANA TIDUNG',
-    'latitude' => 3.55,
-    'longitude' => 117.25,
-  ),
-  368 => 
-  array (
-    'code' => '65.04',
-    'province_code' => '65',
-    'name' => 'KABUPATEN NUNUKAN',
-    'latitude' => 4.13333,
-    'longitude' => 116.7,
-  ),
-  369 => 
-  array (
-    'code' => '65.71',
-    'province_code' => '65',
-    'name' => 'KOTA TARAKAN',
-    'latitude' => 3.36667,
-    'longitude' => 117.6,
-  ),
-  370 => 
-  array (
-    'code' => '71.01',
-    'province_code' => '71',
-    'name' => 'KABUPATEN BOLAANG MONGONDOW',
-    'latitude' => 0.75,
-    'longitude' => 124.08333,
-  ),
-  371 => 
-  array (
-    'code' => '71.02',
-    'province_code' => '71',
-    'name' => 'KABUPATEN MINAHASA',
-    'latitude' => 1.2537,
-    'longitude' => 124.83,
-  ),
-  372 => 
-  array (
-    'code' => '71.03',
-    'province_code' => '71',
-    'name' => 'KABUPATEN KEPULAUAN SANGIHE',
-    'latitude' => 3.5,
-    'longitude' => 125.55,
-  ),
-  373 => 
-  array (
-    'code' => '71.04',
-    'province_code' => '71',
-    'name' => 'KABUPATEN KEPULAUAN TALAUD',
-    'latitude' => 4.31178,
-    'longitude' => 126.78085,
-  ),
-  374 => 
-  array (
-    'code' => '71.05',
-    'province_code' => '71',
-    'name' => 'KABUPATEN MINAHASA SELATAN',
-    'latitude' => 1.21291,
-    'longitude' => 124.59708,
-  ),
-  375 => 
-  array (
-    'code' => '71.06',
-    'province_code' => '71',
-    'name' => 'KABUPATEN MINAHASA UTARA',
-    'latitude' => 1.4025,
-    'longitude' => 124.96,
-  ),
-  376 => 
-  array (
-    'code' => '71.07',
-    'province_code' => '71',
-    'name' => 'KABUPATEN BOLAANG MONGONDOW UTARA',
-    'latitude' => 0.78527,
-    'longitude' => 123.41766,
-  ),
-  377 => 
-  array (
-    'code' => '71.08',
-    'province_code' => '71',
-    'name' => 'KABUPATEN SIAU TAGULANDANG BIARO',
-    'latitude' => 2.11728,
-    'longitude' => 125.37512,
-  ),
-  378 => 
-  array (
-    'code' => '71.09',
-    'province_code' => '71',
-    'name' => 'KABUPATEN MINAHASA TENGGARA',
-    'latitude' => 1.05633,
-    'longitude' => 124.7925,
-  ),
-  379 => 
-  array (
-    'code' => '71.10',
-    'province_code' => '71',
-    'name' => 'KABUPATEN BOLAANG MONGONDOW SELATAN',
-    'latitude' => 0.40912,
-    'longitude' => 123.75961,
-  ),
-  380 => 
-  array (
-    'code' => '71.11',
-    'province_code' => '71',
-    'name' => 'KABUPATEN BOLAANG MONGONDOW TIMUR',
-    'latitude' => 0.72073,
-    'longitude' => 124.50256,
-  ),
-  381 => 
-  array (
-    'code' => '71.71',
-    'province_code' => '71',
-    'name' => 'KOTA MANADO',
-    'latitude' => 1.51667,
-    'longitude' => 124.88333,
-  ),
-  382 => 
-  array (
-    'code' => '71.72',
-    'province_code' => '71',
-    'name' => 'KOTA BITUNG',
-    'latitude' => 1.48333,
-    'longitude' => 125.15,
-  ),
-  383 => 
-  array (
-    'code' => '71.73',
-    'province_code' => '71',
-    'name' => 'KOTA TOMOHON',
-    'latitude' => 1.31307,
-    'longitude' => 124.83404,
-  ),
-  384 => 
-  array (
-    'code' => '71.74',
-    'province_code' => '71',
-    'name' => 'KOTA KOTAMOBAGU',
-    'latitude' => 0.68915,
-    'longitude' => 124.32678,
-  ),
-  385 => 
-  array (
-    'code' => '72.01',
-    'province_code' => '72',
-    'name' => 'KABUPATEN BANGGAI KEPULAUAN',
-    'latitude' => -1.6424,
-    'longitude' => 123.54881,
-  ),
-  386 => 
-  array (
-    'code' => '72.02',
-    'province_code' => '72',
-    'name' => 'KABUPATEN BANGGAI',
-    'latitude' => -1.2835,
-    'longitude' => 122.8892,
-  ),
-  387 => 
-  array (
-    'code' => '72.03',
-    'province_code' => '72',
-    'name' => 'KABUPATEN MOROWALI',
-    'latitude' => -1.89342,
-    'longitude' => 121.25473,
-  ),
-  388 => 
-  array (
-    'code' => '72.04',
-    'province_code' => '72',
-    'name' => 'KABUPATEN POSO',
-    'latitude' => -1.65,
-    'longitude' => 120.5,
-  ),
-  389 => 
-  array (
-    'code' => '72.05',
-    'province_code' => '72',
-    'name' => 'KABUPATEN DONGGALA',
-    'latitude' => -0.58333,
-    'longitude' => 119.85,
-  ),
-  390 => 
-  array (
-    'code' => '72.06',
-    'province_code' => '72',
-    'name' => 'KABUPATEN TOLI-TOLI',
-    'latitude' => 1.30862,
-    'longitude' => 120.88643,
-  ),
-  391 => 
-  array (
-    'code' => '72.07',
-    'province_code' => '72',
-    'name' => 'KABUPATEN BUOL',
-    'latitude' => 0.75,
-    'longitude' => 120.75,
-  ),
-  392 => 
-  array (
-    'code' => '72.08',
-    'province_code' => '72',
-    'name' => 'KABUPATEN PARIGI MOUTONG',
-    'latitude' => 0.3368,
-    'longitude' => 120.17841,
-  ),
-  393 => 
-  array (
-    'code' => '72.09',
-    'province_code' => '72',
-    'name' => 'KABUPATEN TOJO UNA-UNA',
-    'latitude' => -1.2036,
-    'longitude' => 121.48201,
-  ),
-  394 => 
-  array (
-    'code' => '72.10',
-    'province_code' => '72',
-    'name' => 'KABUPATEN SIGI',
-    'latitude' => -1.385,
-    'longitude' => 119.96694,
-  ),
-  395 => 
-  array (
-    'code' => '72.11',
-    'province_code' => '72',
-    'name' => 'KABUPATEN BANGGAI LAUT',
-    'latitude' => -1.61841,
-    'longitude' => 123.49388,
-  ),
-  396 => 
-  array (
-    'code' => '72.12',
-    'province_code' => '72',
-    'name' => 'KABUPATEN MOROWALI UTARA',
-    'latitude' => -1.7207,
-    'longitude' => 121.24649,
-  ),
-  397 => 
-  array (
-    'code' => '72.71',
-    'province_code' => '72',
-    'name' => 'KOTA PALU',
-    'latitude' => -0.86972,
-    'longitude' => 119.9,
-  ),
-  398 => 
-  array (
-    'code' => '73.01',
-    'province_code' => '73',
-    'name' => 'KABUPATEN KEPULAUAN SELAYAR',
-    'latitude' => -6.81667,
-    'longitude' => 120.8,
-  ),
-  399 => 
-  array (
-    'code' => '73.02',
-    'province_code' => '73',
-    'name' => 'KABUPATEN BULUKUMBA',
-    'latitude' => -5.41667,
-    'longitude' => 120.23333,
-  ),
-  400 => 
-  array (
-    'code' => '73.03',
-    'province_code' => '73',
-    'name' => 'KABUPATEN BANTAENG',
-    'latitude' => -5.48333,
-    'longitude' => 119.98333,
-  ),
-  401 => 
-  array (
-    'code' => '73.04',
-    'province_code' => '73',
-    'name' => 'KABUPATEN JENEPONTO',
-    'latitude' => -5.63333,
-    'longitude' => 119.73333,
-  ),
-  402 => 
-  array (
-    'code' => '73.05',
-    'province_code' => '73',
-    'name' => 'KABUPATEN TAKALAR',
-    'latitude' => -5.41667,
-    'longitude' => 119.51667,
-  ),
-  403 => 
-  array (
-    'code' => '73.06',
-    'province_code' => '73',
-    'name' => 'KABUPATEN GOWA',
-    'latitude' => -5.31667,
-    'longitude' => 119.75,
-  ),
-  404 => 
-  array (
-    'code' => '73.07',
-    'province_code' => '73',
-    'name' => 'KABUPATEN SINJAI',
-    'latitude' => -5.21667,
-    'longitude' => 120.15,
-  ),
-  405 => 
-  array (
-    'code' => '73.08',
-    'province_code' => '73',
-    'name' => 'KABUPATEN MAROS',
-    'latitude' => -5.05,
-    'longitude' => 119.71667,
-  ),
-  406 => 
-  array (
-    'code' => '73.09',
-    'province_code' => '73',
-    'name' => 'KABUPATEN PANGKAJENE DAN KEPULAUAN',
-    'latitude' => -4.7827,
-    'longitude' => 119.5506,
-  ),
-  407 => 
-  array (
-    'code' => '73.10',
-    'province_code' => '73',
-    'name' => 'KABUPATEN BARRU',
-    'latitude' => -4.43333,
-    'longitude' => 119.68333,
-  ),
-  408 => 
-  array (
-    'code' => '73.11',
-    'province_code' => '73',
-    'name' => 'KABUPATEN BONE',
-    'latitude' => -4.7,
-    'longitude' => 120.13333,
-  ),
-  409 => 
-  array (
-    'code' => '73.12',
-    'province_code' => '73',
-    'name' => 'KABUPATEN SOPPENG',
-    'latitude' => -4.3842,
-    'longitude' => 119.89,
-  ),
-  410 => 
-  array (
-    'code' => '73.13',
-    'province_code' => '73',
-    'name' => 'KABUPATEN WAJO',
-    'latitude' => -4.0,
-    'longitude' => 120.16667,
-  ),
-  411 => 
-  array (
-    'code' => '73.14',
-    'province_code' => '73',
-    'name' => 'KABUPATEN SIDENRENG RAPPANG',
-    'latitude' => -3.85,
-    'longitude' => 119.96667,
-  ),
-  412 => 
-  array (
-    'code' => '73.15',
-    'province_code' => '73',
-    'name' => 'KABUPATEN PINRANG',
-    'latitude' => -3.61667,
-    'longitude' => 119.6,
-  ),
-  413 => 
-  array (
-    'code' => '73.16',
-    'province_code' => '73',
-    'name' => 'KABUPATEN ENREKANG',
-    'latitude' => -3.5,
-    'longitude' => 119.86667,
-  ),
-  414 => 
-  array (
-    'code' => '73.17',
-    'province_code' => '73',
-    'name' => 'KABUPATEN LUWU',
-    'latitude' => -2.5577,
-    'longitude' => 121.3242,
-  ),
-  415 => 
-  array (
-    'code' => '73.18',
-    'province_code' => '73',
-    'name' => 'KABUPATEN TANA TORAJA',
-    'latitude' => -3.0024,
-    'longitude' => 119.79655,
-  ),
-  416 => 
-  array (
-    'code' => '73.22',
-    'province_code' => '73',
-    'name' => 'KABUPATEN LUWU UTARA',
-    'latitude' => -2.6,
-    'longitude' => 120.25,
-  ),
-  417 => 
-  array (
-    'code' => '73.25',
-    'province_code' => '73',
-    'name' => 'KABUPATEN LUWU TIMUR',
-    'latitude' => -2.50957,
-    'longitude' => 120.3978,
-  ),
-  418 => 
-  array (
-    'code' => '73.26',
-    'province_code' => '73',
-    'name' => 'KABUPATEN TORAJA UTARA',
-    'latitude' => -2.92738,
-    'longitude' => 119.79218,
-  ),
-  419 => 
-  array (
-    'code' => '73.71',
-    'province_code' => '73',
-    'name' => 'KOTA MAKASSAR',
-    'latitude' => -5.15,
-    'longitude' => 119.45,
-  ),
-  420 => 
-  array (
-    'code' => '73.72',
-    'province_code' => '73',
-    'name' => 'KOTA PARE-PARE',
-    'latitude' => -4.03333,
-    'longitude' => 119.65,
-  ),
-  421 => 
-  array (
-    'code' => '73.73',
-    'province_code' => '73',
-    'name' => 'KOTA PALOPO',
-    'latitude' => -2.97841,
-    'longitude' => 120.11078,
-  ),
-  422 => 
-  array (
-    'code' => '74.01',
-    'province_code' => '74',
-    'name' => 'KABUPATEN BUTON',
-    'latitude' => -5.31667,
-    'longitude' => 122.58333,
-  ),
-  423 => 
-  array (
-    'code' => '74.02',
-    'province_code' => '74',
-    'name' => 'KABUPATEN MUNA',
-    'latitude' => -4.96667,
-    'longitude' => 122.66667,
-  ),
-  424 => 
-  array (
-    'code' => '74.03',
-    'province_code' => '74',
-    'name' => 'KABUPATEN KONAWE',
-    'latitude' => -3.91717,
-    'longitude' => 122.08823,
-  ),
-  425 => 
-  array (
-    'code' => '74.04',
-    'province_code' => '74',
-    'name' => 'KABUPATEN KOLAKA',
-    'latitude' => -4.08333,
-    'longitude' => 121.66667,
-  ),
-  426 => 
-  array (
-    'code' => '74.05',
-    'province_code' => '74',
-    'name' => 'KABUPATEN KONAWE SELATAN',
-    'latitude' => -4.19191,
-    'longitude' => 122.44854,
-  ),
-  427 => 
-  array (
-    'code' => '74.06',
-    'province_code' => '74',
-    'name' => 'KABUPATEN BOMBANA',
-    'latitude' => -4.6257,
-    'longitude' => 121.81641,
-  ),
-  428 => 
-  array (
-    'code' => '74.07',
-    'province_code' => '74',
-    'name' => 'KABUPATEN WAKATOBI',
-    'latitude' => -5.31934,
-    'longitude' => 123.5948,
-  ),
-  429 => 
-  array (
-    'code' => '74.08',
-    'province_code' => '74',
-    'name' => 'KABUPATEN KOLAKA UTARA',
-    'latitude' => -3.10452,
-    'longitude' => 121.12427,
-  ),
-  430 => 
-  array (
-    'code' => '74.09',
-    'province_code' => '74',
-    'name' => 'KABUPATEN BUTON UTARA',
-    'latitude' => -5.01457,
-    'longitude' => 122.93015,
-  ),
-  431 => 
-  array (
-    'code' => '74.10',
-    'province_code' => '74',
-    'name' => 'KABUPATEN KONAWE UTARA',
-    'latitude' => -3.41552,
-    'longitude' => 121.99081,
-  ),
-  432 => 
-  array (
-    'code' => '74.11',
-    'province_code' => '74',
-    'name' => 'KABUPATEN KOLAKA TIMUR',
-    'latitude' => -4.01807,
-    'longitude' => 121.86172,
-  ),
-  433 => 
-  array (
-    'code' => '74.12',
-    'province_code' => '74',
-    'name' => 'KABUPATEN KONAWE KEPULAUAN',
-    'latitude' => -4.11656,
-    'longitude' => 123.10181,
-  ),
-  434 => 
-  array (
-    'code' => '74.13',
-    'province_code' => '74',
-    'name' => 'KABUPATEN MUNA BARAT',
-    'latitude' => -4.83333,
-    'longitude' => 122.48333,
-  ),
-  435 => 
-  array (
-    'code' => '74.14',
-    'province_code' => '74',
-    'name' => 'KABUPATEN BUTON TENGAH',
-    'latitude' => -5.31667,
-    'longitude' => 122.33333,
-  ),
-  436 => 
-  array (
-    'code' => '74.15',
-    'province_code' => '74',
-    'name' => 'KABUPATEN BUTON SELATAN',
-    'latitude' => -5.56667,
-    'longitude' => 122.7,
-  ),
-  437 => 
-  array (
-    'code' => '74.71',
-    'province_code' => '74',
-    'name' => 'KOTA KENDARI',
-    'latitude' => -3.98333,
-    'longitude' => 122.5,
-  ),
-  438 => 
-  array (
-    'code' => '74.72',
-    'province_code' => '74',
-    'name' => 'KOTA BAUBAU',
-    'latitude' => -5.477,
-    'longitude' => 122.6166,
-  ),
-  439 => 
-  array (
-    'code' => '75.01',
-    'province_code' => '75',
-    'name' => 'KABUPATEN BOALEMO',
-    'latitude' => 0.62689,
-    'longitude' => 122.3568,
-  ),
-  440 => 
-  array (
-    'code' => '75.02',
-    'province_code' => '75',
-    'name' => 'KABUPATEN GORONTALO',
-    'latitude' => 0.5728,
-    'longitude' => 122.2337,
-  ),
-  441 => 
-  array (
-    'code' => '75.03',
-    'province_code' => '75',
-    'name' => 'KABUPATEN POHUWATO',
-    'latitude' => 0.7098,
-    'longitude' => 121.59582,
-  ),
-  442 => 
-  array (
-    'code' => '75.04',
-    'province_code' => '75',
-    'name' => 'KABUPATEN BONE BOLANGO',
-    'latitude' => 0.50296,
-    'longitude' => 123.27501,
-  ),
-  443 => 
-  array (
-    'code' => '75.05',
-    'province_code' => '75',
-    'name' => 'KABUPATEN GORONTALO UTARA',
-    'latitude' => 0.77,
-    'longitude' => 122.31667,
-  ),
-  444 => 
-  array (
-    'code' => '75.71',
-    'province_code' => '75',
-    'name' => 'KOTA GORONTALO',
-    'latitude' => 0.53333,
-    'longitude' => 123.1,
-  ),
-  445 => 
-  array (
-    'code' => '76.01',
-    'province_code' => '76',
-    'name' => 'KABUPATEN MAJENE',
-    'latitude' => -3.15,
-    'longitude' => 118.86667,
-  ),
-  446 => 
-  array (
-    'code' => '76.02',
-    'province_code' => '76',
-    'name' => 'KABUPATEN POLEWALI MANDAR',
-    'latitude' => -3.3,
-    'longitude' => 119.16667,
-  ),
-  447 => 
-  array (
-    'code' => '76.03',
-    'province_code' => '76',
-    'name' => 'KABUPATEN MAMASA',
-    'latitude' => -2.96492,
-    'longitude' => 119.30631,
-  ),
-  448 => 
-  array (
-    'code' => '76.04',
-    'province_code' => '76',
-    'name' => 'KABUPATEN MAMUJU',
-    'latitude' => -2.5,
-    'longitude' => 119.41667,
-  ),
-  449 => 
-  array (
-    'code' => '76.05',
-    'province_code' => '76',
-    'name' => 'KABUPATEN MAMUJU UTARA',
-    'latitude' => -1.51639,
-    'longitude' => 119.42139,
-  ),
-  450 => 
-  array (
-    'code' => '76.06',
-    'province_code' => '76',
-    'name' => 'KABUPATEN MAMUJU TENGAH',
-    'latitude' => -2.8212,
-    'longitude' => 119.2662,
-  ),
-  451 => 
-  array (
-    'code' => '81.01',
-    'province_code' => '81',
-    'name' => 'KABUPATEN MALUKU TENGGARA BARAT',
-    'latitude' => -7.61186,
-    'longitude' => 131.38,
-  ),
-  452 => 
-  array (
-    'code' => '81.02',
-    'province_code' => '81',
-    'name' => 'KABUPATEN MALUKU TENGGARA',
-    'latitude' => -5.75,
-    'longitude' => 132.73334,
-  ),
-  453 => 
-  array (
-    'code' => '81.03',
-    'province_code' => '81',
-    'name' => 'KABUPATEN MALUKU TENGAH',
-    'latitude' => -3.29167,
-    'longitude' => 128.9675,
-  ),
-  454 => 
-  array (
-    'code' => '81.04',
-    'province_code' => '81',
-    'name' => 'KABUPATEN BURU',
-    'latitude' => -3.32767,
-    'longitude' => 126.68413,
-  ),
-  455 => 
-  array (
-    'code' => '81.05',
-    'province_code' => '81',
-    'name' => 'KABUPATEN KEPULAUAN ARU',
-    'latitude' => -6.17059,
-    'longitude' => 134.46991,
-  ),
-  456 => 
-  array (
-    'code' => '81.06',
-    'province_code' => '81',
-    'name' => 'KABUPATEN SERAM BAGIAN BARAT',
-    'latitude' => -3.1027,
-    'longitude' => 128.42996,
-  ),
-  457 => 
-  array (
-    'code' => '81.07',
-    'province_code' => '81',
-    'name' => 'KABUPATEN SERAM BAGIAN TIMUR',
-    'latitude' => -3.39851,
-    'longitude' => 130.39166,
-  ),
-  458 => 
-  array (
-    'code' => '81.08',
-    'province_code' => '81',
-    'name' => 'KABUPATEN MALUKU BARAT DAYA',
-    'latitude' => -7.8296,
-    'longitude' => 126.17386,
-  ),
-  459 => 
-  array (
-    'code' => '81.09',
-    'province_code' => '81',
-    'name' => 'KABUPATEN BURU SELATAN',
-    'latitude' => -3.52187,
-    'longitude' => 126.59271,
-  ),
-  460 => 
-  array (
-    'code' => '81.71',
-    'province_code' => '81',
-    'name' => 'KOTA AMBON',
-    'latitude' => -3.7,
-    'longitude' => 128.18333,
-  ),
-  461 => 
-  array (
-    'code' => '81.72',
-    'province_code' => '81',
-    'name' => 'KOTA TUAL',
-    'latitude' => -5.64301,
-    'longitude' => 132.74934,
-  ),
-  462 => 
-  array (
-    'code' => '82.01',
-    'province_code' => '82',
-    'name' => 'KABUPATEN HALMAHERA BARAT',
-    'latitude' => 1.41709,
-    'longitude' => 127.55264,
-  ),
-  463 => 
-  array (
-    'code' => '82.02',
-    'province_code' => '82',
-    'name' => 'KABUPATEN HALMAHERA TENGAH',
-    'latitude' => 0.48056,
-    'longitude' => 128.25,
-  ),
-  464 => 
-  array (
-    'code' => '82.03',
-    'province_code' => '82',
-    'name' => 'KABUPATEN KEPULAUAN SULA',
-    'latitude' => -1.8646,
-    'longitude' => 125.69046,
-  ),
-  465 => 
-  array (
-    'code' => '82.04',
-    'province_code' => '82',
-    'name' => 'KABUPATEN HALMAHERA SELATAN',
-    'latitude' => -0.3955,
-    'longitude' => 127.90833,
-  ),
-  466 => 
-  array (
-    'code' => '82.05',
-    'province_code' => '82',
-    'name' => 'KABUPATEN HALMAHERA UTARA',
-    'latitude' => 1.73194,
-    'longitude' => 128.00778,
-  ),
-  467 => 
-  array (
-    'code' => '82.06',
-    'province_code' => '82',
-    'name' => 'KABUPATEN HALMAHERA TIMUR',
-    'latitude' => 1.33517,
-    'longitude' => 128.48627,
-  ),
-  468 => 
-  array (
-    'code' => '82.07',
-    'province_code' => '82',
-    'name' => 'KABUPATEN PULAU MOROTAI',
-    'latitude' => 2.19924,
-    'longitude' => 128.40546,
-  ),
-  469 => 
-  array (
-    'code' => '82.08',
-    'province_code' => '82',
-    'name' => 'KABUPATEN PULAU TALIABU',
-    'latitude' => -1.84578,
-    'longitude' => 124.78992,
-  ),
-  470 => 
-  array (
-    'code' => '82.71',
-    'province_code' => '82',
-    'name' => 'KOTA TERNATE',
-    'latitude' => 0.89618,
-    'longitude' => 127.31016,
-  ),
-  471 => 
-  array (
-    'code' => '82.72',
-    'province_code' => '82',
-    'name' => 'KOTA TIDORE KEPULAUAN',
-    'latitude' => 0.60962,
-    'longitude' => 127.56981,
-  ),
-  472 => 
-  array (
-    'code' => '91.01',
-    'province_code' => '91',
-    'name' => 'KABUPATEN FAK-FAK',
-    'latitude' => -2.92641,
-    'longitude' => 132.29608,
-  ),
-  473 => 
-  array (
-    'code' => '91.02',
-    'province_code' => '91',
-    'name' => 'KABUPATEN KAIMANA',
-    'latitude' => -3.66093,
-    'longitude' => 133.77451,
-  ),
-  474 => 
-  array (
-    'code' => '91.03',
-    'province_code' => '91',
-    'name' => 'KABUPATEN TELUK WONDAMA',
-    'latitude' => -2.7,
-    'longitude' => 134.5,
-  ),
-  475 => 
-  array (
-    'code' => '91.04',
-    'province_code' => '91',
-    'name' => 'KABUPATEN TELUK BINTUNI',
-    'latitude' => -1.88037,
-    'longitude' => 133.33105,
-  ),
-  476 => 
-  array (
-    'code' => '91.05',
-    'province_code' => '91',
-    'name' => 'KABUPATEN MANOKWARI',
-    'latitude' => -0.9,
-    'longitude' => 133.75,
-  ),
-  477 => 
-  array (
-    'code' => '91.06',
-    'province_code' => '91',
-    'name' => 'KABUPATEN SORONG SELATAN',
-    'latitude' => -1.50495,
-    'longitude' => 132.28638,
-  ),
-  478 => 
-  array (
-    'code' => '91.07',
-    'province_code' => '91',
-    'name' => 'KABUPATEN SORONG',
-    'latitude' => -1.16667,
-    'longitude' => 131.5,
-  ),
-  479 => 
-  array (
-    'code' => '91.08',
-    'province_code' => '91',
-    'name' => 'KABUPATEN RAJA AMPAT',
-    'latitude' => -0.5,
-    'longitude' => 130.0,
-  ),
-  480 => 
-  array (
-    'code' => '91.09',
-    'province_code' => '91',
-    'name' => 'KABUPATEN TAMBRAUW',
-    'latitude' => -0.60515,
-    'longitude' => 132.48962,
-  ),
-  481 => 
-  array (
-    'code' => '91.10',
-    'province_code' => '91',
-    'name' => 'KABUPATEN MAYBRAT',
-    'latitude' => -1.2155,
-    'longitude' => 132.35092,
-  ),
-  482 => 
-  array (
-    'code' => '91.11',
-    'province_code' => '91',
-    'name' => 'KABUPATEN MANOKWARI SELATAN',
-    'latitude' => -1.0798,
-    'longitude' => 133.96729,
-  ),
-  483 => 
-  array (
-    'code' => '91.12',
-    'province_code' => '91',
-    'name' => 'KABUPATEN PEGUNUNGAN ARFAK',
-    'latitude' => -0.93523,
-    'longitude' => 133.89587,
-  ),
-  484 => 
-  array (
-    'code' => '91.71',
-    'province_code' => '91',
-    'name' => 'KOTA SORONG',
-    'latitude' => -0.86507,
-    'longitude' => 131.25153,
-  ),
-  485 => 
-  array (
-    'code' => '94.01',
-    'province_code' => '94',
-    'name' => 'KABUPATEN MERAUKE',
-    'latitude' => -7.66667,
-    'longitude' => 139.66667,
-  ),
-  486 => 
-  array (
-    'code' => '94.02',
-    'province_code' => '94',
-    'name' => 'KABUPATEN JAYAWIJAYA',
-    'latitude' => -4.08333,
-    'longitude' => 139.08333,
-  ),
-  487 => 
-  array (
-    'code' => '94.03',
-    'province_code' => '94',
-    'name' => 'KABUPATEN JAYAPURA',
-    'latitude' => -3.0,
-    'longitude' => 139.95,
-  ),
-  488 => 
-  array (
-    'code' => '94.04',
-    'province_code' => '94',
-    'name' => 'KABUPATEN NABIRE',
-    'latitude' => -3.54016,
-    'longitude' => 135.55511,
-  ),
-  489 => 
-  array (
-    'code' => '94.08',
-    'province_code' => '94',
-    'name' => 'KABUPATEN KEPULAUAN YAPEN',
-    'latitude' => -1.78773,
-    'longitude' => 136.27716,
-  ),
-  490 => 
-  array (
-    'code' => '94.09',
-    'province_code' => '94',
-    'name' => 'KABUPATEN BIAK NUMFOR',
-    'latitude' => -1.03333,
-    'longitude' => 136.0,
-  ),
-  491 => 
-  array (
-    'code' => '94.10',
-    'province_code' => '94',
-    'name' => 'KABUPATEN PANIAI',
-    'latitude' => -3.9,
-    'longitude' => 136.60001,
-  ),
-  492 => 
-  array (
-    'code' => '94.11',
-    'province_code' => '94',
-    'name' => 'KABUPATEN PUNCAK JAYA',
-    'latitude' => -3.67241,
-    'longitude' => 137.43896,
-  ),
-  493 => 
-  array (
-    'code' => '94.12',
-    'province_code' => '94',
-    'name' => 'KABUPATEN MIMIKA',
-    'latitude' => -4.54357,
-    'longitude' => 136.56555,
-  ),
-  494 => 
-  array (
-    'code' => '94.13',
-    'province_code' => '94',
-    'name' => 'KABUPATEN BOVEN DIGOEL',
-    'latitude' => -5.70519,
-    'longitude' => 140.36349,
-  ),
-  495 => 
-  array (
-    'code' => '94.14',
-    'province_code' => '94',
-    'name' => 'KABUPATEN MAPPI',
-    'latitude' => -6.49971,
-    'longitude' => 139.34441,
-  ),
-  496 => 
-  array (
-    'code' => '94.15',
-    'province_code' => '94',
-    'name' => 'KABUPATEN ASMAT',
-    'latitude' => -5.3795,
-    'longitude' => 138.46344,
-  ),
-  497 => 
-  array (
-    'code' => '94.16',
-    'province_code' => '94',
-    'name' => 'KABUPATEN YAHUKIMO',
-    'latitude' => -4.60403,
-    'longitude' => 139.58405,
-  ),
-  498 => 
-  array (
-    'code' => '94.17',
-    'province_code' => '94',
-    'name' => 'KABUPATEN PEGUNUNGAN BINTANG',
-    'latitude' => -4.52167,
-    'longitude' => 140.29541,
-  ),
-  499 => 
-  array (
-    'code' => '94.18',
-    'province_code' => '94',
-    'name' => 'KABUPATEN TOLIKARA',
-    'latitude' => -3.42661,
-    'longitude' => 137.41699,
-  ),
-  500 => 
-  array (
-    'code' => '94.19',
-    'province_code' => '94',
-    'name' => 'KABUPATEN SARMI',
-    'latitude' => -2.41667,
-    'longitude' => 139.08333,
-  ),
-  501 => 
-  array (
-    'code' => '94.20',
-    'province_code' => '94',
-    'name' => 'KABUPATEN KEEROM',
-    'latitude' => -3.3,
-    'longitude' => 140.61667,
-  ),
-  502 => 
-  array (
-    'code' => '94.26',
-    'province_code' => '94',
-    'name' => 'KABUPATEN WAROPEN',
-    'latitude' => -2.286,
-    'longitude' => 137.01837,
-  ),
-  503 => 
-  array (
-    'code' => '94.27',
-    'province_code' => '94',
-    'name' => 'KABUPATEN SUPIORI',
-    'latitude' => -0.73881,
-    'longitude' => 135.61111,
-  ),
-  504 => 
-  array (
-    'code' => '94.28',
-    'province_code' => '94',
-    'name' => 'KABUPATEN MAMBERAMO RAYA',
-    'latitude' => -2.23561,
-    'longitude' => 137.78229,
-  ),
-  505 => 
-  array (
-    'code' => '94.29',
-    'province_code' => '94',
-    'name' => 'KABUPATEN NDUGA',
-    'latitude' => -4.45093,
-    'longitude' => 138.10089,
-  ),
-  506 => 
-  array (
-    'code' => '94.30',
-    'province_code' => '94',
-    'name' => 'KABUPATEN LANNY JAYA',
-    'latitude' => -3.91244,
-    'longitude' => 138.28766,
-  ),
-  507 => 
-  array (
-    'code' => '94.31',
-    'province_code' => '94',
-    'name' => 'KABUPATEN MAMBERAMO TENGAH',
-    'latitude' => -2.46064,
-    'longitude' => 138.45245,
-  ),
-  508 => 
-  array (
-    'code' => '94.32',
-    'province_code' => '94',
-    'name' => 'KABUPATEN YALIMO',
-    'latitude' => -3.86037,
-    'longitude' => 138.47305,
-  ),
-  509 => 
-  array (
-    'code' => '94.33',
-    'province_code' => '94',
-    'name' => 'KABUPATEN PUNCAK',
-    'latitude' => -4.14204,
-    'longitude' => 137.09702,
-  ),
-  510 => 
-  array (
-    'code' => '94.34',
-    'province_code' => '94',
-    'name' => 'KABUPATEN DOGIYAI',
-    'latitude' => -4.03186,
-    'longitude' => 135.43945,
-  ),
-  511 => 
-  array (
-    'code' => '94.35',
-    'province_code' => '94',
-    'name' => 'KABUPATEN INTAN JAYA',
-    'latitude' => -3.41016,
-    'longitude' => 136.70837,
-  ),
-  512 => 
-  array (
-    'code' => '94.36',
-    'province_code' => '94',
-    'name' => 'KABUPATEN DEIYAI',
-    'latitude' => -3.94737,
-    'longitude' => 135.95032,
-  ),
-  513 => 
-  array (
-    'code' => '94.71',
-    'province_code' => '94',
-    'name' => 'KOTA JAYAPURA',
-    'latitude' => -2.64647,
-    'longitude' => 140.77779,
-  ),
-);
+return [
+    ['code' => '11.01', 'province_code' => '11', 'name' => 'KABUPATEN ACEH SELATAN', 'latitude' => 3.254802, 'longitude' => 97.174112],
+    ['code' => '11.02', 'province_code' => '11', 'name' => 'KABUPATEN ACEH TENGGARA', 'latitude' => 3.47336, 'longitude' => 97.819243],
+    ['code' => '11.03', 'province_code' => '11', 'name' => 'KABUPATEN ACEH TIMUR', 'latitude' => 4.932737, 'longitude' => 97.783844],
+    ['code' => '11.04', 'province_code' => '11', 'name' => 'KABUPATEN ACEH TENGAH', 'latitude' => 4.622057, 'longitude' => 96.845668],
+    ['code' => '11.05', 'province_code' => '11', 'name' => 'KABUPATEN ACEH BARAT', 'latitude' => 4.15301, 'longitude' => 96.131441],
+    ['code' => '11.06', 'province_code' => '11', 'name' => 'KABUPATEN ACEH BESAR', 'latitude' => 5.29734, 'longitude' => 95.610871],
+    ['code' => '11.07', 'province_code' => '11', 'name' => 'KABUPATEN PIDIE', 'latitude' => 5.3676, 'longitude' => 95.95788],
+    ['code' => '11.08', 'province_code' => '11', 'name' => 'KABUPATEN ACEH UTARA', 'latitude' => 5.075716, 'longitude' => 97.302624],
+    ['code' => '11.09', 'province_code' => '11', 'name' => 'KABUPATEN SIMEULUE', 'latitude' => 2.461413, 'longitude' => 96.380377],
+    ['code' => '11.10', 'province_code' => '11', 'name' => 'KABUPATEN ACEH SINGKIL', 'latitude' => 2.271094, 'longitude' => 97.815325],
+    ['code' => '11.11', 'province_code' => '11', 'name' => 'KABUPATEN BIREUEN', 'latitude' => 5.207565, 'longitude' => 96.726403],
+    ['code' => '11.12', 'province_code' => '11', 'name' => 'KABUPATEN ACEH BARAT DAYA', 'latitude' => 3.739103, 'longitude' => 96.851505],
+    ['code' => '11.13', 'province_code' => '11', 'name' => 'KABUPATEN GAYO LUES', 'latitude' => 3.993465, 'longitude' => 97.324502],
+    ['code' => '11.14', 'province_code' => '11', 'name' => 'KABUPATEN ACEH JAYA', 'latitude' => 4.624132, 'longitude' => 95.616812],
+    ['code' => '11.15', 'province_code' => '11', 'name' => 'KABUPATEN NAGAN RAYA', 'latitude' => 4.169427, 'longitude' => 96.324374],
+    ['code' => '11.16', 'province_code' => '11', 'name' => 'KABUPATEN ACEH TAMIANG', 'latitude' => 4.301276, 'longitude' => 98.045715],
+    ['code' => '11.17', 'province_code' => '11', 'name' => 'KABUPATEN BENER MERIAH', 'latitude' => 4.702762, 'longitude' => 96.861953],
+    ['code' => '11.18', 'province_code' => '11', 'name' => 'KABUPATEN PIDIE JAYA', 'latitude' => 5.228899, 'longitude' => 96.244757],
+    ['code' => '11.71', 'province_code' => '11', 'name' => 'KOTA BANDA ACEH', 'latitude' => 5.55005, 'longitude' => 95.317827],
+    ['code' => '11.72', 'province_code' => '11', 'name' => 'KOTA SABANG', 'latitude' => 5.892656, 'longitude' => 95.321117],
+    ['code' => '11.73', 'province_code' => '11', 'name' => 'KOTA LHOKSEUMAWE', 'latitude' => 5.179364, 'longitude' => 97.14894],
+    ['code' => '11.74', 'province_code' => '11', 'name' => 'KOTA LANGSA', 'latitude' => 4.469482, 'longitude' => 97.966446],
+    ['code' => '11.75', 'province_code' => '11', 'name' => 'KOTA SUBULUSSALAM', 'latitude' => 2.670792, 'longitude' => 97.993012],
+    ['code' => '12.01', 'province_code' => '12', 'name' => 'KABUPATEN TAPANULI TENGAH', 'latitude' => 1.68469, 'longitude' => 98.827717],
+    ['code' => '12.02', 'province_code' => '12', 'name' => 'KABUPATEN TAPANULI UTARA', 'latitude' => 2.02185, 'longitude' => 98.961791],
+    ['code' => '12.03', 'province_code' => '12', 'name' => 'KABUPATEN TAPANULI SELATAN', 'latitude' => 1.519662, 'longitude' => 99.302843],
+    ['code' => '12.04', 'province_code' => '12', 'name' => 'KABUPATEN NIAS', 'latitude' => 1.241755, 'longitude' => 97.649918],
+    ['code' => '12.05', 'province_code' => '12', 'name' => 'KABUPATEN LANGKAT', 'latitude' => 3.742686, 'longitude' => 98.447535],
+    ['code' => '12.06', 'province_code' => '12', 'name' => 'KABUPATEN KARO', 'latitude' => 3.11068, 'longitude' => 98.501335],
+    ['code' => '12.07', 'province_code' => '12', 'name' => 'KABUPATEN DELI SERDANG', 'latitude' => 3.550719, 'longitude' => 98.866442],
+    ['code' => '12.08', 'province_code' => '12', 'name' => 'KABUPATEN SIMALUNGUN', 'latitude' => 2.965349, 'longitude' => 98.8621],
+    ['code' => '12.09', 'province_code' => '12', 'name' => 'KABUPATEN ASAHAN', 'latitude' => 2.988106, 'longitude' => 99.612836],
+    ['code' => '12.10', 'province_code' => '12', 'name' => 'KABUPATEN LABUHANBATU', 'latitude' => 2.07009, 'longitude' => 99.857086],
+    ['code' => '12.11', 'province_code' => '12', 'name' => 'KABUPATEN DAIRI', 'latitude' => 2.747967, 'longitude' => 98.313969],
+    ['code' => '12.12', 'province_code' => '12', 'name' => 'KABUPATEN TOBA', 'latitude' => 2.331801, 'longitude' => 99.051021],
+    ['code' => '12.13', 'province_code' => '12', 'name' => 'KABUPATEN MANDAILING NATAL', 'latitude' => 0.796726, 'longitude' => 99.578809],
+    ['code' => '12.14', 'province_code' => '12', 'name' => 'KABUPATEN NIAS SELATAN', 'latitude' => 0.583377, 'longitude' => 97.777885],
+    ['code' => '12.15', 'province_code' => '12', 'name' => 'KABUPATEN PAKPAK BHARAT', 'latitude' => 2.541054, 'longitude' => 98.322589],
+    ['code' => '12.16', 'province_code' => '12', 'name' => 'KABUPATEN HUMBANG HASUNDUTAN', 'latitude' => 2.250279, 'longitude' => 98.790454],
+    ['code' => '12.17', 'province_code' => '12', 'name' => 'KABUPATEN SAMOSIR', 'latitude' => 2.559871, 'longitude' => 98.722389],
+    ['code' => '12.18', 'province_code' => '12', 'name' => 'KABUPATEN SERDANG BEDAGAI', 'latitude' => 3.491265, 'longitude' => 99.12592],
+    ['code' => '12.19', 'province_code' => '12', 'name' => 'KABUPATEN BATU BARA', 'latitude' => 3.171775, 'longitude' => 99.420981],
+    ['code' => '12.20', 'province_code' => '12', 'name' => 'KABUPATEN PADANG LAWAS UTARA', 'latitude' => 1.494549, 'longitude' => 99.619709],
+    ['code' => '12.21', 'province_code' => '12', 'name' => 'KABUPATEN PADANG LAWAS', 'latitude' => 1.05559, 'longitude' => 99.77552],
+    ['code' => '12.22', 'province_code' => '12', 'name' => 'KABUPATEN LABUHANBATU SELATAN', 'latitude' => 1.868221, 'longitude' => 100.041146],
+    ['code' => '12.23', 'province_code' => '12', 'name' => 'KABUPATEN LABUHANBATU UTARA', 'latitude' => 2.562849, 'longitude' => 99.658069],
+    ['code' => '12.24', 'province_code' => '12', 'name' => 'KABUPATEN NIAS UTARA', 'latitude' => 1.389322, 'longitude' => 97.381362],
+    ['code' => '12.25', 'province_code' => '12', 'name' => 'KABUPATEN NIAS BARAT', 'latitude' => 0.998963, 'longitude' => 97.495252],
+    ['code' => '12.71', 'province_code' => '12', 'name' => 'KOTA MEDAN', 'latitude' => 3.590246, 'longitude' => 98.674972],
+    ['code' => '12.72', 'province_code' => '12', 'name' => 'KOTA PEMATANGSIANTAR', 'latitude' => 2.956496, 'longitude' => 99.061821],
+    ['code' => '12.73', 'province_code' => '12', 'name' => 'KOTA SIBOLGA', 'latitude' => 1.746021, 'longitude' => 98.775588],
+    ['code' => '12.74', 'province_code' => '12', 'name' => 'KOTA TANJUNGBALAI', 'latitude' => 2.947754, 'longitude' => 99.766719],
+    ['code' => '12.75', 'province_code' => '12', 'name' => 'KOTA BINJAI', 'latitude' => 3.602977, 'longitude' => 98.483181],
+    ['code' => '12.76', 'province_code' => '12', 'name' => 'KOTA TEBING TINGGI', 'latitude' => 3.327565, 'longitude' => 99.166318],
+    ['code' => '12.77', 'province_code' => '12', 'name' => 'KOTA PADANGSIDIMPUAN', 'latitude' => 1.377645, 'longitude' => 99.271446],
+    ['code' => '12.78', 'province_code' => '12', 'name' => 'KOTA GUNUNGSITOLI', 'latitude' => 1.282641, 'longitude' => 97.613463],
+    ['code' => '13.01', 'province_code' => '13', 'name' => 'KABUPATEN PESISIR SELATAN', 'latitude' => -1.348016, 'longitude' => 100.577717],
+    ['code' => '13.02', 'province_code' => '13', 'name' => 'KABUPATEN SOLOK', 'latitude' => -0.951571, 'longitude' => 100.621364],
+    ['code' => '13.03', 'province_code' => '13', 'name' => 'KABUPATEN SIJUNJUNG', 'latitude' => -0.665781, 'longitude' => 100.94461],
+    ['code' => '13.04', 'province_code' => '13', 'name' => 'KABUPATEN TANAH DATAR', 'latitude' => -0.474365, 'longitude' => 100.623418],
+    ['code' => '13.05', 'province_code' => '13', 'name' => 'KABUPATEN PADANG PARIAMAN', 'latitude' => -0.620998, 'longitude' => 100.306542],
+    ['code' => '13.06', 'province_code' => '13', 'name' => 'KABUPATEN AGAM', 'latitude' => -0.315193, 'longitude' => 100.029656],
+    ['code' => '13.07', 'province_code' => '13', 'name' => 'KABUPATEN LIMA PULUH KOTA', 'latitude' => -0.152394, 'longitude' => 100.660738],
+    ['code' => '13.08', 'province_code' => '13', 'name' => 'KABUPATEN PASAMAN', 'latitude' => 0.140391, 'longitude' => 100.166987],
+    ['code' => '13.09', 'province_code' => '13', 'name' => 'KABUPATEN KEPULAUAN MENTAWAI', 'latitude' => -2.054156, 'longitude' => 99.58047],
+    ['code' => '13.10', 'province_code' => '13', 'name' => 'KABUPATEN DHARMASRAYA', 'latitude' => -0.952986, 'longitude' => 101.494113],
+    ['code' => '13.11', 'province_code' => '13', 'name' => 'KABUPATEN SOLOK SELATAN', 'latitude' => -1.556221, 'longitude' => 101.239503],
+    ['code' => '13.12', 'province_code' => '13', 'name' => 'KABUPATEN PASAMAN BARAT', 'latitude' => 0.110378, 'longitude' => 99.827787],
+    ['code' => '13.71', 'province_code' => '13', 'name' => 'KOTA PADANG', 'latitude' => -0.875877, 'longitude' => 100.387288],
+    ['code' => '13.72', 'province_code' => '13', 'name' => 'KOTA SOLOK', 'latitude' => -0.799481, 'longitude' => 100.652782],
+    ['code' => '13.73', 'province_code' => '13', 'name' => 'KOTA SAWAHLUNTO', 'latitude' => -0.675037, 'longitude' => 100.767501],
+    ['code' => '13.74', 'province_code' => '13', 'name' => 'KOTA PADANG PANJANG', 'latitude' => -0.462119, 'longitude' => 100.390399],
+    ['code' => '13.75', 'province_code' => '13', 'name' => 'KOTA BUKITTINGGI', 'latitude' => -0.285465, 'longitude' => 100.367807],
+    ['code' => '13.76', 'province_code' => '13', 'name' => 'KOTA PAYAKUMBUH', 'latitude' => -0.222518, 'longitude' => 100.631978],
+    ['code' => '13.77', 'province_code' => '13', 'name' => 'KOTA PARIAMAN', 'latitude' => -0.62899, 'longitude' => 100.137713],
+    ['code' => '14.01', 'province_code' => '14', 'name' => 'KABUPATEN KAMPAR', 'latitude' => 0.313892, 'longitude' => 101.017989],
+    ['code' => '14.02', 'province_code' => '14', 'name' => 'KABUPATEN INDRAGIRI HULU', 'latitude' => -0.393003, 'longitude' => 102.437572],
+    ['code' => '14.03', 'province_code' => '14', 'name' => 'KABUPATEN BENGKALIS', 'latitude' => 1.473192, 'longitude' => 102.113335],
+    ['code' => '14.04', 'province_code' => '14', 'name' => 'KABUPATEN INDRAGIRI HILIR', 'latitude' => -0.315191, 'longitude' => 103.15785],
+    ['code' => '14.05', 'province_code' => '14', 'name' => 'KABUPATEN PELALAWAN', 'latitude' => 0.383787, 'longitude' => 101.841958],
+    ['code' => '14.06', 'province_code' => '14', 'name' => 'KABUPATEN ROKAN HULU', 'latitude' => 0.899709, 'longitude' => 100.30741],
+    ['code' => '14.07', 'province_code' => '14', 'name' => 'KABUPATEN ROKAN HILIR', 'latitude' => 2.099494, 'longitude' => 100.817651],
+    ['code' => '14.08', 'province_code' => '14', 'name' => 'KABUPATEN SIAK', 'latitude' => 0.804539, 'longitude' => 102.020319],
+    ['code' => '14.09', 'province_code' => '14', 'name' => 'KABUPATEN KUANTAN SINGINGI', 'latitude' => -0.505301, 'longitude' => 101.538077],
+    ['code' => '14.10', 'province_code' => '14', 'name' => 'KABUPATEN KEPULAUAN MERANTI', 'latitude' => 1.000703, 'longitude' => 102.725682],
+    ['code' => '14.71', 'province_code' => '14', 'name' => 'KOTA PEKANBARU', 'latitude' => 0.513419, 'longitude' => 101.447022],
+    ['code' => '14.72', 'province_code' => '14', 'name' => 'KOTA DUMAI', 'latitude' => 1.605411, 'longitude' => 101.39166],
+    ['code' => '15.01', 'province_code' => '15', 'name' => 'KABUPATEN KERINCI', 'latitude' => -2.057363, 'longitude' => 101.388466],
+    ['code' => '15.02', 'province_code' => '15', 'name' => 'KABUPATEN MERANGIN', 'latitude' => -2.060061, 'longitude' => 102.274329],
+    ['code' => '15.03', 'province_code' => '15', 'name' => 'KABUPATEN SAROLANGUN', 'latitude' => -2.313216, 'longitude' => 102.750412],
+    ['code' => '15.04', 'province_code' => '15', 'name' => 'KABUPATEN BATANGHARI', 'latitude' => -1.693609, 'longitude' => 103.272996],
+    ['code' => '15.05', 'province_code' => '15', 'name' => 'KABUPATEN MUARO JAMBI', 'latitude' => -1.448251, 'longitude' => 103.515496],
+    ['code' => '15.06', 'province_code' => '15', 'name' => 'KABUPATEN TANJUNG JABUNG BARAT', 'latitude' => -0.826701, 'longitude' => 103.461214],
+    ['code' => '15.07', 'province_code' => '15', 'name' => 'KABUPATEN TANJUNG JABUNG TIMUR', 'latitude' => -1.206229, 'longitude' => 103.790428],
+    ['code' => '15.08', 'province_code' => '15', 'name' => 'KABUPATEN BUNGO', 'latitude' => -1.516316, 'longitude' => 102.118689],
+    ['code' => '15.09', 'province_code' => '15', 'name' => 'KABUPATEN TEBO', 'latitude' => -1.466216, 'longitude' => 102.358276],
+    ['code' => '15.71', 'province_code' => '15', 'name' => 'KOTA JAMBI', 'latitude' => -1.630501, 'longitude' => 103.60727],
+    ['code' => '15.72', 'province_code' => '15', 'name' => 'KOTA SUNGAI PENUH', 'latitude' => -2.07091, 'longitude' => 101.396078],
+    ['code' => '16.01', 'province_code' => '16', 'name' => 'KABUPATEN OGAN KOMERING ULU', 'latitude' => -4.16571, 'longitude' => 104.197771],
+    ['code' => '16.02', 'province_code' => '16', 'name' => 'KABUPATEN OGAN KOMERING ILIR', 'latitude' => -3.411646, 'longitude' => 104.82302],
+    ['code' => '16.03', 'province_code' => '16', 'name' => 'KABUPATEN MUARA ENIM', 'latitude' => -3.65563, 'longitude' => 103.777004],
+    ['code' => '16.04', 'province_code' => '16', 'name' => 'KABUPATEN LAHAT', 'latitude' => -3.778186, 'longitude' => 103.550481],
+    ['code' => '16.05', 'province_code' => '16', 'name' => 'KABUPATEN MUSI RAWAS', 'latitude' => -3.243508, 'longitude' => 103.011586],
+    ['code' => '16.06', 'province_code' => '16', 'name' => 'KABUPATEN MUSI BANYUASIN', 'latitude' => -2.888843, 'longitude' => 103.840229],
+    ['code' => '16.07', 'province_code' => '16', 'name' => 'KABUPATEN BANYUASIN', 'latitude' => -2.916811, 'longitude' => 104.406642],
+    ['code' => '16.08', 'province_code' => '16', 'name' => 'KABUPATEN OGAN KOMERING ULU TIMUR', 'latitude' => -4.368781, 'longitude' => 104.358447],
+    ['code' => '16.09', 'province_code' => '16', 'name' => 'KABUPATEN OGAN KOMERING ULU SELATAN', 'latitude' => -4.532324, 'longitude' => 104.095362],
+    ['code' => '16.10', 'province_code' => '16', 'name' => 'KABUPATEN OGAN ILIR', 'latitude' => -3.260584, 'longitude' => 104.652535],
+    ['code' => '16.11', 'province_code' => '16', 'name' => 'KABUPATEN EMPAT LAWANG', 'latitude' => -3.609844, 'longitude' => 103.102764],
+    ['code' => '16.12', 'province_code' => '16', 'name' => 'KABUPATEN PENUKAL ABAB LEMATANG ILIR', 'latitude' => -3.309874, 'longitude' => 103.884051],
+    ['code' => '16.13', 'province_code' => '16', 'name' => 'KABUPATEN MUSI RAWAS UTARA', 'latitude' => -2.73469, 'longitude' => 102.901127],
+    ['code' => '16.71', 'province_code' => '16', 'name' => 'KOTA PALEMBANG', 'latitude' => -2.991046, 'longitude' => 104.756751],
+    ['code' => '16.72', 'province_code' => '16', 'name' => 'KOTA PAGAR ALAM', 'latitude' => -4.039322, 'longitude' => 103.19702],
+    ['code' => '16.73', 'province_code' => '16', 'name' => 'KOTA LUBUK LINGGAU', 'latitude' => -3.325842, 'longitude' => 102.825387],
+    ['code' => '16.74', 'province_code' => '16', 'name' => 'KOTA PRABUMULIH', 'latitude' => -3.368938, 'longitude' => 104.308426],
+    ['code' => '17.01', 'province_code' => '17', 'name' => 'KABUPATEN BENGKULU SELATAN', 'latitude' => -4.439935, 'longitude' => 102.895202],
+    ['code' => '17.02', 'province_code' => '17', 'name' => 'KABUPATEN REJANG LEBONG', 'latitude' => -3.477964, 'longitude' => 102.531886],
+    ['code' => '17.03', 'province_code' => '17', 'name' => 'KABUPATEN BENGKULU UTARA', 'latitude' => -3.436858, 'longitude' => 102.201786],
+    ['code' => '17.04', 'province_code' => '17', 'name' => 'KABUPATEN KAUR', 'latitude' => -4.75911, 'longitude' => 103.3491],
+    ['code' => '17.05', 'province_code' => '17', 'name' => 'KABUPATEN SELUMA', 'latitude' => -4.07763, 'longitude' => 102.556254],
+    ['code' => '17.06', 'province_code' => '17', 'name' => 'KABUPATEN MUKOMUKO', 'latitude' => -2.552763, 'longitude' => 101.104214],
+    ['code' => '17.07', 'province_code' => '17', 'name' => 'KABUPATEN LEBONG', 'latitude' => -3.157449, 'longitude' => 102.182847],
+    ['code' => '17.08', 'province_code' => '17', 'name' => 'KABUPATEN KEPAHIANG', 'latitude' => -3.625109, 'longitude' => 102.556345],
+    ['code' => '17.09', 'province_code' => '17', 'name' => 'KABUPATEN BENGKULU TENGAH', 'latitude' => -3.772855, 'longitude' => 102.38999],
+    ['code' => '17.71', 'province_code' => '17', 'name' => 'KOTA BENGKULU', 'latitude' => -3.792845, 'longitude' => 102.260764],
+    ['code' => '18.01', 'province_code' => '18', 'name' => 'KABUPATEN LAMPUNG SELATAN', 'latitude' => -5.717676, 'longitude' => 105.585348],
+    ['code' => '18.02', 'province_code' => '18', 'name' => 'KABUPATEN LAMPUNG TENGAH', 'latitude' => -4.977247, 'longitude' => 105.21014],
+    ['code' => '18.03', 'province_code' => '18', 'name' => 'KABUPATEN LAMPUNG UTARA', 'latitude' => -4.82919, 'longitude' => 104.887445],
+    ['code' => '18.04', 'province_code' => '18', 'name' => 'KABUPATEN LAMPUNG BARAT', 'latitude' => -5.018975, 'longitude' => 104.060763],
+    ['code' => '18.05', 'province_code' => '18', 'name' => 'KABUPATEN TULANG BAWANG', 'latitude' => -4.494997, 'longitude' => 105.220212],
+    ['code' => '18.06', 'province_code' => '18', 'name' => 'KABUPATEN TANGGAMUS', 'latitude' => -5.480675, 'longitude' => 104.6823],
+    ['code' => '18.07', 'province_code' => '18', 'name' => 'KABUPATEN LAMPUNG TIMUR', 'latitude' => -5.048183, 'longitude' => 105.528255],
+    ['code' => '18.08', 'province_code' => '18', 'name' => 'KABUPATEN WAY KANAN', 'latitude' => -4.506182, 'longitude' => 104.511314],
+    ['code' => '18.09', 'province_code' => '18', 'name' => 'KABUPATEN PESAWARAN', 'latitude' => -5.397533, 'longitude' => 105.070108],
+    ['code' => '18.10', 'province_code' => '18', 'name' => 'KABUPATEN PRINGSEWU', 'latitude' => -5.344242, 'longitude' => 105.006402],
+    ['code' => '18.11', 'province_code' => '18', 'name' => 'KABUPATEN MESUJI', 'latitude' => -3.873163, 'longitude' => 105.427879],
+    ['code' => '18.12', 'province_code' => '18', 'name' => 'KABUPATEN TULANG BAWANG BARAT', 'latitude' => -4.499407, 'longitude' => 105.1199],
+    ['code' => '18.13', 'province_code' => '18', 'name' => 'KABUPATEN PESISIR BARAT', 'latitude' => -5.188425, 'longitude' => 103.934584],
+    ['code' => '18.71', 'province_code' => '18', 'name' => 'KOTA BANDAR LAMPUNG', 'latitude' => -5.429579, 'longitude' => 105.262568],
+    ['code' => '18.72', 'province_code' => '18', 'name' => 'KOTA METRO', 'latitude' => -5.113689, 'longitude' => 105.306904],
+    ['code' => '19.01', 'province_code' => '19', 'name' => 'KABUPATEN BANGKA', 'latitude' => -1.887311, 'longitude' => 106.104827],
+    ['code' => '19.02', 'province_code' => '19', 'name' => 'KABUPATEN BELITUNG', 'latitude' => -2.742308, 'longitude' => 107.654315],
+    ['code' => '19.03', 'province_code' => '19', 'name' => 'KABUPATEN BANGKA SELATAN', 'latitude' => -3.019747, 'longitude' => 106.511747],
+    ['code' => '19.04', 'province_code' => '19', 'name' => 'KABUPATEN BANGKA TENGAH', 'latitude' => -2.515349, 'longitude' => 106.415894],
+    ['code' => '19.05', 'province_code' => '19', 'name' => 'KABUPATEN BANGKA BARAT', 'latitude' => -2.05861, 'longitude' => 105.201381],
+    ['code' => '19.06', 'province_code' => '19', 'name' => 'KABUPATEN BELITUNG TIMUR', 'latitude' => -2.883346, 'longitude' => 108.239304],
+    ['code' => '19.71', 'province_code' => '19', 'name' => 'KOTA PANGKAL PINANG', 'latitude' => -2.140979, 'longitude' => 106.115914],
+    ['code' => '21.01', 'province_code' => '21', 'name' => 'KABUPATEN BINTAN', 'latitude' => 1.086704, 'longitude' => 104.502145],
+    ['code' => '21.02', 'province_code' => '21', 'name' => 'KABUPATEN KARIMUN', 'latitude' => 1.032978, 'longitude' => 103.375781],
+    ['code' => '21.03', 'province_code' => '21', 'name' => 'KABUPATEN NATUNA', 'latitude' => 3.923444, 'longitude' => 108.336932],
+    ['code' => '21.04', 'province_code' => '21', 'name' => 'KABUPATEN LINGGA', 'latitude' => -0.209993, 'longitude' => 104.604659],
+    ['code' => '21.05', 'province_code' => '21', 'name' => 'KABUPATEN KEPULAUAN ANAMBAS', 'latitude' => 3.214546, 'longitude' => 106.248702],
+    ['code' => '21.71', 'province_code' => '21', 'name' => 'KOTA BATAM', 'latitude' => 1.128745, 'longitude' => 104.055333],
+    ['code' => '21.72', 'province_code' => '21', 'name' => 'KOTA TANJUNG PINANG', 'latitude' => 0.965343, 'longitude' => 104.440987],
+    ['code' => '31.01', 'province_code' => '31', 'name' => 'KABUPATEN ADMINISTRASI KEPULAUAN SERIBU', 'latitude' => -5.746481, 'longitude' => 106.61316],
+    ['code' => '31.71', 'province_code' => '31', 'name' => 'KOTA ADMINISTRASI JAKARTA PUSAT', 'latitude' => -6.172913, 'longitude' => 106.818696],
+    ['code' => '31.72', 'province_code' => '31', 'name' => 'KOTA ADMINISTRASI JAKARTA UTARA', 'latitude' => -6.120028, 'longitude' => 106.892495],
+    ['code' => '31.73', 'province_code' => '31', 'name' => 'KOTA ADMINISTRASI JAKARTA BARAT', 'latitude' => -6.184335, 'longitude' => 106.736621],
+    ['code' => '31.74', 'province_code' => '31', 'name' => 'KOTA ADMINISTRASI JAKARTA SELATAN', 'latitude' => -6.247775, 'longitude' => 106.807637],
+    ['code' => '31.75', 'province_code' => '31', 'name' => 'KOTA ADMINISTRASI JAKARTA TIMUR', 'latitude' => -6.213686, 'longitude' => 106.944008],
+    ['code' => '32.01', 'province_code' => '32', 'name' => 'KABUPATEN BOGOR', 'latitude' => -6.479479, 'longitude' => 106.824717],
+    ['code' => '32.02', 'province_code' => '32', 'name' => 'KABUPATEN SUKABUMI', 'latitude' => -6.989165, 'longitude' => 106.550223],
+    ['code' => '32.03', 'province_code' => '32', 'name' => 'KABUPATEN CIANJUR', 'latitude' => -6.822746, 'longitude' => 107.139484],
+    ['code' => '32.04', 'province_code' => '32', 'name' => 'KABUPATEN BANDUNG', 'latitude' => -7.021855, 'longitude' => 107.527551],
+    ['code' => '32.05', 'province_code' => '32', 'name' => 'KABUPATEN GARUT', 'latitude' => -7.202672, 'longitude' => 107.886068],
+    ['code' => '32.06', 'province_code' => '32', 'name' => 'KABUPATEN TASIKMALAYA', 'latitude' => -7.361039, 'longitude' => 108.113076],
+    ['code' => '32.07', 'province_code' => '32', 'name' => 'KABUPATEN CIAMIS', 'latitude' => -7.325899, 'longitude' => 108.351401],
+    ['code' => '32.08', 'province_code' => '32', 'name' => 'KABUPATEN KUNINGAN', 'latitude' => -6.975865, 'longitude' => 108.483105],
+    ['code' => '32.09', 'province_code' => '32', 'name' => 'KABUPATEN CIREBON', 'latitude' => -6.764528, 'longitude' => 108.47862],
+    ['code' => '32.10', 'province_code' => '32', 'name' => 'KABUPATEN MAJALENGKA', 'latitude' => -6.836271, 'longitude' => 108.227555],
+    ['code' => '32.11', 'province_code' => '32', 'name' => 'KABUPATEN SUMEDANG', 'latitude' => -6.861204, 'longitude' => 107.920617],
+    ['code' => '32.12', 'province_code' => '32', 'name' => 'KABUPATEN INDRAMAYU', 'latitude' => -6.32708, 'longitude' => 108.323209],
+    ['code' => '32.13', 'province_code' => '32', 'name' => 'KABUPATEN SUBANG', 'latitude' => -6.571295, 'longitude' => 107.762353],
+    ['code' => '32.14', 'province_code' => '32', 'name' => 'KABUPATEN PURWAKARTA', 'latitude' => -6.556212, 'longitude' => 107.441257],
+    ['code' => '32.15', 'province_code' => '32', 'name' => 'KABUPATEN KARAWANG', 'latitude' => -6.301616, 'longitude' => 107.304882],
+    ['code' => '32.16', 'province_code' => '32', 'name' => 'KABUPATEN BEKASI', 'latitude' => -6.247447, 'longitude' => 107.148452],
+    ['code' => '32.17', 'province_code' => '32', 'name' => 'KABUPATEN BANDUNG BARAT', 'latitude' => -6.865221, 'longitude' => 107.491977],
+    ['code' => '32.18', 'province_code' => '32', 'name' => 'KABUPATEN PANGANDARAN', 'latitude' => -7.615061, 'longitude' => 108.498827],
+    ['code' => '32.71', 'province_code' => '32', 'name' => 'KOTA BOGOR', 'latitude' => -6.595057, 'longitude' => 106.794112],
+    ['code' => '32.72', 'province_code' => '32', 'name' => 'KOTA SUKABUMI', 'latitude' => -6.917619, 'longitude' => 106.931857],
+    ['code' => '32.73', 'province_code' => '32', 'name' => 'KOTA BANDUNG', 'latitude' => -6.910656, 'longitude' => 107.60987],
+    ['code' => '32.74', 'province_code' => '32', 'name' => 'KOTA CIREBON', 'latitude' => -6.706735, 'longitude' => 108.558247],
+    ['code' => '32.75', 'province_code' => '32', 'name' => 'KOTA BEKASI', 'latitude' => -6.236014, 'longitude' => 106.994248],
+    ['code' => '32.76', 'province_code' => '32', 'name' => 'KOTA DEPOK', 'latitude' => -6.394166, 'longitude' => 106.822689],
+    ['code' => '32.77', 'province_code' => '32', 'name' => 'KOTA CIMAHI', 'latitude' => -6.870807, 'longitude' => 107.555159],
+    ['code' => '32.78', 'province_code' => '32', 'name' => 'KOTA TASIKMALAYA', 'latitude' => -7.316053, 'longitude' => 108.197014],
+    ['code' => '32.79', 'province_code' => '32', 'name' => 'KOTA BANJAR', 'latitude' => -7.362161, 'longitude' => 108.55959],
+    ['code' => '33.01', 'province_code' => '33', 'name' => 'KABUPATEN CILACAP', 'latitude' => -7.725599, 'longitude' => 109.00954],
+    ['code' => '33.02', 'province_code' => '33', 'name' => 'KABUPATEN BANYUMAS', 'latitude' => -7.422799, 'longitude' => 109.230083],
+    ['code' => '33.03', 'province_code' => '33', 'name' => 'KABUPATEN PURBALINGGA', 'latitude' => -7.388814, 'longitude' => 109.364076],
+    ['code' => '33.04', 'province_code' => '33', 'name' => 'KABUPATEN BANJARNEGARA', 'latitude' => -7.395695, 'longitude' => 109.69607],
+    ['code' => '33.05', 'province_code' => '33', 'name' => 'KABUPATEN KEBUMEN', 'latitude' => -7.668444, 'longitude' => 109.653716],
+    ['code' => '33.06', 'province_code' => '33', 'name' => 'KABUPATEN PURWOREJO', 'latitude' => -7.713975, 'longitude' => 110.008299],
+    ['code' => '33.07', 'province_code' => '33', 'name' => 'KABUPATEN WONOSOBO', 'latitude' => -7.358331, 'longitude' => 109.905163],
+    ['code' => '33.08', 'province_code' => '33', 'name' => 'KABUPATEN MAGELANG', 'latitude' => -7.596984, 'longitude' => 110.223531],
+    ['code' => '33.09', 'province_code' => '33', 'name' => 'KABUPATEN BOYOLALI', 'latitude' => -7.545656, 'longitude' => 110.610596],
+    ['code' => '33.10', 'province_code' => '33', 'name' => 'KABUPATEN KLATEN', 'latitude' => -7.712385, 'longitude' => 110.592136],
+    ['code' => '33.11', 'province_code' => '33', 'name' => 'KABUPATEN SUKOHARJO', 'latitude' => -7.664599, 'longitude' => 110.835868],
+    ['code' => '33.12', 'province_code' => '33', 'name' => 'KABUPATEN WONOGIRI', 'latitude' => -7.815058, 'longitude' => 110.925684],
+    ['code' => '33.13', 'province_code' => '33', 'name' => 'KABUPATEN KARANGANYAR', 'latitude' => -7.595517, 'longitude' => 110.93964],
+    ['code' => '33.14', 'province_code' => '33', 'name' => 'KABUPATEN SRAGEN', 'latitude' => -7.426355, 'longitude' => 111.023179],
+    ['code' => '33.15', 'province_code' => '33', 'name' => 'KABUPATEN GROBOGAN', 'latitude' => -7.082059, 'longitude' => 110.917372],
+    ['code' => '33.16', 'province_code' => '33', 'name' => 'KABUPATEN BLORA', 'latitude' => -6.969719, 'longitude' => 111.414923],
+    ['code' => '33.17', 'province_code' => '33', 'name' => 'KABUPATEN REMBANG', 'latitude' => -6.703466, 'longitude' => 111.342621],
+    ['code' => '33.18', 'province_code' => '33', 'name' => 'KABUPATEN PATI', 'latitude' => -6.752227, 'longitude' => 111.039948],
+    ['code' => '33.19', 'province_code' => '33', 'name' => 'KABUPATEN KUDUS', 'latitude' => -6.805652, 'longitude' => 110.842195],
+    ['code' => '33.20', 'province_code' => '33', 'name' => 'KABUPATEN JEPARA', 'latitude' => -6.590094, 'longitude' => 110.66813],
+    ['code' => '33.21', 'province_code' => '33', 'name' => 'KABUPATEN DEMAK', 'latitude' => -6.891355, 'longitude' => 110.638389],
+    ['code' => '33.22', 'province_code' => '33', 'name' => 'KABUPATEN SEMARANG', 'latitude' => -7.128957, 'longitude' => 110.404091],
+    ['code' => '33.23', 'province_code' => '33', 'name' => 'KABUPATEN TEMANGGUNG', 'latitude' => -7.315316, 'longitude' => 110.181892],
+    ['code' => '33.24', 'province_code' => '33', 'name' => 'KABUPATEN KENDAL', 'latitude' => -6.922837, 'longitude' => 110.203567],
+    ['code' => '33.25', 'province_code' => '33', 'name' => 'KABUPATEN BATANG', 'latitude' => -6.910711, 'longitude' => 109.729682],
+    ['code' => '33.26', 'province_code' => '33', 'name' => 'KABUPATEN PEKALONGAN', 'latitude' => -7.025036, 'longitude' => 109.591145],
+    ['code' => '33.27', 'province_code' => '33', 'name' => 'KABUPATEN PEMALANG', 'latitude' => -6.893151, 'longitude' => 109.380719],
+    ['code' => '33.28', 'province_code' => '33', 'name' => 'KABUPATEN TEGAL', 'latitude' => -6.995408, 'longitude' => 109.127895],
+    ['code' => '33.29', 'province_code' => '33', 'name' => 'KABUPATEN BREBES', 'latitude' => -6.870111, 'longitude' => 109.039211],
+    ['code' => '33.71', 'province_code' => '33', 'name' => 'KOTA MAGELANG', 'latitude' => -7.503711, 'longitude' => 110.221471],
+    ['code' => '33.72', 'province_code' => '33', 'name' => 'KOTA SURAKARTA', 'latitude' => -7.569261, 'longitude' => 110.82946],
+    ['code' => '33.73', 'province_code' => '33', 'name' => 'KOTA SALATIGA', 'latitude' => -7.330437, 'longitude' => 110.50083],
+    ['code' => '33.74', 'province_code' => '33', 'name' => 'KOTA SEMARANG', 'latitude' => -6.98168, 'longitude' => 110.412234],
+    ['code' => '33.75', 'province_code' => '33', 'name' => 'KOTA PEKALONGAN', 'latitude' => -6.89695, 'longitude' => 109.662081],
+    ['code' => '33.76', 'province_code' => '33', 'name' => 'KOTA TEGAL', 'latitude' => -6.870409, 'longitude' => 109.137416],
+    ['code' => '34.01', 'province_code' => '34', 'name' => 'KABUPATEN KULON PROGO', 'latitude' => -7.857809, 'longitude' => 110.159161],
+    ['code' => '34.02', 'province_code' => '34', 'name' => 'KABUPATEN BANTUL', 'latitude' => -7.88619, 'longitude' => 110.327838],
+    ['code' => '34.03', 'province_code' => '34', 'name' => 'KABUPATEN GUNUNGKIDUL', 'latitude' => -7.96408, 'longitude' => 110.601538],
+    ['code' => '34.04', 'province_code' => '34', 'name' => 'KABUPATEN SLEMAN', 'latitude' => -7.716547, 'longitude' => 110.355773],
+    ['code' => '34.71', 'province_code' => '34', 'name' => 'KOTA YOGYAKARTA', 'latitude' => -7.799905, 'longitude' => 110.391371],
+    ['code' => '35.01', 'province_code' => '35', 'name' => 'KABUPATEN PACITAN', 'latitude' => -8.194485, 'longitude' => 111.103165],
+    ['code' => '35.02', 'province_code' => '35', 'name' => 'KABUPATEN PONOROGO', 'latitude' => -7.870874, 'longitude' => 111.462549],
+    ['code' => '35.03', 'province_code' => '35', 'name' => 'KABUPATEN TRENGGALEK', 'latitude' => -8.04791, 'longitude' => 111.709151],
+    ['code' => '35.04', 'province_code' => '35', 'name' => 'KABUPATEN TULUNGAGUNG', 'latitude' => -8.064365, 'longitude' => 111.90068],
+    ['code' => '35.05', 'province_code' => '35', 'name' => 'KABUPATEN BLITAR', 'latitude' => -8.123931, 'longitude' => 112.213074],
+    ['code' => '35.06', 'province_code' => '35', 'name' => 'KABUPATEN KEDIRI', 'latitude' => -7.802165, 'longitude' => 112.041114],
+    ['code' => '35.07', 'province_code' => '35', 'name' => 'KABUPATEN MALANG', 'latitude' => -8.105459, 'longitude' => 112.573291],
+    ['code' => '35.08', 'province_code' => '35', 'name' => 'KABUPATEN LUMAJANG', 'latitude' => -8.135206, 'longitude' => 113.224395],
+    ['code' => '35.09', 'province_code' => '35', 'name' => 'KABUPATEN JEMBER', 'latitude' => -8.169671, 'longitude' => 113.702151],
+    ['code' => '35.10', 'province_code' => '35', 'name' => 'KABUPATEN BANYUWANGI', 'latitude' => -8.223037, 'longitude' => 114.366435],
+    ['code' => '35.11', 'province_code' => '35', 'name' => 'KABUPATEN BONDOWOSO', 'latitude' => -7.914445, 'longitude' => 113.821851],
+    ['code' => '35.12', 'province_code' => '35', 'name' => 'KABUPATEN SITUBONDO', 'latitude' => -7.707341, 'longitude' => 114.001775],
+    ['code' => '35.13', 'province_code' => '35', 'name' => 'KABUPATEN PROBOLINGGO', 'latitude' => -7.761819, 'longitude' => 113.415973],
+    ['code' => '35.14', 'province_code' => '35', 'name' => 'KABUPATEN PASURUAN', 'latitude' => -7.649012, 'longitude' => 112.905159],
+    ['code' => '35.15', 'province_code' => '35', 'name' => 'KABUPATEN SIDOARJO', 'latitude' => -7.447173, 'longitude' => 112.718078],
+    ['code' => '35.16', 'province_code' => '35', 'name' => 'KABUPATEN MOJOKERTO', 'latitude' => -7.462844, 'longitude' => 112.43342],
+    ['code' => '35.17', 'province_code' => '35', 'name' => 'KABUPATEN JOMBANG', 'latitude' => -7.556402, 'longitude' => 112.23461],
+    ['code' => '35.18', 'province_code' => '35', 'name' => 'KABUPATEN NGANJUK', 'latitude' => -7.601983, 'longitude' => 111.901895],
+    ['code' => '35.19', 'province_code' => '35', 'name' => 'KABUPATEN MADIUN', 'latitude' => -7.538541, 'longitude' => 111.653483],
+    ['code' => '35.20', 'province_code' => '35', 'name' => 'KABUPATEN MAGETAN', 'latitude' => -7.656157, 'longitude' => 111.329269],
+    ['code' => '35.21', 'province_code' => '35', 'name' => 'KABUPATEN NGAWI', 'latitude' => -7.401286, 'longitude' => 111.445443],
+    ['code' => '35.22', 'province_code' => '35', 'name' => 'KABUPATEN BOJONEGORO', 'latitude' => -7.149935, 'longitude' => 111.881543],
+    ['code' => '35.23', 'province_code' => '35', 'name' => 'KABUPATEN TUBAN', 'latitude' => -6.896104, 'longitude' => 112.065063],
+    ['code' => '35.24', 'province_code' => '35', 'name' => 'KABUPATEN LAMONGAN', 'latitude' => -7.121035, 'longitude' => 112.415434],
+    ['code' => '35.25', 'province_code' => '35', 'name' => 'KABUPATEN GRESIK', 'latitude' => -7.170588, 'longitude' => 112.599676],
+    ['code' => '35.26', 'province_code' => '35', 'name' => 'KABUPATEN BANGKALAN', 'latitude' => -7.046392, 'longitude' => 112.737067],
+    ['code' => '35.27', 'province_code' => '35', 'name' => 'KABUPATEN SAMPANG', 'latitude' => -7.187535, 'longitude' => 113.23734],
+    ['code' => '35.28', 'province_code' => '35', 'name' => 'KABUPATEN PAMEKASAN', 'latitude' => -7.156884, 'longitude' => 113.471883],
+    ['code' => '35.29', 'province_code' => '35', 'name' => 'KABUPATEN SUMENEP', 'latitude' => -7.014033, 'longitude' => 113.863526],
+    ['code' => '35.71', 'province_code' => '35', 'name' => 'KOTA KEDIRI', 'latitude' => -7.812194, 'longitude' => 112.014284],
+    ['code' => '35.72', 'province_code' => '35', 'name' => 'KOTA BLITAR', 'latitude' => -8.099174, 'longitude' => 112.164554],
+    ['code' => '35.73', 'province_code' => '35', 'name' => 'KOTA MALANG', 'latitude' => -7.977788, 'longitude' => 112.633836],
+    ['code' => '35.74', 'province_code' => '35', 'name' => 'KOTA PROBOLINGGO', 'latitude' => -7.753678, 'longitude' => 113.21424],
+    ['code' => '35.75', 'province_code' => '35', 'name' => 'KOTA PASURUAN', 'latitude' => -7.647371, 'longitude' => 112.90855],
+    ['code' => '35.76', 'province_code' => '35', 'name' => 'KOTA MOJOKERTO', 'latitude' => -7.462815, 'longitude' => 112.433446],
+    ['code' => '35.77', 'province_code' => '35', 'name' => 'KOTA MADIUN', 'latitude' => -7.624397, 'longitude' => 111.520649],
+    ['code' => '35.78', 'province_code' => '35', 'name' => 'KOTA SURABAYA', 'latitude' => -7.258891, 'longitude' => 112.747039],
+    ['code' => '35.79', 'province_code' => '35', 'name' => 'KOTA BATU', 'latitude' => -7.862516, 'longitude' => 112.513353],
+    ['code' => '36.01', 'province_code' => '36', 'name' => 'KABUPATEN PANDEGLANG', 'latitude' => -6.316855, 'longitude' => 106.114794],
+    ['code' => '36.02', 'province_code' => '36', 'name' => 'KABUPATEN LEBAK', 'latitude' => -6.360767, 'longitude' => 106.246187],
+    ['code' => '36.03', 'province_code' => '36', 'name' => 'KABUPATEN TANGERANG', 'latitude' => -6.26963, 'longitude' => 106.484405],
+    ['code' => '36.04', 'province_code' => '36', 'name' => 'KABUPATEN SERANG', 'latitude' => -6.115303, 'longitude' => 106.152015],
+    ['code' => '36.71', 'province_code' => '36', 'name' => 'KOTA TANGERANG', 'latitude' => -6.164362, 'longitude' => 106.641071],
+    ['code' => '36.72', 'province_code' => '36', 'name' => 'KOTA CILEGON', 'latitude' => -6.009809, 'longitude' => 106.042129],
+    ['code' => '36.73', 'province_code' => '36', 'name' => 'KOTA SERANG', 'latitude' => -6.119698, 'longitude' => 106.173461],
+    ['code' => '36.74', 'province_code' => '36', 'name' => 'KOTA TANGERANG SELATAN', 'latitude' => -6.321568, 'longitude' => 106.707742],
+    ['code' => '51.01', 'province_code' => '51', 'name' => 'KABUPATEN JEMBRANA', 'latitude' => -8.357301, 'longitude' => 114.636901],
+    ['code' => '51.02', 'province_code' => '51', 'name' => 'KABUPATEN TABANAN', 'latitude' => -8.539498, 'longitude' => 115.131032],
+    ['code' => '51.03', 'province_code' => '51', 'name' => 'KABUPATEN BADUNG', 'latitude' => -8.601921, 'longitude' => 115.179145],
+    ['code' => '51.04', 'province_code' => '51', 'name' => 'KABUPATEN GIANYAR', 'latitude' => -8.540851, 'longitude' => 115.32411],
+    ['code' => '51.05', 'province_code' => '51', 'name' => 'KABUPATEN KLUNGKUNG', 'latitude' => -8.534402, 'longitude' => 115.40298],
+    ['code' => '51.06', 'province_code' => '51', 'name' => 'KABUPATEN BANGLI', 'latitude' => -8.461763, 'longitude' => 115.352477],
+    ['code' => '51.07', 'province_code' => '51', 'name' => 'KABUPATEN KARANGASEM', 'latitude' => -8.438847, 'longitude' => 115.612233],
+    ['code' => '51.08', 'province_code' => '51', 'name' => 'KABUPATEN BULELENG', 'latitude' => -8.12516, 'longitude' => 115.092849],
+    ['code' => '51.71', 'province_code' => '51', 'name' => 'KOTA DENPASAR', 'latitude' => -8.654459, 'longitude' => 115.216533],
+    ['code' => '52.01', 'province_code' => '52', 'name' => 'KABUPATEN LOMBOK BARAT', 'latitude' => -8.681396, 'longitude' => 116.136705],
+    ['code' => '52.02', 'province_code' => '52', 'name' => 'KABUPATEN LOMBOK TENGAH', 'latitude' => -8.706132, 'longitude' => 116.270034],
+    ['code' => '52.03', 'province_code' => '52', 'name' => 'KABUPATEN LOMBOK TIMUR', 'latitude' => -8.650939, 'longitude' => 116.529654],
+    ['code' => '52.04', 'province_code' => '52', 'name' => 'KABUPATEN SUMBAWA', 'latitude' => -8.489512, 'longitude' => 117.419689],
+    ['code' => '52.05', 'province_code' => '52', 'name' => 'KABUPATEN DOMPU', 'latitude' => -8.534112, 'longitude' => 118.464749],
+    ['code' => '52.06', 'province_code' => '52', 'name' => 'KABUPATEN BIMA', 'latitude' => -8.556533, 'longitude' => 118.670158],
+    ['code' => '52.07', 'province_code' => '52', 'name' => 'KABUPATEN SUMBAWA BARAT', 'latitude' => -8.75391, 'longitude' => 116.854265],
+    ['code' => '52.08', 'province_code' => '52', 'name' => 'KABUPATEN LOMBOK UTARA', 'latitude' => -8.356335, 'longitude' => 116.15927],
+    ['code' => '52.71', 'province_code' => '52', 'name' => 'KOTA MATARAM', 'latitude' => -8.582729, 'longitude' => 116.108138],
+    ['code' => '52.72', 'province_code' => '52', 'name' => 'KOTA BIMA', 'latitude' => -8.461655, 'longitude' => 118.74872],
+    ['code' => '53.01', 'province_code' => '53', 'name' => 'KABUPATEN KUPANG', 'latitude' => -10.072767, 'longitude' => 123.864463],
+    ['code' => '53.02', 'province_code' => '53', 'name' => 'KABUPATEN TIMOR TENGAH SELATAN', 'latitude' => -9.851781, 'longitude' => 124.266481],
+    ['code' => '53.03', 'province_code' => '53', 'name' => 'KABUPATEN TIMOR TENGAH UTARA', 'latitude' => -9.456935, 'longitude' => 124.475088],
+    ['code' => '53.04', 'province_code' => '53', 'name' => 'KABUPATEN BELU', 'latitude' => -9.105891, 'longitude' => 124.873577],
+    ['code' => '53.05', 'province_code' => '53', 'name' => 'KABUPATEN ALOR', 'latitude' => -8.209309, 'longitude' => 124.573464],
+    ['code' => '53.06', 'province_code' => '53', 'name' => 'KABUPATEN FLORES TIMUR', 'latitude' => -8.326455, 'longitude' => 123.003111],
+    ['code' => '53.07', 'province_code' => '53', 'name' => 'KABUPATEN SIKKA', 'latitude' => -8.616591, 'longitude' => 122.208082],
+    ['code' => '53.08', 'province_code' => '53', 'name' => 'KABUPATEN ENDE', 'latitude' => -8.843445, 'longitude' => 121.66223],
+    ['code' => '53.09', 'province_code' => '53', 'name' => 'KABUPATEN NGADA', 'latitude' => -8.785173, 'longitude' => 120.97473],
+    ['code' => '53.10', 'province_code' => '53', 'name' => 'KABUPATEN MANGGARAI', 'latitude' => -8.611447, 'longitude' => 120.464299],
+    ['code' => '53.11', 'province_code' => '53', 'name' => 'KABUPATEN SUMBA TIMUR', 'latitude' => -9.660788, 'longitude' => 120.261319],
+    ['code' => '53.12', 'province_code' => '53', 'name' => 'KABUPATEN SUMBA BARAT', 'latitude' => -9.647322, 'longitude' => 119.394007],
+    ['code' => '53.13', 'province_code' => '53', 'name' => 'KABUPATEN LEMBATA', 'latitude' => -8.359888, 'longitude' => 123.459243],
+    ['code' => '53.14', 'province_code' => '53', 'name' => 'KABUPATEN ROTE NDAO', 'latitude' => -10.757803, 'longitude' => 123.062591],
+    ['code' => '53.15', 'province_code' => '53', 'name' => 'KABUPATEN MANGGARAI BARAT', 'latitude' => -8.495965, 'longitude' => 119.894299],
+    ['code' => '53.16', 'province_code' => '53', 'name' => 'KABUPATEN NAGEKEO', 'latitude' => -8.575463, 'longitude' => 121.281129],
+    ['code' => '53.17', 'province_code' => '53', 'name' => 'KABUPATEN SUMBA TENGAH', 'latitude' => -9.622679, 'longitude' => 119.600435],
+    ['code' => '53.18', 'province_code' => '53', 'name' => 'KABUPATEN SUMBA BARAT DAYA', 'latitude' => -9.391735, 'longitude' => 119.180992],
+    ['code' => '53.19', 'province_code' => '53', 'name' => 'KABUPATEN MANGGARAI TIMUR', 'latitude' => -8.749471, 'longitude' => 120.608619],
+    ['code' => '53.20', 'province_code' => '53', 'name' => 'KABUPATEN SABU RAIJUA', 'latitude' => -10.452783, 'longitude' => 121.878033],
+    ['code' => '53.21', 'province_code' => '53', 'name' => 'KABUPATEN MALAKA', 'latitude' => -9.444597, 'longitude' => 124.91758],
+    ['code' => '53.71', 'province_code' => '53', 'name' => 'KOTA KUPANG', 'latitude' => -10.153896, 'longitude' => 123.61939],
+    ['code' => '61.01', 'province_code' => '61', 'name' => 'KABUPATEN SAMBAS', 'latitude' => 1.361092, 'longitude' => 109.3285],
+    ['code' => '61.02', 'province_code' => '61', 'name' => 'KABUPATEN MEMPAWAH', 'latitude' => 0.350738, 'longitude' => 108.962476],
+    ['code' => '61.03', 'province_code' => '61', 'name' => 'KABUPATEN SANGGAU', 'latitude' => 0.123484, 'longitude' => 110.596046],
+    ['code' => '61.04', 'province_code' => '61', 'name' => 'KABUPATEN KETAPANG', 'latitude' => -1.844228, 'longitude' => 109.978939],
+    ['code' => '61.05', 'province_code' => '61', 'name' => 'KABUPATEN SINTANG', 'latitude' => 0.078653, 'longitude' => 111.495484],
+    ['code' => '61.06', 'province_code' => '61', 'name' => 'KABUPATEN KAPUAS HULU', 'latitude' => 0.879257, 'longitude' => 112.925391],
+    ['code' => '61.07', 'province_code' => '61', 'name' => 'KABUPATEN BENGKAYANG', 'latitude' => 0.869104, 'longitude' => 109.497491],
+    ['code' => '61.08', 'province_code' => '61', 'name' => 'KABUPATEN LANDAK', 'latitude' => 0.374789, 'longitude' => 109.93827],
+    ['code' => '61.09', 'province_code' => '61', 'name' => 'KABUPATEN SEKADAU', 'latitude' => 0.00719, 'longitude' => 110.954719],
+    ['code' => '61.10', 'province_code' => '61', 'name' => 'KABUPATEN MELAWI', 'latitude' => -0.376928, 'longitude' => 111.764366],
+    ['code' => '61.11', 'province_code' => '61', 'name' => 'KABUPATEN KAYONG UTARA', 'latitude' => -1.253325, 'longitude' => 109.95438],
+    ['code' => '61.12', 'province_code' => '61', 'name' => 'KABUPATEN KUBU RAYA', 'latitude' => -0.126859, 'longitude' => 109.403956],
+    ['code' => '61.71', 'province_code' => '61', 'name' => 'KOTA PONTIANAK', 'latitude' => -0.022086, 'longitude' => 109.338104],
+    ['code' => '61.72', 'province_code' => '61', 'name' => 'KOTA SINGKAWANG', 'latitude' => 0.904786, 'longitude' => 108.977405],
+    ['code' => '62.01', 'province_code' => '62', 'name' => 'KABUPATEN KOTAWARINGIN BARAT', 'latitude' => -2.692217, 'longitude' => 111.634341],
+    ['code' => '62.02', 'province_code' => '62', 'name' => 'KABUPATEN KOTAWARINGIN TIMUR', 'latitude' => -2.537536, 'longitude' => 112.941011],
+    ['code' => '62.03', 'province_code' => '62', 'name' => 'KABUPATEN KAPUAS', 'latitude' => -2.964466, 'longitude' => 114.416134],
+    ['code' => '62.04', 'province_code' => '62', 'name' => 'KABUPATEN BARITO SELATAN', 'latitude' => -1.718999, 'longitude' => 114.845131],
+    ['code' => '62.05', 'province_code' => '62', 'name' => 'KABUPATEN BARITO UTARA', 'latitude' => -0.952075, 'longitude' => 114.898454],
+    ['code' => '62.06', 'province_code' => '62', 'name' => 'KABUPATEN KATINGAN', 'latitude' => -1.880719, 'longitude' => 113.399176],
+    ['code' => '62.07', 'province_code' => '62', 'name' => 'KABUPATEN SERUYAN', 'latitude' => -3.413843, 'longitude' => 112.541704],
+    ['code' => '62.08', 'province_code' => '62', 'name' => 'KABUPATEN SUKAMARA', 'latitude' => -2.760534, 'longitude' => 111.17663],
+    ['code' => '62.09', 'province_code' => '62', 'name' => 'KABUPATEN LAMANDAU', 'latitude' => -2.184822, 'longitude' => 111.42762],
+    ['code' => '62.10', 'province_code' => '62', 'name' => 'KABUPATEN GUNUNG MAS', 'latitude' => -1.127259, 'longitude' => 113.843872],
+    ['code' => '62.11', 'province_code' => '62', 'name' => 'KABUPATEN PULANG PISAU', 'latitude' => -2.716435, 'longitude' => 114.30473],
+    ['code' => '62.12', 'province_code' => '62', 'name' => 'KABUPATEN MURUNG RAYA', 'latitude' => -0.640207, 'longitude' => 114.568746],
+    ['code' => '62.13', 'province_code' => '62', 'name' => 'KABUPATEN BARITO TIMUR', 'latitude' => -2.115345, 'longitude' => 115.169201],
+    ['code' => '62.71', 'province_code' => '62', 'name' => 'KOTA PALANGKARAYA', 'latitude' => -2.173996, 'longitude' => 113.88027],
+    ['code' => '63.01', 'province_code' => '63', 'name' => 'KABUPATEN TANAH LAUT', 'latitude' => -3.799467, 'longitude' => 114.782551],
+    ['code' => '63.02', 'province_code' => '63', 'name' => 'KABUPATEN KOTABARU', 'latitude' => -3.236239, 'longitude' => 116.227975],
+    ['code' => '63.03', 'province_code' => '63', 'name' => 'KABUPATEN BANJAR', 'latitude' => -3.408735, 'longitude' => 114.848156],
+    ['code' => '63.04', 'province_code' => '63', 'name' => 'KABUPATEN BARITO KUALA', 'latitude' => -2.978339, 'longitude' => 114.765795],
+    ['code' => '63.05', 'province_code' => '63', 'name' => 'KABUPATEN TAPIN', 'latitude' => -2.932106, 'longitude' => 115.163298],
+    ['code' => '63.06', 'province_code' => '63', 'name' => 'KABUPATEN HULU SUNGAI SELATAN', 'latitude' => -2.78651, 'longitude' => 115.265945],
+    ['code' => '63.07', 'province_code' => '63', 'name' => 'KABUPATEN HULU SUNGAI TENGAH', 'latitude' => -2.584768, 'longitude' => 115.384532],
+    ['code' => '63.08', 'province_code' => '63', 'name' => 'KABUPATEN HULU SUNGAI UTARA', 'latitude' => -2.418873, 'longitude' => 115.254335],
+    ['code' => '63.09', 'province_code' => '63', 'name' => 'KABUPATEN TABALONG', 'latitude' => -2.164354, 'longitude' => 115.382357],
+    ['code' => '63.10', 'province_code' => '63', 'name' => 'KABUPATEN TANAH BUMBU', 'latitude' => -3.48324, 'longitude' => 115.946814],
+    ['code' => '63.11', 'province_code' => '63', 'name' => 'KABUPATEN BALANGAN', 'latitude' => -2.363568, 'longitude' => 115.471082],
+    ['code' => '63.71', 'province_code' => '63', 'name' => 'KOTA BANJARMASIN', 'latitude' => -3.327491, 'longitude' => 114.588999],
+    ['code' => '63.72', 'province_code' => '63', 'name' => 'KOTA BANJARBARU', 'latitude' => -3.438617, 'longitude' => 114.831061],
+    ['code' => '64.01', 'province_code' => '64', 'name' => 'KABUPATEN PASER', 'latitude' => -1.910435, 'longitude' => 116.191329],
+    ['code' => '64.02', 'province_code' => '64', 'name' => 'KABUPATEN KUTAI KARTANEGARA', 'latitude' => -0.44278, 'longitude' => 116.998671],
+    ['code' => '64.03', 'province_code' => '64', 'name' => 'KABUPATEN BERAU', 'latitude' => 2.150032, 'longitude' => 117.507601],
+    ['code' => '64.07', 'province_code' => '64', 'name' => 'KABUPATEN KUTAI BARAT', 'latitude' => -0.236548, 'longitude' => 115.696433],
+    ['code' => '64.08', 'province_code' => '64', 'name' => 'KABUPATEN KUTAI TIMUR', 'latitude' => 0.525682, 'longitude' => 117.608218],
+    ['code' => '64.09', 'province_code' => '64', 'name' => 'KABUPATEN PENAJAM PASER UTARA', 'latitude' => -1.308203, 'longitude' => 116.726904],
+    ['code' => '64.11', 'province_code' => '64', 'name' => 'KABUPATEN MAHAKAM ULU', 'latitude' => 0.505681, 'longitude' => 115.270807],
+    ['code' => '64.71', 'province_code' => '64', 'name' => 'KOTA BALIKPAPAN', 'latitude' => -1.276337, 'longitude' => 116.82776],
+    ['code' => '64.72', 'province_code' => '64', 'name' => 'KOTA SAMARINDA', 'latitude' => -0.491365, 'longitude' => 117.14598],
+    ['code' => '64.74', 'province_code' => '64', 'name' => 'KOTA BONTANG', 'latitude' => 0.069549, 'longitude' => 117.444199],
+    ['code' => '65.01', 'province_code' => '65', 'name' => 'KABUPATEN BULUNGAN', 'latitude' => 2.840859, 'longitude' => 117.398078],
+    ['code' => '65.02', 'province_code' => '65', 'name' => 'KABUPATEN MALINAU', 'latitude' => 3.551933, 'longitude' => 116.622085],
+    ['code' => '65.03', 'province_code' => '65', 'name' => 'KABUPATEN NUNUKAN', 'latitude' => 4.077076, 'longitude' => 117.718911],
+    ['code' => '65.04', 'province_code' => '65', 'name' => 'KABUPATEN TANA TIDUNG', 'latitude' => 3.602267, 'longitude' => 116.902751],
+    ['code' => '65.71', 'province_code' => '65', 'name' => 'KOTA TARAKAN', 'latitude' => 3.313743, 'longitude' => 117.604855],
+    ['code' => '71.01', 'province_code' => '71', 'name' => 'KABUPATEN BOLAANG MONGONDOW', 'latitude' => 0.870606, 'longitude' => 124.024404],
+    ['code' => '71.02', 'province_code' => '71', 'name' => 'KABUPATEN MINAHASA', 'latitude' => 1.300764, 'longitude' => 124.91087],
+    ['code' => '71.03', 'province_code' => '71', 'name' => 'KABUPATEN KEPULAUAN SANGIHE', 'latitude' => 3.612452, 'longitude' => 125.499643],
+    ['code' => '71.04', 'province_code' => '71', 'name' => 'KABUPATEN KEPULAUAN TALAUD', 'latitude' => 4.005792, 'longitude' => 126.681884],
+    ['code' => '71.05', 'province_code' => '71', 'name' => 'KABUPATEN MINAHASA SELATAN', 'latitude' => 1.213251, 'longitude' => 124.59717],
+    ['code' => '71.06', 'province_code' => '71', 'name' => 'KABUPATEN MINAHASA UTARA', 'latitude' => 1.459061, 'longitude' => 124.97473],
+    ['code' => '71.07', 'province_code' => '71', 'name' => 'KABUPATEN MINAHASA TENGGARA', 'latitude' => 1.041813, 'longitude' => 124.797621],
+    ['code' => '71.08', 'province_code' => '71', 'name' => 'KABUPATEN BOLAANG MONGONDOW UTARA', 'latitude' => 0.906457, 'longitude' => 123.259051],
+    ['code' => '71.09', 'province_code' => '71', 'name' => 'KABUPATEN KEP. SIAU TAGULANDANG BIARO', 'latitude' => 2.744597, 'longitude' => 125.362288],
+    ['code' => '71.10', 'province_code' => '71', 'name' => 'KABUPATEN BOLAANG MONGONDOW TIMUR', 'latitude' => 0.768523, 'longitude' => 124.613173],
+    ['code' => '71.11', 'province_code' => '71', 'name' => 'KABUPATEN BOLAANG MONGONDOW SELATAN', 'latitude' => 0.38354, 'longitude' => 124.047884],
+    ['code' => '71.71', 'province_code' => '71', 'name' => 'KOTA MANADO', 'latitude' => 1.484554, 'longitude' => 124.849125],
+    ['code' => '71.72', 'province_code' => '71', 'name' => 'KOTA BITUNG', 'latitude' => 1.445396, 'longitude' => 125.181983],
+    ['code' => '71.73', 'province_code' => '71', 'name' => 'KOTA TOMOHON', 'latitude' => 1.314525, 'longitude' => 124.827447],
+    ['code' => '71.74', 'province_code' => '71', 'name' => 'KOTA KOTAMOBAGU', 'latitude' => 0.743497, 'longitude' => 124.312668],
+    ['code' => '72.01', 'province_code' => '72', 'name' => 'KABUPATEN BANGGAI', 'latitude' => -0.994323, 'longitude' => 122.788538],
+    ['code' => '72.02', 'province_code' => '72', 'name' => 'KABUPATEN POSO', 'latitude' => -1.395202, 'longitude' => 120.754824],
+    ['code' => '72.03', 'province_code' => '72', 'name' => 'KABUPATEN DONGGALA', 'latitude' => -0.678464, 'longitude' => 119.752574],
+    ['code' => '72.04', 'province_code' => '72', 'name' => 'KABUPATEN TOLI-TOLI', 'latitude' => 1.018493, 'longitude' => 120.798023],
+    ['code' => '72.05', 'province_code' => '72', 'name' => 'KABUPATEN BUOL', 'latitude' => 1.169078, 'longitude' => 121.409756],
+    ['code' => '72.06', 'province_code' => '72', 'name' => 'KABUPATEN MOROWALI', 'latitude' => -2.480863, 'longitude' => 121.934285],
+    ['code' => '72.07', 'province_code' => '72', 'name' => 'KABUPATEN BANGGAI KEPULAUAN', 'latitude' => -1.311904, 'longitude' => 123.298444],
+    ['code' => '72.08', 'province_code' => '72', 'name' => 'KABUPATEN PARIGI MOUTONG', 'latitude' => -0.805427, 'longitude' => 120.160323],
+    ['code' => '72.09', 'province_code' => '72', 'name' => 'KABUPATEN TOJO UNA UNA', 'latitude' => -0.914651, 'longitude' => 121.588521],
+    ['code' => '72.10', 'province_code' => '72', 'name' => 'KABUPATEN SIGI', 'latitude' => -1.047398, 'longitude' => 119.950341],
+    ['code' => '72.11', 'province_code' => '72', 'name' => 'KABUPATEN BANGGAI LAUT', 'latitude' => -1.606292, 'longitude' => 123.496387],
+    ['code' => '72.12', 'province_code' => '72', 'name' => 'KABUPATEN MOROWALI UTARA', 'latitude' => -1.977283, 'longitude' => 121.335508],
+    ['code' => '72.71', 'province_code' => '72', 'name' => 'KOTA PALU', 'latitude' => -0.89996, 'longitude' => 119.891022],
+    ['code' => '73.01', 'province_code' => '73', 'name' => 'KABUPATEN KEPULAUAN SELAYAR', 'latitude' => -6.120175, 'longitude' => 120.466346],
+    ['code' => '73.02', 'province_code' => '73', 'name' => 'KABUPATEN BULUKUMBA', 'latitude' => -5.558244, 'longitude' => 120.193081],
+    ['code' => '73.03', 'province_code' => '73', 'name' => 'KABUPATEN BANTAENG', 'latitude' => -5.553154, 'longitude' => 119.967186],
+    ['code' => '73.04', 'province_code' => '73', 'name' => 'KABUPATEN JENEPONTO', 'latitude' => -5.676945, 'longitude' => 119.74939],
+    ['code' => '73.05', 'province_code' => '73', 'name' => 'KABUPATEN TAKALAR', 'latitude' => -5.425459, 'longitude' => 119.440631],
+    ['code' => '73.06', 'province_code' => '73', 'name' => 'KABUPATEN GOWA', 'latitude' => -5.199807, 'longitude' => 119.45319],
+    ['code' => '73.07', 'province_code' => '73', 'name' => 'KABUPATEN SINJAI', 'latitude' => -5.119899, 'longitude' => 120.235444],
+    ['code' => '73.08', 'province_code' => '73', 'name' => 'KABUPATEN BONE', 'latitude' => -4.539252, 'longitude' => 120.309255],
+    ['code' => '73.09', 'province_code' => '73', 'name' => 'KABUPATEN MAROS', 'latitude' => -5.016149, 'longitude' => 119.574459],
+    ['code' => '73.10', 'province_code' => '73', 'name' => 'KABUPATEN PANGKAJENE DAN KEPULAUAN', 'latitude' => -4.845732, 'longitude' => 119.559829],
+    ['code' => '73.11', 'province_code' => '73', 'name' => 'KABUPATEN BARRU', 'latitude' => -4.414041, 'longitude' => 119.617294],
+    ['code' => '73.12', 'province_code' => '73', 'name' => 'KABUPATEN SOPPENG', 'latitude' => -4.36445, 'longitude' => 119.897772],
+    ['code' => '73.13', 'province_code' => '73', 'name' => 'KABUPATEN WAJO', 'latitude' => -4.112072, 'longitude' => 120.027156],
+    ['code' => '73.14', 'province_code' => '73', 'name' => 'KABUPATEN SIDENRENG RAPPANG', 'latitude' => -3.933053, 'longitude' => 119.769305],
+    ['code' => '73.15', 'province_code' => '73', 'name' => 'KABUPATEN PINRANG', 'latitude' => -3.809259, 'longitude' => 119.650003],
+    ['code' => '73.16', 'province_code' => '73', 'name' => 'KABUPATEN ENREKANG', 'latitude' => -3.58833, 'longitude' => 119.770301],
+    ['code' => '73.17', 'province_code' => '73', 'name' => 'KABUPATEN LUWU', 'latitude' => -3.394692, 'longitude' => 120.36551],
+    ['code' => '73.18', 'province_code' => '73', 'name' => 'KABUPATEN TANA TORAJA', 'latitude' => -3.086543, 'longitude' => 119.857083],
+    ['code' => '73.22', 'province_code' => '73', 'name' => 'KABUPATEN LUWU UTARA', 'latitude' => -2.549854, 'longitude' => 120.346158],
+    ['code' => '73.24', 'province_code' => '73', 'name' => 'KABUPATEN LUWU TIMUR', 'latitude' => -2.616248, 'longitude' => 121.124106],
+    ['code' => '73.26', 'province_code' => '73', 'name' => 'KABUPATEN TORAJA UTARA', 'latitude' => -2.973621, 'longitude' => 119.894821],
+    ['code' => '73.71', 'province_code' => '73', 'name' => 'KOTA MAKASSAR', 'latitude' => -5.133216, 'longitude' => 119.407837],
+    ['code' => '73.72', 'province_code' => '73', 'name' => 'KOTA PAREPARE', 'latitude' => -4.027782, 'longitude' => 119.633328],
+    ['code' => '73.73', 'province_code' => '73', 'name' => 'KOTA PALOPO', 'latitude' => -3.008386, 'longitude' => 120.201564],
+    ['code' => '74.01', 'province_code' => '74', 'name' => 'KABUPATEN KOLAKA', 'latitude' => -4.060809, 'longitude' => 121.616119],
+    ['code' => '74.02', 'province_code' => '74', 'name' => 'KABUPATEN KONAWE', 'latitude' => -3.854234, 'longitude' => 122.042727],
+    ['code' => '74.03', 'province_code' => '74', 'name' => 'KABUPATEN MUNA', 'latitude' => -4.797871, 'longitude' => 122.718959],
+    ['code' => '74.04', 'province_code' => '74', 'name' => 'KABUPATEN BUTON', 'latitude' => -5.495774, 'longitude' => 122.840139],
+    ['code' => '74.05', 'province_code' => '74', 'name' => 'KABUPATEN KONAWE SELATAN', 'latitude' => -4.332036, 'longitude' => 122.281315],
+    ['code' => '74.06', 'province_code' => '74', 'name' => 'KABUPATEN BOMBANA', 'latitude' => -4.747235, 'longitude' => 122.011093],
+    ['code' => '74.07', 'province_code' => '74', 'name' => 'KABUPATEN WAKATOBI', 'latitude' => -5.3283, 'longitude' => 23.538901],
+    ['code' => '74.08', 'province_code' => '74', 'name' => 'KABUPATEN KOLAKA UTARA', 'latitude' => -3.490135, 'longitude' => 120.887528],
+    ['code' => '74.09', 'province_code' => '74', 'name' => 'KABUPATEN KONAWE UTARA', 'latitude' => -3.512353, 'longitude' => 122.110732],
+    ['code' => '74.10', 'province_code' => '74', 'name' => 'KABUPATEN BUTON UTARA', 'latitude' => -4.801007, 'longitude' => 122.983095],
+    ['code' => '74.11', 'province_code' => '74', 'name' => 'KABUPATEN KOLAKA TIMUR', 'latitude' => -4.00051, 'longitude' => 121.86195],
+    ['code' => '74.12', 'province_code' => '74', 'name' => 'KABUPATEN KONAWE KEPULAUAN', 'latitude' => -4.052608, 'longitude' => 122.988585],
+    ['code' => '74.13', 'province_code' => '74', 'name' => 'KABUPATEN MUNA BARAT', 'latitude' => -4.791714, 'longitude' => 122.494184],
+    ['code' => '74.14', 'province_code' => '74', 'name' => 'KABUPATEN BUTON TENGAH', 'latitude' => -5.316414, 'longitude' => 122.531979],
+    ['code' => '74.15', 'province_code' => '74', 'name' => 'KABUPATEN BUTON SELATAN', 'latitude' => -5.608165, 'longitude' => 122.600622],
+    ['code' => '74.71', 'province_code' => '74', 'name' => 'KOTA KENDARI', 'latitude' => -3.972902, 'longitude' => 122.511741],
+    ['code' => '74.72', 'province_code' => '74', 'name' => 'KOTA BAU BAU', 'latitude' => -5.485072, 'longitude' => 122.584799],
+    ['code' => '75.01', 'province_code' => '75', 'name' => 'KABUPATEN GORONTALO', 'latitude' => 0.629003, 'longitude' => 122.980938],
+    ['code' => '75.02', 'province_code' => '75', 'name' => 'KABUPATEN BOALEMO', 'latitude' => 0.529272, 'longitude' => 122.347542],
+    ['code' => '75.03', 'province_code' => '75', 'name' => 'KABUPATEN BONE BOLANGO', 'latitude' => 0.557411, 'longitude' => 123.143917],
+    ['code' => '75.04', 'province_code' => '75', 'name' => 'KABUPATEN POHUWATO', 'latitude' => 0.705528, 'longitude' => 121.719546],
+    ['code' => '75.05', 'province_code' => '75', 'name' => 'KABUPATEN GORONTALO UTARA', 'latitude' => 0.79095, 'longitude' => 122.868715],
+    ['code' => '75.71', 'province_code' => '75', 'name' => 'KOTA GORONTALO', 'latitude' => 0.531906, 'longitude' => 123.059503],
+    ['code' => '76.01', 'province_code' => '76', 'name' => 'KABUPATEN PASANGKAYU', 'latitude' => -1.173745, 'longitude' => 119.377237],
+    ['code' => '76.02', 'province_code' => '76', 'name' => 'KABUPATEN MAMUJU', 'latitude' => -2.689749, 'longitude' => 118.884534],
+    ['code' => '76.03', 'province_code' => '76', 'name' => 'KABUPATEN MAMASA', 'latitude' => -2.955625, 'longitude' => 119.362864],
+    ['code' => '76.04', 'province_code' => '76', 'name' => 'KABUPATEN POLEWALI MANDAR', 'latitude' => -3.407717, 'longitude' => 119.311154],
+    ['code' => '76.05', 'province_code' => '76', 'name' => 'KABUPATEN MAJENE', 'latitude' => -3.548096, 'longitude' => 118.959294],
+    ['code' => '76.06', 'province_code' => '76', 'name' => 'KABUPATEN MAMUJU TENGAH', 'latitude' => -2.081919, 'longitude' => 119.301015],
+    ['code' => '81.01', 'province_code' => '81', 'name' => 'KABUPATEN MALUKU TENGAH', 'latitude' => -3.304265, 'longitude' => 128.954086],
+    ['code' => '81.02', 'province_code' => '81', 'name' => 'KABUPATEN MALUKU TENGGARA', 'latitude' => -5.682917, 'longitude' => 132.717277],
+    ['code' => '81.03', 'province_code' => '81', 'name' => 'KABUPATEN KEPULAUAN TANIMBAR', 'latitude' => -7.970116, 'longitude' => 131.312265],
+    ['code' => '81.04', 'province_code' => '81', 'name' => 'KABUPATEN BURU', 'latitude' => -3.259175, 'longitude' => 127.102782],
+    ['code' => '81.05', 'province_code' => '81', 'name' => 'KABUPATEN SERAM BAGIAN TIMUR', 'latitude' => -3.10375, 'longitude' => 130.488608],
+    ['code' => '81.06', 'province_code' => '81', 'name' => 'KABUPATEN SERAM BAGIAN BARAT', 'latitude' => -3.066663, 'longitude' => 128.230039],
+    ['code' => '81.07', 'province_code' => '81', 'name' => 'KABUPATEN KEPULAUAN ARU', 'latitude' => -5.775178, 'longitude' => 134.214588],
+    ['code' => '81.08', 'province_code' => '81', 'name' => 'KABUPATEN MALUKU BARAT DAYA', 'latitude' => -8.148038, 'longitude' => 127.80155],
+    ['code' => '81.09', 'province_code' => '81', 'name' => 'KABUPATEN BURU SELATAN', 'latitude' => -3.83779, 'longitude' => 126.734259],
+    ['code' => '81.71', 'province_code' => '81', 'name' => 'KOTA AMBON', 'latitude' => -3.694324, 'longitude' => 128.181303],
+    ['code' => '81.72', 'province_code' => '81', 'name' => 'KOTA TUAL', 'latitude' => -5.634681, 'longitude' => 132.751721],
+    ['code' => '82.01', 'province_code' => '82', 'name' => 'KABUPATEN HALMAHERA BARAT', 'latitude' => 1.080468, 'longitude' => 127.480155],
+    ['code' => '82.02', 'province_code' => '82', 'name' => 'KABUPATEN HALMAHERA TENGAH', 'latitude' => 0.330424, 'longitude' => 127.870251],
+    ['code' => '82.03', 'province_code' => '82', 'name' => 'KABUPATEN HALMAHERA UTARA', 'latitude' => 1.728187, 'longitude' => 127.992197],
+    ['code' => '82.04', 'province_code' => '82', 'name' => 'KABUPATEN HALMAHERA SELATAN', 'latitude' => -0.645475, 'longitude' => 127.504984],
+    ['code' => '82.05', 'province_code' => '82', 'name' => 'KABUPATEN KEPULAUAN SULA', 'latitude' => -2.006978, 'longitude' => 125.964145],
+    ['code' => '82.06', 'province_code' => '82', 'name' => 'KABUPATEN HALMAHERA TIMUR', 'latitude' => 0.677443, 'longitude' => 128.284084],
+    ['code' => '82.07', 'province_code' => '82', 'name' => 'KABUPATEN PULAU MOROTAI', 'latitude' => 2.013297, 'longitude' => 128.283718],
+    ['code' => '82.08', 'province_code' => '82', 'name' => 'KABUPATEN PULAU TALIABU', 'latitude' => -1.947444, 'longitude' => 124.387216],
+    ['code' => '82.71', 'province_code' => '82', 'name' => 'KOTA TERNATE', 'latitude' => 0.785751, 'longitude' => 127.387846],
+    ['code' => '82.72', 'province_code' => '82', 'name' => 'KOTA TIDORE KEPULAUAN', 'latitude' => 0.671565, 'longitude' => 127.446723],
+    ['code' => '91.03', 'province_code' => '91', 'name' => 'KABUPATEN JAYAPURA', 'latitude' => -2.549872, 'longitude' => 140.477103],
+    ['code' => '91.05', 'province_code' => '91', 'name' => 'KABUPATEN KEPULAUAN YAPEN', 'latitude' => -1.874067, 'longitude' => 136.237078],
+    ['code' => '91.06', 'province_code' => '91', 'name' => 'KABUPATEN BIAK NUMFOR', 'latitude' => -1.170709, 'longitude' => 136.090193],
+    ['code' => '91.10', 'province_code' => '91', 'name' => 'KABUPATEN SARMI', 'latitude' => -1.868573, 'longitude' => 138.744226],
+    ['code' => '91.11', 'province_code' => '91', 'name' => 'KABUPATEN KEEROM', 'latitude' => -2.908725, 'longitude' => 140.773341],
+    ['code' => '91.15', 'province_code' => '91', 'name' => 'KABUPATEN WAROPEN', 'latitude' => -2.240841, 'longitude' => 136.37945],
+    ['code' => '91.19', 'province_code' => '91', 'name' => 'KABUPATEN SUPIORI', 'latitude' => -0.730682, 'longitude' => 135.732642],
+    ['code' => '91.20', 'province_code' => '91', 'name' => 'KABUPATEN MAMBERAMO RAYA', 'latitude' => -2.370806, 'longitude' => 138.049868],
+    ['code' => '91.71', 'province_code' => '91', 'name' => 'KOTA JAYAPURA', 'latitude' => -2.562626, 'longitude' => 140.692633],
+    ['code' => '92.02', 'province_code' => '92', 'name' => 'KABUPATEN MANOKWARI', 'latitude' => -0.890814, 'longitude' => 134.04012],
+    ['code' => '92.03', 'province_code' => '92', 'name' => 'KABUPATEN FAK FAK', 'latitude' => -2.928858, 'longitude' => 132.293635],
+    ['code' => '92.06', 'province_code' => '92', 'name' => 'KABUPATEN TELUK BINTUNI', 'latitude' => -2.034972, 'longitude' => 133.731806],
+    ['code' => '92.07', 'province_code' => '92', 'name' => 'KABUPATEN TELUK WONDAMA', 'latitude' => -2.827693, 'longitude' => 134.535723],
+    ['code' => '92.08', 'province_code' => '92', 'name' => 'KABUPATEN KAIMANA', 'latitude' => -3.639691, 'longitude' => 133.740067],
+    ['code' => '92.11', 'province_code' => '92', 'name' => 'KABUPATEN MANOKWARI SELATAN', 'latitude' => -1.506395, 'longitude' => 134.168643],
+    ['code' => '92.12', 'province_code' => '92', 'name' => 'KABUPATEN PEGUNUNGAN ARFAK', 'latitude' => -1.325047, 'longitude' => 133.91657],
+    ['code' => '93.01', 'province_code' => '93', 'name' => 'KABUPATEN MERAUKE', 'latitude' => -8.508696, 'longitude' => 140.409676],
+    ['code' => '93.02', 'province_code' => '93', 'name' => 'KABUPATEN BOVEN DIGOEL', 'latitude' => -6.100404, 'longitude' => 140.320611],
+    ['code' => '93.03', 'province_code' => '93', 'name' => 'KABUPATEN MAPPI', 'latitude' => -6.528146, 'longitude' => 139.319252],
+    ['code' => '93.04', 'province_code' => '93', 'name' => 'KABUPATEN ASMAT', 'latitude' => -5.540947, 'longitude' => 138.13683],
+    ['code' => '94.01', 'province_code' => '94', 'name' => 'KABUPATEN NABIRE', 'latitude' => -3.363366, 'longitude' => 135.503891],
+    ['code' => '94.02', 'province_code' => '94', 'name' => 'KABUPATEN PUNCAK JAYA', 'latitude' => -3.716208, 'longitude' => 137.987817],
+    ['code' => '94.03', 'province_code' => '94', 'name' => 'KABUPATEN PANIAI', 'latitude' => -3.941435, 'longitude' => 136.421631],
+    ['code' => '94.04', 'province_code' => '94', 'name' => 'KABUPATEN MIMIKA', 'latitude' => -4.455857, 'longitude' => 136.853729],
+    ['code' => '94.05', 'province_code' => '94', 'name' => 'KABUPATEN PUNCAK', 'latitude' => -3.971609, 'longitude' => 137.641798],
+    ['code' => '94.06', 'province_code' => '94', 'name' => 'KABUPATEN DOGIYAI', 'latitude' => -4.004608, 'longitude' => 136.037762],
+    ['code' => '94.07', 'province_code' => '94', 'name' => 'KABUPATEN INTAN JAYA', 'latitude' => -3.740529, 'longitude' => 137.043952],
+    ['code' => '94.08', 'province_code' => '94', 'name' => 'KABUPATEN DEIYAI', 'latitude' => -4.032249, 'longitude' => 136.298992],
+    ['code' => '95.01', 'province_code' => '95', 'name' => 'KABUPATEN JAYAWIJAYA', 'latitude' => -4.099307, 'longitude' => 138.943149],
+    ['code' => '95.02', 'province_code' => '95', 'name' => 'KABUPATEN PEGUNUNGAN BINTANG', 'latitude' => -4.890903, 'longitude' => 140.639925],
+    ['code' => '95.03', 'province_code' => '95', 'name' => 'KABUPATEN YAHUKIMO', 'latitude' => -4.88695, 'longitude' => 139.520518],
+    ['code' => '95.04', 'province_code' => '95', 'name' => 'KABUPATEN TOLIKARA', 'latitude' => -3.682251, 'longitude' => 138.473485],
+    ['code' => '95.05', 'province_code' => '95', 'name' => 'KABUPATEN MAMBERAMO TENGAH', 'latitude' => -3.671617, 'longitude' => 139.060763],
+    ['code' => '95.06', 'province_code' => '95', 'name' => 'KABUPATEN YALIMO', 'latitude' => -3.778853, 'longitude' => 139.383157],
+    ['code' => '95.07', 'province_code' => '95', 'name' => 'KABUPATEN LANNY JAYA', 'latitude' => -3.923599, 'longitude' => 138.449584],
+    ['code' => '95.08', 'province_code' => '95', 'name' => 'KABUPATEN NDUGA', 'latitude' => -4.406941, 'longitude' => 138.239355],
+    ['code' => '96.01', 'province_code' => '96', 'name' => 'KABUPATEN SORONG', 'latitude' => -0.988156, 'longitude' => 131.366213],
+    ['code' => '96.02', 'province_code' => '96', 'name' => 'KABUPATEN SORONG SELATAN', 'latitude' => -1.475248, 'longitude' => 132.085622],
+    ['code' => '96.03', 'province_code' => '96', 'name' => 'KABUPATEN RAJA AMPAT', 'latitude' => -0.418506, 'longitude' => 130.828791],
+    ['code' => '96.04', 'province_code' => '96', 'name' => 'KABUPATEN TAMBRAUW', 'latitude' => -0.497301, 'longitude' => 132.088098],
+    ['code' => '96.05', 'province_code' => '96', 'name' => 'KABUPATEN MAYBRAT', 'latitude' => -1.257254, 'longitude' => 132.498623],
+    ['code' => '96.71', 'province_code' => '96', 'name' => 'KOTA SORONG', 'latitude' => -0.881124, 'longitude' => 131.28764],
+];

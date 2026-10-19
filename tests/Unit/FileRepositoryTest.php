@@ -70,4 +70,20 @@ class FileRepositoryTest extends TestCase
         $first = $results->first();
         $this->assertEquals('40132', $first['postal_code'] ?? null);
     }
+
+    public function test_reads_legacy_array_villages_file_from_custom_data_path(): void
+    {
+        $dir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'nusantara-legacy-' . uniqid();
+        mkdir($dir);
+        file_put_contents($dir . DIRECTORY_SEPARATOR . 'villages.php', "<?php return [\n"
+            . "    ['code' => '32.73.01.1001', 'district_code' => '32.73.01', 'name' => 'CIHAPIT', 'postal_code' => '40114'],\n"
+            . "];\n");
+        $this->app['config']->set('nusantara.data_path', $dir);
+
+        $repo = new FileRepository();
+        $this->assertSame('CIHAPIT', $repo->findVillage('32.73.01.1001')['name'] ?? null);
+        $this->assertSame(['32.73.01.1001'], $repo->findByPostalCode('40114')->codes());
+
+        $this->app['files']->deleteDirectory($dir);
+    }
 }

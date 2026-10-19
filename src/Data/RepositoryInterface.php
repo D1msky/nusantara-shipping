@@ -16,6 +16,12 @@ interface RepositoryInterface
 
     public function villages(string $districtCode): RegionCollection;
 
+    /** All regencies across every province, for full scans (fuzzy search, nearest lookup). */
+    public function allRegencies(): RegionCollection;
+
+    /** All districts across every regency, for full scans (fuzzy search). */
+    public function allDistricts(): RegionCollection;
+
     public function findProvince(string $code): ?array;
 
     public function findRegency(string $code): ?array;

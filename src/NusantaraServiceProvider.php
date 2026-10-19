@@ -19,7 +19,14 @@ class NusantaraServiceProvider extends ServiceProvider
             __DIR__ . '/../config/nusantara.php',
             'nusantara'
         );
-        $this->app->singleton(Nusantara::class, fn () => new Nusantara());
+        // Scoped: one instance per request/job, so in-process memoization never outlives a
+        // cache flush in long-running workers (Octane, queue).
+        $this->app->scoped(Nusantara::class, fn () => new Nusantara());
+    }
+
+    public static function migrationsPath(): string
+    {
+        return dirname(__DIR__) . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'migrations';
     }
 
     public function boot(): void
@@ -28,7 +35,11 @@ class NusantaraServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../config/nusantara.php' => config_path('nusantara.php'),
             ], 'nusantara-config');
-            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+            // Only the database driver uses the tables; file-driver apps would otherwise get four
+            // empty tables on every `php artisan migrate`.
+            if (config('nusantara.driver') === 'database') {
+                $this->loadMigrationsFrom(self::migrationsPath());
+            }
             $this->commands([
                 InstallCommand::class,
                 SeedCommand::class,

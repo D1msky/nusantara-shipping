@@ -3,6 +3,9 @@
 namespace Nusantara\Tests\Feature;
 
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Schema;
+use Nusantara\Models\Province;
+use Nusantara\NusantaraServiceProvider;
 use Nusantara\Tests\TestCase;
 
 class InstallCommandTest extends TestCase
@@ -37,5 +40,23 @@ class InstallCommandTest extends TestCase
 
         $this->artisan('nusantara:install', ['--migrate' => true])
             ->assertSuccessful();
+
+        $this->assertTrue(Schema::hasTable('nusantara_villages'));
+        $this->assertSame(1, Province::where('code', '32')->count(), 'migrate with the database driver also seeds');
+    }
+
+    public function test_install_command_with_migrate_option_fails_for_file_driver(): void
+    {
+        $this->artisan('nusantara:install', ['--migrate' => true])
+            ->expectsOutputToContain('--migrate needs NUSANTARA_DRIVER=database')
+            ->assertFailed();
+    }
+
+    public function test_migrations_are_not_registered_for_file_driver(): void
+    {
+        $this->assertNotContains(
+            realpath(NusantaraServiceProvider::migrationsPath()),
+            array_map('realpath', $this->app['migrator']->paths())
+        );
     }
 }

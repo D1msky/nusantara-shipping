@@ -22,6 +22,9 @@ class District extends Model
     /** @var array<int, string> */
     protected $fillable = ['code', 'regency_code', 'name', 'latitude', 'longitude'];
 
+    /** @var array<string, string> DECIMAL columns come back as strings; match the file driver's floats */
+    protected $casts = ['latitude' => 'float', 'longitude' => 'float'];
+
     public function getTable(): string
     {
         return config('nusantara.table_prefix', 'nusantara_') . 'districts';

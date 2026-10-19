@@ -1,245 +1,45 @@
 <?php
 
 // Source: Kepmendagri / nusantara:update-data
-// Last updated: 2026-02-23
+// Last updated: 2026-10-19
 
-return array (
-  0 => 
-  array (
-    'code' => '11',
-    'name' => 'ACEH',
-    'latitude' => 4.36855,
-    'longitude' => 97.0253,
-  ),
-  1 => 
-  array (
-    'code' => '12',
-    'name' => 'SUMATERA UTARA',
-    'latitude' => 2.19235,
-    'longitude' => 99.38122,
-  ),
-  2 => 
-  array (
-    'code' => '13',
-    'name' => 'SUMATERA BARAT',
-    'latitude' => -1.34225,
-    'longitude' => 100.0761,
-  ),
-  3 => 
-  array (
-    'code' => '14',
-    'name' => 'RIAU',
-    'latitude' => 0.50041,
-    'longitude' => 101.54758,
-  ),
-  4 => 
-  array (
-    'code' => '15',
-    'name' => 'JAMBI',
-    'latitude' => -1.61157,
-    'longitude' => 102.7797,
-  ),
-  5 => 
-  array (
-    'code' => '16',
-    'name' => 'SUMATERA SELATAN',
-    'latitude' => -3.12668,
-    'longitude' => 104.09306,
-  ),
-  6 => 
-  array (
-    'code' => '17',
-    'name' => 'BENGKULU',
-    'latitude' => -3.51868,
-    'longitude' => 102.53598,
-  ),
-  7 => 
-  array (
-    'code' => '18',
-    'name' => 'LAMPUNG',
-    'latitude' => -4.8555,
-    'longitude' => 105.0273,
-  ),
-  8 => 
-  array (
-    'code' => '19',
-    'name' => 'KEPULAUAN BANGKA BELITUNG',
-    'latitude' => -2.75775,
-    'longitude' => 107.58394,
-  ),
-  9 => 
-  array (
-    'code' => '21',
-    'name' => 'KEPULAUAN RIAU',
-    'latitude' => -0.15478,
-    'longitude' => 104.58037,
-  ),
-  10 => 
-  array (
-    'code' => '31',
-    'name' => 'DKI JAKARTA',
-    'latitude' => 6.1745,
-    'longitude' => 106.8227,
-  ),
-  11 => 
-  array (
-    'code' => '32',
-    'name' => 'JAWA BARAT',
-    'latitude' => -6.88917,
-    'longitude' => 107.64047,
-  ),
-  12 => 
-  array (
-    'code' => '33',
-    'name' => 'JAWA TENGAH',
-    'latitude' => -7.30324,
-    'longitude' => 110.00441,
-  ),
-  13 => 
-  array (
-    'code' => '34',
-    'name' => 'DI YOGYAKARTA',
-    'latitude' => 7.7956,
-    'longitude' => 110.3695,
-  ),
-  14 => 
-  array (
-    'code' => '35',
-    'name' => 'JAWA TIMUR',
-    'latitude' => -6.96851,
-    'longitude' => 113.98005,
-  ),
-  15 => 
-  array (
-    'code' => '36',
-    'name' => 'BANTEN',
-    'latitude' => -6.44538,
-    'longitude' => 106.13756,
-  ),
-  16 => 
-  array (
-    'code' => '51',
-    'name' => 'BALI',
-    'latitude' => -8.23566,
-    'longitude' => 115.12239,
-  ),
-  17 => 
-  array (
-    'code' => '52',
-    'name' => 'NUSA TENGGARA BARAT',
-    'latitude' => -8.12179,
-    'longitude' => 117.63696,
-  ),
-  18 => 
-  array (
-    'code' => '53',
-    'name' => 'NUSA TENGGARA TIMUR',
-    'latitude' => -8.56568,
-    'longitude' => 120.69786,
-  ),
-  19 => 
-  array (
-    'code' => '61',
-    'name' => 'KALIMANTAN BARAT',
-    'latitude' => -0.13224,
-    'longitude' => 111.09689,
-  ),
-  20 => 
-  array (
-    'code' => '62',
-    'name' => 'KALIMANTAN TENGAH',
-    'latitude' => -1.49958,
-    'longitude' => 113.29033,
-  ),
-  21 => 
-  array (
-    'code' => '63',
-    'name' => 'KALIMANTAN SELATAN',
-    'latitude' => -2.94348,
-    'longitude' => 115.37565,
-  ),
-  22 => 
-  array (
-    'code' => '64',
-    'name' => 'KALIMANTAN TIMUR',
-    'latitude' => 0.78844,
-    'longitude' => 116.242,
-  ),
-  23 => 
-  array (
-    'code' => '65',
-    'name' => 'KALIMANTAN UTARA',
-    'latitude' => 2.72594,
-    'longitude' => 116.911,
-  ),
-  24 => 
-  array (
-    'code' => '71',
-    'name' => 'SULAWESI UTARA',
-    'latitude' => 0.65557,
-    'longitude' => 124.09015,
-  ),
-  25 => 
-  array (
-    'code' => '72',
-    'name' => 'SULAWESI TENGAH',
-    'latitude' => -1.69378,
-    'longitude' => 120.80886,
-  ),
-  26 => 
-  array (
-    'code' => '73',
-    'name' => 'SULAWESI SELATAN',
-    'latitude' => -3.64467,
-    'longitude' => 119.94719,
-  ),
-  27 => 
-  array (
-    'code' => '74',
-    'name' => 'SULAWESI TENGGARA',
-    'latitude' => -3.54912,
-    'longitude' => 121.72796,
-  ),
-  28 => 
-  array (
-    'code' => '75',
-    'name' => 'GORONTALO',
-    'latitude' => 0.71862,
-    'longitude' => 122.45559,
-  ),
-  29 => 
-  array (
-    'code' => '76',
-    'name' => 'SULAWESI BARAT',
-    'latitude' => -2.49745,
-    'longitude' => 119.3919,
-  ),
-  30 => 
-  array (
-    'code' => '81',
-    'name' => 'MALUKU',
-    'latitude' => -3.11884,
-    'longitude' => 129.42078,
-  ),
-  31 => 
-  array (
-    'code' => '82',
-    'name' => 'MALUKU UTARA',
-    'latitude' => 0.63012,
-    'longitude' => 127.97202,
-  ),
-  32 => 
-  array (
-    'code' => '91',
-    'name' => 'PAPUA BARAT',
-    'latitude' => -1.38424,
-    'longitude' => 132.90253,
-  ),
-  33 => 
-  array (
-    'code' => '94',
-    'name' => 'PAPUA',
-    'latitude' => -3.98857,
-    'longitude' => 138.34853,
-  ),
-);
+return [
+    ['code' => '11', 'name' => 'ACEH', 'latitude' => 5.570547, 'longitude' => 95.340809],
+    ['code' => '12', 'name' => 'SUMATERA UTARA', 'latitude' => 3.58063, 'longitude' => 98.672],
+    ['code' => '13', 'name' => 'SUMATERA BARAT', 'latitude' => -0.93767, 'longitude' => 100.360444],
+    ['code' => '14', 'name' => 'RIAU', 'latitude' => 0.51771, 'longitude' => 101.44584],
+    ['code' => '15', 'name' => 'JAMBI', 'latitude' => -1.603998, 'longitude' => 103.58358],
+    ['code' => '16', 'name' => 'SUMATERA SELATAN', 'latitude' => -2.977157, 'longitude' => 104.75053],
+    ['code' => '17', 'name' => 'BENGKULU', 'latitude' => -3.82094, 'longitude' => 102.283989],
+    ['code' => '18', 'name' => 'LAMPUNG', 'latitude' => -5.441206, 'longitude' => 105.25829],
+    ['code' => '19', 'name' => 'KEPULAUAN BANGKA BELITUNG', 'latitude' => -2.152921, 'longitude' => 106.157888],
+    ['code' => '21', 'name' => 'KEPULAUAN RIAU', 'latitude' => 0.876163, 'longitude' => 104.445223],
+    ['code' => '31', 'name' => 'DAERAH KHUSUS IBUKOTA JAKARTA', 'latitude' => -6.177802, 'longitude' => 106.828444],
+    ['code' => '32', 'name' => 'JAWA BARAT', 'latitude' => -6.902225, 'longitude' => 107.61876],
+    ['code' => '33', 'name' => 'JAWA TENGAH', 'latitude' => -6.993481, 'longitude' => 110.420243],
+    ['code' => '34', 'name' => 'DAERAH ISTIMEWA YOGYAKARTA', 'latitude' => -7.794743, 'longitude' => 110.367282],
+    ['code' => '35', 'name' => 'JAWA TIMUR', 'latitude' => -7.245567, 'longitude' => 112.739166],
+    ['code' => '36', 'name' => 'BANTEN', 'latitude' => -6.173707, 'longitude' => 106.156635],
+    ['code' => '51', 'name' => 'BALI', 'latitude' => -8.667787, 'longitude' => 115.234087],
+    ['code' => '52', 'name' => 'NUSA TENGGARA BARAT', 'latitude' => -8.581476, 'longitude' => 116.109752],
+    ['code' => '53', 'name' => 'NUSA TENGGARA TIMUR', 'latitude' => -10.171315, 'longitude' => 123.607437],
+    ['code' => '61', 'name' => 'KALIMANTAN BARAT', 'latitude' => -0.061003, 'longitude' => 109.353348],
+    ['code' => '62', 'name' => 'KALIMANTAN TENGAH', 'latitude' => -2.216839, 'longitude' => 113.918751],
+    ['code' => '63', 'name' => 'KALIMANTAN SELATAN', 'latitude' => -3.484313, 'longitude' => 114.833801],
+    ['code' => '64', 'name' => 'KALIMANTAN TIMUR', 'latitude' => -0.500806, 'longitude' => 117.139352],
+    ['code' => '65', 'name' => 'KALIMANTAN UTARA', 'latitude' => 2.842226, 'longitude' => 117.374042],
+    ['code' => '71', 'name' => 'SULAWESI UTARA', 'latitude' => 1.470128, 'longitude' => 124.844811],
+    ['code' => '72', 'name' => 'SULAWESI TENGAH', 'latitude' => -0.890609, 'longitude' => 119.871074],
+    ['code' => '73', 'name' => 'SULAWESI SELATAN', 'latitude' => -5.139084, 'longitude' => 119.45237],
+    ['code' => '74', 'name' => 'SULAWESI TENGGARA', 'latitude' => -4.02474, 'longitude' => 122.540459],
+    ['code' => '75', 'name' => 'GORONTALO', 'latitude' => 0.523906, 'longitude' => 123.077456],
+    ['code' => '76', 'name' => 'SULAWESI BARAT', 'latitude' => -2.664914, 'longitude' => 118.852796],
+    ['code' => '81', 'name' => 'MALUKU', 'latitude' => -3.694413, 'longitude' => 128.182703],
+    ['code' => '82', 'name' => 'MALUKU UTARA', 'latitude' => 0.755858, 'longitude' => 127.609802],
+    ['code' => '91', 'name' => 'PAPUA', 'latitude' => -2.536301, 'longitude' => 140.715024],
+    ['code' => '92', 'name' => 'PAPUA BARAT', 'latitude' => -0.918351, 'longitude' => 134.030488],
+    ['code' => '93', 'name' => 'PAPUA SELATAN', 'latitude' => -8.508696, 'longitude' => 140.409676],
+    ['code' => '94', 'name' => 'PAPUA TENGAH', 'latitude' => -3.363366, 'longitude' => 135.503891],
+    ['code' => '95', 'name' => 'PAPUA PEGUNUNGAN', 'latitude' => -4.099307, 'longitude' => 138.943149],
+    ['code' => '96', 'name' => 'PAPUA BARAT DAYA', 'latitude' => -0.881124, 'longitude' => 131.28764],
+];
