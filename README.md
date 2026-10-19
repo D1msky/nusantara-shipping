@@ -26,6 +26,9 @@ Use it for: dropdowns (provinces → regencies → districts → villages), addr
 - **PHP** 8.1+
 - **Laravel** 10, 11, or 12
 - **illuminate/support** & **illuminate/database** (no extra deps)
+- **OPcache** recommended for the file driver: the data files are then shared across requests at no per-request cost.
+
+> **Upgrading from 1.x?** Region codes changed to the official Kepmendagri codes — see [UPGRADE.md](UPGRADE.md).
 
 ---
 
@@ -135,17 +138,19 @@ NUSANTARA_DATA_PATH=
 
 Tables: `nusantara_provinces`, `nusantara_regencies`, `nusantara_districts`, `nusantara_villages`.
 
+The migration is only registered when `NUSANTARA_DRIVER=database`, so apps using the file driver don't get these tables. Set the driver **before** running `migrate` (or `nusantara:install --migrate`, which refuses to run with another driver).
+
 ---
 
 ## Artisan commands
 
 | Command | Description |
 |---------|-------------|
-| `nusantara:install` | Publish config; optional `--migrate` and `--seed` |
+| `nusantara:install` | Publish config; optional `--migrate` (runs only the Nusantara migration; database driver only) and `--seed` |
 | `nusantara:seed` | Seed DB from data files (`--only=provinces|regencies|districts|villages`) |
 | `nusantara:update-data` | Show data source info; use `--source=<path_or_url>` to fetch and transform |
 | `nusantara:stats` | Print counts (provinces, regencies, districts, villages, postal codes) |
-| `nusantara:clear-cache` | Clear Nusantara cache |
+| `nusantara:clear-cache` | Clear Nusantara cache (works on every cache store, tags not required) |
 
 ---
 
@@ -177,7 +182,18 @@ Then: `Nusantara::shippingAddress($code, style: 'my_courier')`.
 
 ## Data source and updates
 
-Region data follows **Kepmendagri** (Indonesian Ministry of Home Affairs). The package ships with **sample data** so it works out of the box. For full or up-to-date datasets, use the `nusantara:update-data` command.
+The package ships the full **Kepmendagri No 300.2.2-2138 Tahun 2025** dataset (Indonesian Ministry of Home Affairs):
+
+| Level | Rows | Extra |
+|-------|------|-------|
+| Provinces | 38 | coordinates |
+| Regencies (kabupaten/kota) | 514 | coordinates |
+| Districts (kecamatan) | 7,285 | coordinates for 5,619; the rest fall back to the regency in `coordinates()` |
+| Villages (kelurahan/desa) | 83,762 | postal code for every village |
+
+Codes and names come from [cahyadsn/wilayah](https://github.com/cahyadsn/wilayah), postal codes from [cahyadsn/wilayah_kodepos](https://github.com/cahyadsn/wilayah_kodepos) (both MIT); see [data/NOTICE.md](data/NOTICE.md). To load a newer dataset, use the `nusantara:update-data` command.
+
+Villages are stored as one line per village in `data/villages.php` (about 2.5 MB on disk, 5 MB in memory), so even without OPcache a lookup by district, code or postal code and a name search across all villages take a few milliseconds.
 
 ### Command
 
@@ -219,13 +235,15 @@ Each file must be a **JSON array of objects**. The command normalizes common fie
 
 Codes can be dotted (e.g. `32.73`) or plain (e.g. `3273`); the command normalizes to dotted format where applicable.
 
-### Example: URL (raw GitHub)
+### Example: URL
 
 ```bash
-php artisan nusantara:update-data --source=https://raw.githubusercontent.com/yusufsyaifudin/wilayah-indonesia/master/data/list_of_area
+php artisan nusantara:update-data --source=https://example.com/wilayah/json
 ```
 
-This URL serves `provinces.json`, `regencies.json`, `districts.json`, and `villages.json` directly.
+The base URL must serve `provinces.json` (required) and optionally `regencies.json`, `districts.json`, and `villages.json`.
+
+> **Use Kepmendagri codes, not BPS codes.** BPS uses 7-digit district codes (e.g. `3273100` Rancasari, `3273101` Gedebage) that cannot be mapped to the `32.73.10` format, so several districts end up with the same code and overwrite each other when seeding. The command prints a warning when codes collide after normalization; if you see it, switch to a Kepmendagri-coded source.
 
 ### Example: local folder
 
@@ -242,6 +260,10 @@ The folder must contain at least `provinces.json`.
 
 ### After updating data
 
+The command flushes the Nusantara cache and invalidates OPcache for the rewritten files, so the new data is served immediately.
+
+> By default the files are written to the package's `data/` folder inside `vendor/`, which `composer install` / `composer update` will overwrite. Set `NUSANTARA_DATA_PATH` to a directory you control (e.g. `storage_path('nusantara')`) to keep updated data across deploys.
+
 - **File driver (`NUSANTARA_DRIVER=file`):** Data is read from the updated PHP files; no further step.
 - **Database driver (`NUSANTARA_DRIVER=database`):** Run the seeder to fill the database from the updated files:
 
@@ -257,8 +279,8 @@ php artisan nusantara:stats
 
 ### Recommended public sources
 
-- [yusufsyaifudin/wilayah-indonesia](https://github.com/yusufsyaifudin/wilayah-indonesia) — JSON in `data/list_of_area/` (provinces, regencies, districts, villages).
-- [cahyadsn/wilayah](https://github.com/cahyadsn/wilayah) — Kepmendagri; provides SQL; for JSON you need to export or use a repo that exposes JSON.
+- [cahyadsn/wilayah](https://github.com/cahyadsn/wilayah) + [cahyadsn/wilayah_kodepos](https://github.com/cahyadsn/wilayah_kodepos) — Kepmendagri codes and postal codes (the bundled data's source); provides SQL, so convert it to the JSON layout above first.
+- [yusufsyaifudin/wilayah-indonesia](https://github.com/yusufsyaifudin/wilayah-indonesia) — JSON, but uses **BPS** district codes (see the warning above); not suitable as-is.
 - [hanifabd/wilayah-indonesia-area](https://github.com/hanifabd/wilayah-indonesia-area) — data in other formats (e.g. zip); use a source that exposes `.json` files if you want to use `--source=<url>` directly.
 
 ---
