@@ -7,12 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.1] - 2026-10-19
 
+First 2.x release: contains everything listed under 2.0.0 below, plus these fixes. Upgrading from 1.x? Read [UPGRADE.md](UPGRADE.md) first — region codes changed.
+
 ### Fixed
 
 - Postal-code lookups returned nothing when `data/villages.php` had CRLF line endings (e.g. a git checkout on Windows with `core.autocrlf=true`): `VillageIndex` now normalizes line endings, and `.gitattributes` keeps `data/*.php` at LF.
 - **CI:** Laravel 10 and 11 jobs failed to install because Composer ≥ 2.9 blocks releases with security advisories and those versions are end-of-life; the jobs now set `policy.advisories.block` to `false`.
 
-## [2.0.0] - 2026-10-19
+## [2.0.0] - 2026-10-19 [YANKED]
+
+Withdrawn: postal-code lookups failed when the data files were checked out with CRLF line endings. Use 2.0.1, which includes all of the changes below.
 
 Region codes changed to the official Kepmendagri codes — see [UPGRADE.md](UPGRADE.md) before upgrading.
 
