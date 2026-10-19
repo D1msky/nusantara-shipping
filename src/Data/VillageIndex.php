@@ -30,6 +30,12 @@ final class VillageIndex
     public static function fromData(mixed $data): self
     {
         if (is_string($data)) {
+            // The lines live inside a multi-line string literal, so a CRLF conversion of the file
+            // (git checkout on Windows with core.autocrlf, an editor, FTP) changes the data itself.
+            if (str_contains($data, "\r")) {
+                $data = str_replace(["\r\n", "\r"], "\n", $data);
+            }
+
             // Files written by nusantara:update-data are already sorted and "\n"-wrapped; using the
             // string as-is keeps OPcache's immutable copy instead of allocating a new one.
             return new self(str_starts_with($data, "\n") && str_ends_with($data, "\n") ? $data : "\n" . trim($data, "\n") . "\n");
