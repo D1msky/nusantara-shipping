@@ -12,6 +12,12 @@ class FacadeTest extends TestCase
         $this->assertInstanceOf(\Nusantara\Nusantara::class, Nusantara::getFacadeRoot());
     }
 
+    public function test_documented_facade_class_resolves(): void
+    {
+        $this->assertInstanceOf(\Nusantara\Nusantara::class, \Nusantara\Facades\Nusantara::getFacadeRoot());
+        $this->assertGreaterThan(0, \Nusantara\Facades\Nusantara::provinces()->count());
+    }
+
     public function test_provinces_returns_collection(): void
     {
         $provinces = Nusantara::provinces();
@@ -29,7 +35,7 @@ class FacadeTest extends TestCase
     {
         $addr = Nusantara::shippingAddress('32.73.01.1001');
         $this->assertNotNull($addr);
-        $this->assertStringContainsString('Cihapit', $addr);
+        $this->assertStringContainsString('Sukarasa', $addr);
     }
 
     public function test_nearest_regency_returns_result(): void

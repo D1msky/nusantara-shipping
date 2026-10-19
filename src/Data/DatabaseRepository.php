@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Nusantara\Data;
 
+use Illuminate\Database\Eloquent\Builder;
 use Nusantara\Models\District;
 use Nusantara\Models\Province;
 use Nusantara\Models\Regency;
@@ -62,36 +63,50 @@ final class DatabaseRepository implements RepositoryInterface
         return new RegionCollection($data);
     }
 
+    public function allRegencies(): RegionCollection
+    {
+        $data = $this->cache->get('regencies:*', function () {
+            return Regency::orderBy('code')->get()->map(fn ($m) => $m->toArray())->all();
+        });
+
+        return new RegionCollection($data);
+    }
+
+    public function allDistricts(): RegionCollection
+    {
+        $data = $this->cache->get('districts:*', function () {
+            return District::orderBy('code')->get()->map(fn ($m) => $m->toArray())->all();
+        });
+
+        return new RegionCollection($data);
+    }
+
     public function findProvince(string $code): ?array
     {
         $code = $this->normalizeCode($code, 1);
-        $m = Province::find($code);
 
-        return $m ? $m->toArray() : null;
+        return $this->cache->get('province:' . $code, fn () => Province::find($code)?->toArray());
     }
 
     public function findRegency(string $code): ?array
     {
         $code = $this->normalizeCode($code, 2);
-        $m = Regency::find($code);
 
-        return $m ? $m->toArray() : null;
+        return $this->cache->get('regency:' . $code, fn () => Regency::find($code)?->toArray());
     }
 
     public function findDistrict(string $code): ?array
     {
         $code = $this->normalizeCode($code, 3);
-        $m = District::find($code);
 
-        return $m ? $m->toArray() : null;
+        return $this->cache->get('district:' . $code, fn () => District::find($code)?->toArray());
     }
 
     public function findVillage(string $code): ?array
     {
         $code = $this->normalizeCode($code, 4);
-        $m = Village::find($code);
 
-        return $m ? $m->toArray() : null;
+        return $this->cache->get('village:' . $code, fn () => Village::find($code)?->toArray());
     }
 
     public function search(string $term, ?string $level = null): RegionCollection
@@ -101,12 +116,13 @@ final class DatabaseRepository implements RepositoryInterface
             return new RegionCollection([]);
         }
 
-        $like = '%' . addcslashes($term, '%_\\') . '%';
+        $level = $level ? strtolower($level) : null;
+        $like = '%' . addcslashes(mb_strtoupper($term), '%_\\') . '%';
         $maxResults = (int) (config('nusantara.search.max_results') ?? 20);
         $results = [];
 
         if ($level === null || $level === 'province') {
-            foreach (Province::where('name', 'like', $like)->limit($maxResults)->get() as $m) {
+            foreach ($this->whereNameLike(Province::query(), $like)->limit($maxResults)->get() as $m) {
                 $results[] = array_merge($m->toArray(), ['level' => 'province']);
             }
         }
@@ -114,7 +130,7 @@ final class DatabaseRepository implements RepositoryInterface
         if ($level === null || $level === 'regency') {
             $remaining = $maxResults - count($results);
             if ($remaining > 0) {
-                foreach (Regency::where('name', 'like', $like)->limit($remaining)->get() as $m) {
+                foreach ($this->whereNameLike(Regency::query(), $like)->limit($remaining)->get() as $m) {
                     $results[] = array_merge($m->toArray(), ['level' => 'regency']);
                 }
             }
@@ -123,7 +139,7 @@ final class DatabaseRepository implements RepositoryInterface
         if ($level === null || $level === 'district') {
             $remaining = $maxResults - count($results);
             if ($remaining > 0) {
-                foreach (District::where('name', 'like', $like)->limit($remaining)->get() as $m) {
+                foreach ($this->whereNameLike(District::query(), $like)->limit($remaining)->get() as $m) {
                     $results[] = array_merge($m->toArray(), ['level' => 'district']);
                 }
             }
@@ -132,7 +148,7 @@ final class DatabaseRepository implements RepositoryInterface
         if ($level === null || $level === 'village') {
             $remaining = $maxResults - count($results);
             if ($remaining > 0) {
-                foreach (Village::where('name', 'like', $like)->limit($remaining)->get() as $m) {
+                foreach ($this->whereNameLike(Village::query(), $like)->limit($remaining)->get() as $m) {
                     $results[] = array_merge($m->toArray(), ['level' => 'village']);
                 }
             }
@@ -157,11 +173,11 @@ final class DatabaseRepository implements RepositoryInterface
                 $r = $d?->regency;
                 $p = $r?->province;
 
-                $found[] = array_merge($v->toArray(), [
+                $found[] = array_merge($v->withoutRelations()->toArray(), [
                     'level' => 'village',
-                    'province' => $p?->toArray(),
-                    'regency' => $r?->toArray(),
-                    'district' => $d?->toArray(),
+                    'province' => $p?->withoutRelations()->toArray(),
+                    'regency' => $r?->withoutRelations()->toArray(),
+                    'district' => $d?->withoutRelations()->toArray(),
                 ]);
             }
 
@@ -169,5 +185,14 @@ final class DatabaseRepository implements RepositoryInterface
         });
 
         return new RegionCollection($data);
+    }
+
+    /**
+     * Case-insensitive on every driver (PostgreSQL LIKE is case-sensitive; names are stored upper-case).
+     * $like must already be upper-cased.
+     */
+    private function whereNameLike(Builder $query, string $like): Builder
+    {
+        return $query->whereRaw('UPPER(name) LIKE ?', [$like]);
     }
 }

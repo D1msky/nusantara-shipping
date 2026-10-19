@@ -17,7 +17,7 @@ class HierarchyTest extends TestCase
         $this->assertArrayHasKey('district', $path);
         $this->assertArrayHasKey('village', $path);
         $this->assertEquals('JAWA BARAT', $path['province']['name'] ?? '');
-        $this->assertEquals('CIHAPIT', $path['village']['name'] ?? '');
+        $this->assertEquals('SUKARASA', $path['village']['name'] ?? '');
     }
 
     public function test_hierarchy_from_district_code(): void

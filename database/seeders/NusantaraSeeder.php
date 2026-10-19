@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Nusantara\Database\Seeders;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use Nusantara\Data\VillageIndex;
 use Nusantara\Models\District;
 use Nusantara\Models\Province;
 use Nusantara\Models\Regency;
@@ -12,6 +14,9 @@ use Nusantara\Models\Village;
 
 class NusantaraSeeder extends Seeder
 {
+    /** Rows per upsert statement; 400 x 5 columns stays under SQL Server's 2100-parameter limit. */
+    private const CHUNK_SIZE = 400;
+
     private string $dataPath;
 
     public function __construct()
@@ -25,109 +30,59 @@ class NusantaraSeeder extends Seeder
     public function run(?string $only = null): void
     {
         if ($only === null || $only === 'provinces') {
-            $this->seedProvinces();
+            $this->seed('provinces', new Province(), ['name', 'latitude', 'longitude']);
         }
         if ($only === null || $only === 'regencies') {
-            $this->seedRegencies();
+            $this->seed('regencies', new Regency(), ['province_code', 'name', 'latitude', 'longitude']);
         }
         if ($only === null || $only === 'districts') {
-            $this->seedDistricts();
+            $this->seed('districts', new District(), ['regency_code', 'name', 'latitude', 'longitude']);
         }
         if ($only === null || $only === 'villages') {
-            $this->seedVillages();
+            $this->seed('villages', new Village(), ['district_code', 'name', 'postal_code']);
         }
     }
 
-    private function seedProvinces(): void
+    /**
+     * Bulk upsert one level in a single transaction (one statement per chunk instead of
+     * a SELECT + INSERT/UPDATE pair per row).
+     *
+     * @param array<int, string> $columns columns updated when the code already exists
+     */
+    private function seed(string $name, Model $model, array $columns): void
     {
-        $file = $this->dataPath . DIRECTORY_SEPARATOR . 'provinces.php';
+        $file = $this->dataPath . DIRECTORY_SEPARATOR . $name . '.php';
         if (! is_file($file)) {
             return;
         }
         $data = require $file;
-        if (! is_array($data)) {
+        if (is_string($data)) {
+            $data = VillageIndex::fromData($data)->rows(); // villages.php line format, streamed row by row
+        }
+        if (! is_iterable($data)) {
             return;
         }
-        foreach ($data as $row) {
-            Province::query()->updateOrInsert(
-                ['code' => $row['code']],
-                [
-                    'name' => $row['name'],
-                    'latitude' => $row['latitude'] ?? null,
-                    'longitude' => $row['longitude'] ?? null,
-                ]
-            );
-        }
-    }
 
-    private function seedRegencies(): void
-    {
-        $file = $this->dataPath . DIRECTORY_SEPARATOR . 'regencies.php';
-        if (! is_file($file)) {
-            return;
-        }
-        $data = require $file;
-        if (! is_array($data)) {
-            return;
-        }
-        foreach ($data as $row) {
-            Regency::query()->updateOrInsert(
-                ['code' => $row['code']],
-                [
-                    'province_code' => $row['province_code'],
-                    'name' => $row['name'],
-                    'latitude' => $row['latitude'] ?? null,
-                    'longitude' => $row['longitude'] ?? null,
-                ]
-            );
-        }
-    }
+        // Build one chunk at a time (a full copy of the villages data alone is ~60 MB). Keying the
+        // chunk by code drops duplicates inside a statement, which PostgreSQL rejects; across
+        // chunks the upsert's update keeps "last row wins", as the old per-row updateOrInsert did.
+        $model->getConnection()->transaction(function () use ($model, $data, $columns) {
+            $chunk = [];
+            foreach ($data as $row) {
+                $record = ['code' => $row['code']];
+                foreach ($columns as $column) {
+                    $record[$column] = $row[$column] ?? null;
+                }
+                $chunk[$row['code']] = $record;
 
-    private function seedDistricts(): void
-    {
-        $file = $this->dataPath . DIRECTORY_SEPARATOR . 'districts.php';
-        if (! is_file($file)) {
-            return;
-        }
-        $data = require $file;
-        if (! is_array($data)) {
-            return;
-        }
-        foreach ($data as $row) {
-            District::query()->updateOrInsert(
-                ['code' => $row['code']],
-                [
-                    'regency_code' => $row['regency_code'],
-                    'name' => $row['name'],
-                    'latitude' => $row['latitude'] ?? null,
-                    'longitude' => $row['longitude'] ?? null,
-                ]
-            );
-        }
-    }
-
-    private function seedVillages(): void
-    {
-        $file = $this->dataPath . DIRECTORY_SEPARATOR . 'villages.php';
-        if (! is_file($file)) {
-            return;
-        }
-        $data = require $file;
-        if (! is_array($data)) {
-            return;
-        }
-        $chunks = array_chunk($data, 500);
-        foreach ($chunks as $chunk) {
-            foreach ($chunk as $row) {
-                Village::query()->updateOrInsert(
-                    ['code' => $row['code']],
-                    [
-                        'district_code' => $row['district_code'],
-                        'name' => $row['name'],
-                        'postal_code' => $row['postal_code'] ?? null,
-                    ]
-                );
+                if (count($chunk) >= self::CHUNK_SIZE) {
+                    $model->newQuery()->upsert(array_values($chunk), ['code'], $columns);
+                    $chunk = [];
+                }
             }
-        }
+            if ($chunk !== []) {
+                $model->newQuery()->upsert(array_values($chunk), ['code'], $columns);
+            }
+        });
     }
 }

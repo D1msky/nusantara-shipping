@@ -11,7 +11,14 @@ final class Cache
 {
     private const PREFIX = 'nusantara:';
 
-    private ?CacheRepository $store = null;
+    private const VERSION_KEY = self::PREFIX . 'version';
+
+    private CacheRepository $store;
+
+    private ?string $versionedPrefix = null;
+
+    /** @var array<string, mixed> in-process memo so repeated lookups skip the cache store round-trip */
+    private array $memo = [];
 
     public function __construct()
     {
@@ -23,66 +30,47 @@ final class Cache
 
     public function get(string $key, callable $callback): mixed
     {
-        $fullKey = self::PREFIX . $key;
         $ttl = (int) config('nusantara.cache_ttl', 86400);
 
         if ($ttl <= 0) {
             return $callback();
         }
 
-        try {
-            if ($this->supportsTags()) {
-                return $this->store->tags(['nusantara'])->remember($fullKey, $ttl, $callback);
-            }
-        } catch (\BadMethodCallException $e) {
-            // Store has tags() but driver does not support tagging (e.g. database, file)
+        if (array_key_exists($key, $this->memo)) {
+            return $this->memo[$key];
         }
 
-        return $this->store->remember($fullKey, $ttl, $callback);
+        return $this->memo[$key] = $this->store->remember($this->prefix() . $key, $ttl, $callback);
     }
 
     public function forget(string $key): bool
     {
-        $fullKey = self::PREFIX . $key;
-        try {
-            if ($this->supportsTags()) {
-                return $this->store->tags(['nusantara'])->forget($fullKey);
-            }
-        } catch (\BadMethodCallException $e) {
-            // Store does not support tagging
-        }
-        return $this->store->forget($fullKey);
+        unset($this->memo[$key]);
+
+        return $this->store->forget($this->prefix() . $key);
     }
 
+    /**
+     * Invalidate every Nusantara entry by bumping the key version. Works on every cache store
+     * (file, database, redis, ...) without tags; orphaned entries expire through their TTL.
+     */
     public function flush(): bool
     {
-        try {
-            if ($this->supportsTags()) {
-                $this->store->tags(['nusantara'])->flush();
-                return true;
-            }
-        } catch (\BadMethodCallException $e) {
-            // Store does not support tagging
-        }
-
-        $this->flushFallback();
+        $this->store->forever(self::VERSION_KEY, $this->version() + 1);
+        $this->versionedPrefix = null;
+        $this->memo = [];
 
         return true;
     }
 
-    private function supportsTags(): bool
+    private function prefix(): string
     {
-        return method_exists($this->store, 'tags');
+        return $this->versionedPrefix ??= self::PREFIX . 'v' . $this->version() . ':';
     }
 
-    /**
-     * Fallback when store does not support tags (e.g. file, database): clear known key patterns.
-     * Caller may have used dynamic keys (e.g. regencies:32); we only clear the static "provinces" key.
-     * For full flush, use a taggable cache store (Redis, Memcached) or restart cache.
-     */
-    private function flushFallback(): void
+    private function version(): int
     {
-        $this->store->forget(self::PREFIX . 'provinces');
+        return (int) $this->store->get(self::VERSION_KEY, 1);
     }
 
     public static function keyProvinces(): string

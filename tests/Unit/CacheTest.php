@@ -79,4 +79,30 @@ class CacheTest extends TestCase
         $result = $cache->flush();
         $this->assertTrue($result);
     }
+
+    public function test_flush_invalidates_every_key_on_a_store_without_tags(): void
+    {
+        $path = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'nusantara-cache-test-' . uniqid();
+        $this->app['config']->set('cache.stores.nusantara-file', ['driver' => 'file', 'path' => $path]);
+        $this->app['config']->set('nusantara.cache_store', 'nusantara-file');
+        $this->app['config']->set('nusantara.cache_ttl', 60);
+
+        (new Cache())->get('regencies:32', fn () => 'old');
+        (new Cache())->flush();
+
+        $this->assertSame('new', (new Cache())->get('regencies:32', fn () => 'new'));
+
+        $this->app['files']->deleteDirectory($path);
+    }
+
+    public function test_flush_clears_in_process_memo(): void
+    {
+        $this->app['config']->set('nusantara.cache_ttl', 60);
+        $cache = new Cache();
+        $cache->get('provinces', fn () => 'old');
+
+        $cache->flush();
+
+        $this->assertSame('new', $cache->get('provinces', fn () => 'new'));
+    }
 }

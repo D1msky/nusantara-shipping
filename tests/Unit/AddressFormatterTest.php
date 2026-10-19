@@ -23,17 +23,17 @@ class AddressFormatterTest extends TestCase
     {
         $addr = $this->formatter->format($this->repo, '32.73.01.1001');
         $this->assertNotNull($addr);
-        $this->assertStringContainsString('Cihapit', $addr);
-        // District for 32.73.01 is Bandung Kulon (per data source)
-        $this->assertStringContainsString('Bandung Kulon', $addr);
-        $this->assertStringContainsString('40114', $addr);
+        $this->assertStringContainsString('Sukarasa', $addr);
+        // District for 32.73.01 is Sukasari (Kepmendagri)
+        $this->assertStringContainsString('Sukasari', $addr);
+        $this->assertStringContainsString('40152', $addr);
     }
 
     public function test_jne_format(): void
     {
         $addr = $this->formatter->format($this->repo, '32.73.01.1001', null, 'jne');
         $this->assertNotNull($addr);
-        $this->assertStringContainsString('CIHAPIT', $addr);
+        $this->assertStringContainsString('SUKARASA', $addr);
         $this->assertEquals(mb_strtoupper($addr), $addr);
     }
 
@@ -41,7 +41,7 @@ class AddressFormatterTest extends TestCase
     {
         $addr = $this->formatter->format($this->repo, '32.73.01.1001', null, 'jnt');
         $this->assertNotNull($addr);
-        $this->assertStringContainsString('CIHAPIT', $addr);
+        $this->assertStringContainsString('SUKARASA', $addr);
     }
 
     public function test_sicepat_format(): void
@@ -55,14 +55,14 @@ class AddressFormatterTest extends TestCase
     {
         $addr = $this->formatter->format($this->repo, '32.73.01.1001', ':village, :district, :regency :postal');
         $this->assertNotNull($addr);
-        $this->assertStringContainsString('40114', $addr);
+        $this->assertStringContainsString('40152', $addr);
     }
 
     public function test_title_case_conversion(): void
     {
         $addr = $this->formatter->format($this->repo, '32.73.01.1001');
         $this->assertNotNull($addr);
-        $this->assertStringContainsString('Cihapit', $addr);
+        $this->assertStringContainsString('Sukarasa', $addr);
     }
 
     public function test_upper_case_conversion(): void

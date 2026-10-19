@@ -8,6 +8,7 @@ use Nusantara\Models\District;
 use Nusantara\Models\Province;
 use Nusantara\Models\Regency;
 use Nusantara\Models\Village;
+use Nusantara\NusantaraServiceProvider;
 use Nusantara\Tests\TestCase;
 
 class DatabaseRepositoryTest extends TestCase
@@ -44,6 +45,11 @@ class DatabaseRepositoryTest extends TestCase
         Village::query()->insert(['code' => '32.73.01.1001', 'district_code' => '32.73.01', 'name' => 'CIHAPIT', 'postal_code' => '40114']);
     }
 
+    public function test_migrations_are_registered_for_database_driver(): void
+    {
+        $this->assertContains(NusantaraServiceProvider::migrationsPath(), $this->app['migrator']->paths());
+    }
+
     public function test_database_repository_returns_provinces(): void
     {
         $repo = new DatabaseRepository();
@@ -65,5 +71,45 @@ class DatabaseRepositoryTest extends TestCase
         $repo = new DatabaseRepository();
         $r = $repo->findByPostalCode('40114');
         $this->assertGreaterThan(0, $r->count());
+    }
+
+    public function test_postal_code_result_has_same_shape_as_file_driver(): void
+    {
+        $first = (new DatabaseRepository())->findByPostalCode('40114')->first();
+        $this->assertSame('BANDUNG WETAN', $first['district']['name']);
+        $this->assertSame('KOTA BANDUNG', $first['regency']['name']);
+        $this->assertArrayNotHasKey('district', $first['regency'] ?? []);
+        $this->assertArrayNotHasKey('regency', $first['district']);
+    }
+
+    public function test_coordinates_are_floats_like_the_file_driver(): void
+    {
+        $province = (new DatabaseRepository())->findProvince('32');
+        $this->assertIsFloat($province['latitude']);
+        $this->assertIsFloat($province['longitude']);
+    }
+
+    public function test_search_ignores_case_of_term_and_level(): void
+    {
+        $r = (new DatabaseRepository())->search('bandung', 'Regency');
+        $this->assertSame('KOTA BANDUNG', $r->first()['name'] ?? null);
+    }
+
+    public function test_all_regencies_and_districts(): void
+    {
+        $repo = new DatabaseRepository();
+        $this->assertSame(['32.73'], $repo->allRegencies()->codes());
+        $this->assertSame(['32.73.01'], $repo->allDistricts()->codes());
+    }
+
+    public function test_find_is_served_from_cache_when_enabled(): void
+    {
+        $this->app['config']->set('nusantara.cache_ttl', 60);
+        $repo = new DatabaseRepository();
+        $repo->findVillage('32.73.01.1001');
+
+        Village::query()->delete();
+
+        $this->assertSame('CIHAPIT', (new DatabaseRepository())->findVillage('32.73.01.1001')['name'] ?? null);
     }
 }

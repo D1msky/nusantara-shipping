@@ -35,16 +35,21 @@ class FuzzyMatcherTest extends TestCase
     public function test_alias_match_jkt(): void
     {
         $r = $this->matcher->search($this->repo, 'jkt');
-        $this->assertGreaterThan(0, $r->count());
-        $names = $r->pluck('name')->all();
-        $this->assertTrue(in_array('DKI JAKARTA', $names, true) || in_array('KOTA JAKARTA SELATAN', $names, true));
+        $this->assertSame('DAERAH KHUSUS IBUKOTA JAKARTA', $r->first()['name'] ?? null);
     }
 
     public function test_alias_match_jaksel(): void
     {
         $r = $this->matcher->search($this->repo, 'jaksel', 'regency');
-        $this->assertGreaterThan(0, $r->count());
+        $this->assertSame('31.74', $r->first()['code'] ?? null);
         $this->assertStringContainsString('JAKARTA SELATAN', $r->first()['name'] ?? '');
+    }
+
+    public function test_pre_2025_names_still_resolve(): void
+    {
+        $this->assertSame('31', $this->matcher->search($this->repo, 'DKI Jakarta', 'province')->first()['code'] ?? null);
+        $this->assertSame('34', $this->matcher->search($this->repo, 'DI Yogyakarta', 'province')->first()['code'] ?? null);
+        $this->assertSame('31.74', $this->matcher->search($this->repo, 'Kota Jakarta Selatan', 'regency')->first()['code'] ?? null);
     }
 
     public function test_alias_match_jogja(): void
@@ -55,8 +60,8 @@ class FuzzyMatcherTest extends TestCase
 
     public function test_alias_match_solo(): void
     {
-        $r = $this->matcher->search($this->repo, 'solo');
-        $this->assertGreaterThanOrEqual(0, $r->count());
+        $r = $this->matcher->search($this->repo, 'solo', 'regency');
+        $this->assertSame('KOTA SURAKARTA', $r->first()['name'] ?? null);
     }
 
     public function test_alias_match_sby(): void
@@ -84,5 +89,18 @@ class FuzzyMatcherTest extends TestCase
         $matcher = new FuzzyMatcher(config('nusantara.aliases'), 70, 20);
         $r = $matcher->search($this->repo, 'mycity');
         $this->assertGreaterThan(0, $r->count());
+    }
+
+    public function test_custom_alias_overrides_builtin_alias_regardless_of_case(): void
+    {
+        $matcher = new FuzzyMatcher(['JKT' => 'KOTA BANDUNG'], 70, 20);
+        $r = $matcher->search($this->repo, 'jkt');
+        $this->assertSame('KOTA BANDUNG', $r->first()['name'] ?? null);
+    }
+
+    public function test_fuzzy_fallback_accepts_level_in_any_case(): void
+    {
+        $r = $this->matcher->search($this->repo, 'bandug kulon', 'District');
+        $this->assertSame('BANDUNG KULON', $r->first()['name'] ?? null);
     }
 }

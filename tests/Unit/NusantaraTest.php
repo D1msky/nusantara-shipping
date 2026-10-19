@@ -39,7 +39,7 @@ class NusantaraTest extends TestCase
         $region = $nusantara->find('32.73.01.1001');
         $this->assertNotNull($region);
         $this->assertSame('32.73.01.1001', $region['code']);
-        $this->assertSame('CIHAPIT', $region['name']);
+        $this->assertSame('SUKARASA', $region['name']);
     }
 
     public function test_find_invalid_code_returns_null(): void
@@ -74,6 +74,13 @@ class NusantaraTest extends TestCase
         $nusantara = $this->app->make(Nusantara::class);
         $regencies = $nusantara->regencies('JAWA BARAT');
         $this->assertGreaterThan(0, $regencies->count());
+    }
+
+    public function test_regencies_by_pre_2025_province_name(): void
+    {
+        $regencies = (new Nusantara())->regencies('DKI JAKARTA');
+        $this->assertCount(6, $regencies);
+        $this->assertContains('31.74', $regencies->codes());
     }
 
     public function test_regencies_empty_input_returns_empty_collection(): void
@@ -146,5 +153,29 @@ class NusantaraTest extends TestCase
         $nusantara = $this->app->make(Nusantara::class);
         $villages = $nusantara->villages('32.73.01');
         $this->assertGreaterThan(0, $villages->count());
+    }
+
+    public function test_nearest_regency_finds_kota_bandung(): void
+    {
+        $nearest = (new Nusantara())->nearestRegency(-6.910656, 107.60987);
+        $this->assertSame('32.73', $nearest['code'] ?? null);
+        $this->assertSame(0.0, $nearest['distance_km'] ?? null);
+    }
+
+    public function test_results_are_identical_with_cache_enabled(): void
+    {
+        $run = fn (Nusantara $n) => [
+            $n->hierarchy('32.73.01.1001'),
+            $n->shippingAddress('32.73.01.1001', style: 'jne'),
+            $n->search('bandug kulon')->all(),
+            $n->postalCode('40132')->all(),
+            $n->postalCodes('32.73'),
+            $n->nearestRegency(-6.9, 107.6),
+        ];
+        $expected = $run(new Nusantara());
+
+        $this->app['config']->set('nusantara.cache_ttl', 60);
+        $this->assertSame($expected, $run(new Nusantara()), 'cold cache');
+        $this->assertSame($expected, $run(new Nusantara()), 'warm cache');
     }
 }

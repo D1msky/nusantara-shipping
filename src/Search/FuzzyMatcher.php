@@ -17,11 +17,19 @@ final class FuzzyMatcher
 
     private int $maxResults;
 
+    /** Distinguishes cached results of matchers built with different aliases/threshold/limits. */
+    private string $fingerprint;
+
     public function __construct(?array $customAliases = null, ?int $threshold = null, ?int $maxResults = null)
     {
-        $this->aliases = array_merge($this->defaultAliases(), (array) ($customAliases ?? config('nusantara.aliases', [])));
+        // Lower-case keys so lookups are O(1) and a custom 'JKT' overrides the built-in 'jkt'.
+        $this->aliases = array_change_key_case(
+            array_merge($this->defaultAliases(), (array) ($customAliases ?? config('nusantara.aliases', []))),
+            CASE_LOWER
+        );
         $this->threshold = $threshold ?? (int) (config('nusantara.search.fuzzy_threshold') ?? 70);
         $this->maxResults = $maxResults ?? (int) (config('nusantara.search.max_results') ?? 20);
+        $this->fingerprint = md5(serialize([$this->aliases, $this->threshold, $this->maxResults]));
     }
 
     public function search(RepositoryInterface $repository, string $term, ?string $level = null): RegionCollection
@@ -31,9 +39,11 @@ final class FuzzyMatcher
             return new RegionCollection([]);
         }
 
-        // Check search cache
+        $level = $level !== null ? strtolower($level) : null;
+
+        // Check search cache (case/whitespace variants of the same query share one entry)
         $cache = new Cache();
-        $cacheKey = 'search:' . md5($term . '|' . ($level ?? '*'));
+        $cacheKey = 'search:' . md5($this->normalizeInput(mb_strtolower($term)) . '|' . ($level ?? '*') . '|' . $this->fingerprint);
 
         return $cache->get($cacheKey, function () use ($repository, $term, $level) {
             return $this->performSearch($repository, $term, $level);
@@ -46,12 +56,11 @@ final class FuzzyMatcher
         $normalized = $this->normalizeInput($termLower);
 
         // 1) Alias exact match (highest priority)
-        foreach ($this->aliases as $alias => $targetName) {
-            if ($termLower === mb_strtolower($alias) || $normalized === mb_strtolower($alias)) {
-                $candidates = $repository->search($targetName, $level);
-                if ($candidates->isNotEmpty()) {
-                    return $this->limitAndSort($candidates->all(), $targetName, 100);
-                }
+        $targetName = $this->aliases[$normalized] ?? $this->aliases[$termLower] ?? null;
+        if ($targetName !== null) {
+            $candidates = $repository->search($targetName, $level);
+            if ($candidates->isNotEmpty()) {
+                return $this->limitAndSort($candidates->all(), $targetName, 100);
             }
         }
 
@@ -102,17 +111,21 @@ final class FuzzyMatcher
      */
     private function limitAndSort(array $items, string $reference, int $max): RegionCollection
     {
+        // Score each item once instead of twice per comparison inside usort (levenshtein is the hot path).
         $refLower = mb_strtolower($reference);
-        usort($items, function ($a, $b) use ($refLower) {
-            $na = $a['name'] ?? '';
-            $nb = $b['name'] ?? '';
-            $sa = $this->scoreSimilarity($refLower, mb_strtolower($na), $na);
-            $sb = $this->scoreSimilarity($refLower, mb_strtolower($nb), $nb);
+        $scores = [];
+        foreach ($items as $i => $item) {
+            $name = $item['name'] ?? '';
+            $scores[$i] = $this->scoreSimilarity($refLower, mb_strtolower($name), $name);
+        }
+        arsort($scores);
 
-            return $sb <=> $sa;
-        });
+        $sorted = [];
+        foreach (array_slice(array_keys($scores), 0, $max) as $i) {
+            $sorted[] = $items[$i];
+        }
 
-        return new RegionCollection(array_slice($items, 0, $max));
+        return new RegionCollection($sorted);
     }
 
     private function collectCandidates(RepositoryInterface $repository, ?string $level): array
@@ -126,20 +139,14 @@ final class FuzzyMatcher
         }
 
         if ($level === null || $level === 'regency') {
-            foreach ($repository->provinces()->all() as $p) {
-                foreach ($repository->regencies($p['code'])->all() as $r) {
-                    $out[] = array_merge($r, ['level' => 'regency']);
-                }
+            foreach ($repository->allRegencies()->all() as $r) {
+                $out[] = array_merge($r, ['level' => 'regency']);
             }
         }
 
         if ($level === null || $level === 'district') {
-            foreach ($repository->provinces()->all() as $p) {
-                foreach ($repository->regencies($p['code'])->all() as $r) {
-                    foreach ($repository->districts($r['code'])->all() as $d) {
-                        $out[] = array_merge($d, ['level' => 'district']);
-                    }
-                }
+            foreach ($repository->allDistricts()->all() as $d) {
+                $out[] = array_merge($d, ['level' => 'district']);
             }
         }
 
@@ -175,23 +182,34 @@ final class FuzzyMatcher
     /** @return array<string, string> */
     private function defaultAliases(): array
     {
+        // Targets use the official Kepmendagri names; the pre-2025 short names stay as aliases
+        // so stored addresses like "DKI JAKARTA" still resolve.
         return [
-            'jkt' => 'DKI JAKARTA',
-            'jakarta' => 'DKI JAKARTA',
-            'jaksel' => 'KOTA JAKARTA SELATAN',
-            'jakut' => 'KOTA JAKARTA UTARA',
-            'jaktim' => 'KOTA JAKARTA TIMUR',
-            'jakbar' => 'KOTA JAKARTA BARAT',
-            'jakpus' => 'KOTA JAKARTA PUSAT',
+            'jkt' => 'DAERAH KHUSUS IBUKOTA JAKARTA',
+            'jakarta' => 'DAERAH KHUSUS IBUKOTA JAKARTA',
+            'dki' => 'DAERAH KHUSUS IBUKOTA JAKARTA',
+            'dki jakarta' => 'DAERAH KHUSUS IBUKOTA JAKARTA',
+            'jaksel' => 'KOTA ADMINISTRASI JAKARTA SELATAN',
+            'jakut' => 'KOTA ADMINISTRASI JAKARTA UTARA',
+            'jaktim' => 'KOTA ADMINISTRASI JAKARTA TIMUR',
+            'jakbar' => 'KOTA ADMINISTRASI JAKARTA BARAT',
+            'jakpus' => 'KOTA ADMINISTRASI JAKARTA PUSAT',
+            'kota jakarta selatan' => 'KOTA ADMINISTRASI JAKARTA SELATAN',
+            'kota jakarta utara' => 'KOTA ADMINISTRASI JAKARTA UTARA',
+            'kota jakarta timur' => 'KOTA ADMINISTRASI JAKARTA TIMUR',
+            'kota jakarta barat' => 'KOTA ADMINISTRASI JAKARTA BARAT',
+            'kota jakarta pusat' => 'KOTA ADMINISTRASI JAKARTA PUSAT',
             'sby' => 'KOTA SURABAYA',
             'surabaya' => 'KOTA SURABAYA',
             'bdg' => 'KOTA BANDUNG',
             'bandung' => 'KOTA BANDUNG',
             'smg' => 'KOTA SEMARANG',
             'semarang' => 'KOTA SEMARANG',
-            'jogja' => 'DI YOGYAKARTA',
-            'yogya' => 'DI YOGYAKARTA',
-            'yogyakarta' => 'DI YOGYAKARTA',
+            'jogja' => 'DAERAH ISTIMEWA YOGYAKARTA',
+            'yogya' => 'DAERAH ISTIMEWA YOGYAKARTA',
+            'yogyakarta' => 'DAERAH ISTIMEWA YOGYAKARTA',
+            'diy' => 'DAERAH ISTIMEWA YOGYAKARTA',
+            'di yogyakarta' => 'DAERAH ISTIMEWA YOGYAKARTA',
             'solo' => 'KOTA SURAKARTA',
             'surakarta' => 'KOTA SURAKARTA',
             'medan' => 'KOTA MEDAN',
@@ -209,11 +227,11 @@ final class FuzzyMatcher
             'bekasi' => 'KOTA BEKASI',
             'bgr' => 'KOTA BOGOR',
             'bogor' => 'KOTA BOGOR',
-            'jkt selatan' => 'KOTA JAKARTA SELATAN',
-            'jkt utara' => 'KOTA JAKARTA UTARA',
-            'jkt timur' => 'KOTA JAKARTA TIMUR',
-            'jkt barat' => 'KOTA JAKARTA BARAT',
-            'jkt pusat' => 'KOTA JAKARTA PUSAT',
+            'jkt selatan' => 'KOTA ADMINISTRASI JAKARTA SELATAN',
+            'jkt utara' => 'KOTA ADMINISTRASI JAKARTA UTARA',
+            'jkt timur' => 'KOTA ADMINISTRASI JAKARTA TIMUR',
+            'jkt barat' => 'KOTA ADMINISTRASI JAKARTA BARAT',
+            'jkt pusat' => 'KOTA ADMINISTRASI JAKARTA PUSAT',
         ];
     }
 }

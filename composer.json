@@ -22,7 +22,7 @@
     "authors": [
         {
             "name": "Dimas",
-            "email": "your@email.com"
+            "email": "dimassanjaya18777@gmail.com"
         }
     ],
     "require": {
@@ -53,7 +53,7 @@
                 "Nusantara\\NusantaraServiceProvider"
             ],
             "aliases": {
-                "Nusantara": "Nusantara\\NusantaraFacade"
+                "Nusantara": "Nusantara\\Facades\\Nusantara"
             }
         }
     },

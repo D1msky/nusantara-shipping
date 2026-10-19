@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Nusantara\Console;
 
 use Illuminate\Console\Command;
+use Nusantara\Data\VillageIndex;
+use Nusantara\Support\Cache;
 
 class UpdateDataCommand extends Command
 {
@@ -78,12 +80,16 @@ class UpdateDataCommand extends Command
                 'http' => ['timeout' => 30],
                 'ssl' => ['verify_peer' => true],
             ]));
-            if ($content !== false) {
-                $decoded = json_decode($content, true);
-                if (is_array($decoded)) {
-                    file_put_contents($tempDir . DIRECTORY_SEPARATOR . $name . '.json', $content);
-                }
+            if ($content === false || ! is_array(json_decode($content, true))) {
+                $this->warn("Could not fetch a JSON array from {$url}; {$name} will not be updated.");
+                continue;
             }
+            file_put_contents($tempDir . DIRECTORY_SEPARATOR . $name . '.json', $content);
+        }
+        if (! is_file($tempDir . DIRECTORY_SEPARATOR . 'provinces.json')) {
+            $this->removeDirectory($tempDir);
+            $this->error('provinces.json could not be fetched; no data was changed.');
+            return self::FAILURE;
         }
         $this->transformAndWrite($tempDir);
         $this->removeDirectory($tempDir);
@@ -96,16 +102,23 @@ class UpdateDataCommand extends Command
         if (! is_dir($this->dataPath)) {
             mkdir($this->dataPath, 0755, true);
         }
-        $header = "<?php\n\n// Source: Kepmendagri / nusantara:update-data\n// Last updated: " . date('Y-m-d') . "\n\nreturn ";
-        $this->writeProvinces($sourceDir, $header);
-        $this->writeRegencies($sourceDir, $header);
-        $this->writeDistricts($sourceDir, $header);
-        $this->writeVillages($sourceDir, $header);
+        $header = "<?php\n\n// Source: Kepmendagri / nusantara:update-data\n// Last updated: " . date('Y-m-d') . "\n\n";
+        $this->writeLevel($sourceDir, 'provinces', $this->normalizeProvinces(...), $header);
+        $this->writeLevel($sourceDir, 'regencies', $this->normalizeRegencies(...), $header);
+        $this->writeLevel($sourceDir, 'districts', $this->normalizeDistricts(...), $header);
+        $this->writeLevel($sourceDir, 'villages', $this->normalizeVillages(...), $header);
+
+        // Cached lists would otherwise keep serving the old data until their TTL expires.
+        (new Cache())->flush();
+        if (config('nusantara.driver') === 'database') {
+            $this->line('Run `php artisan nusantara:seed` to load the new data into the database.');
+        }
     }
 
-    private function writeProvinces(string $sourceDir, string $header): void
+    /** @param callable(array<int, array>): array<int, array> $normalize */
+    private function writeLevel(string $sourceDir, string $name, callable $normalize, string $header): void
     {
-        $path = $sourceDir . DIRECTORY_SEPARATOR . 'provinces.json';
+        $path = $sourceDir . DIRECTORY_SEPARATOR . $name . '.json';
         if (! is_file($path)) {
             return;
         }
@@ -113,50 +126,58 @@ class UpdateDataCommand extends Command
         if (! is_array($data)) {
             return;
         }
-        $out = $this->normalizeProvinces($data);
-        file_put_contents($this->dataPath . DIRECTORY_SEPARATOR . 'provinces.php', $header . var_export($out, true) . ";\n");
+        $out = $normalize($data);
+
+        // Codes that collide after normalization (e.g. 7-digit BPS district codes such as 3273100 and
+        // 3273101 both becoming 32.73.10) silently overwrite each other when seeding.
+        $duplicates = count($out) - count(array_unique(array_column($out, 'code')));
+        if ($duplicates > 0) {
+            $this->warn("{$name}: {$duplicates} rows share a code with another row after normalization. "
+                . 'The source probably uses BPS codes rather than Kepmendagri codes; use a Kepmendagri source.');
+        }
+
+        // Villages are stored as one sorted "<code>\t<NAME>\t<postal>" line each (see VillageIndex):
+        // ~5 MB in memory instead of ~60 MB as arrays.
+        $body = $name === 'villages'
+            ? "// One village per line: \"<code>\\t<NAME>\\t<postal_code>\", sorted by code (read by Nusantara\\Data\\VillageIndex).\n"
+                . 'return ' . VillageIndex::fromRows($out)->toPhpLiteral()
+            : 'return ' . $this->exportRows($out);
+        $this->writeAtomically($this->dataPath . DIRECTORY_SEPARATOR . $name . '.php', $header . $body . ";\n");
+        $this->line(sprintf('  %s: %s rows', $name, number_format(count($out))));
     }
 
-    private function writeRegencies(string $sourceDir, string $header): void
+    /**
+     * Write to a temp file and rename over the target, so concurrent requests never `require` a
+     * half-written file, then drop the stale OPcache entry (matters when validate_timestamps=0).
+     */
+    private function writeAtomically(string $target, string $contents): void
     {
-        $path = $sourceDir . DIRECTORY_SEPARATOR . 'regencies.json';
-        if (! is_file($path)) {
-            return;
+        $tmp = $target . '.' . uniqid('', true) . '.tmp';
+        file_put_contents($tmp, $contents, LOCK_EX);
+        rename($tmp, $target);
+        if (function_exists('opcache_invalidate')) {
+            opcache_invalidate($target, true);
         }
-        $data = json_decode(file_get_contents($path), true);
-        if (! is_array($data)) {
-            return;
-        }
-        $out = $this->normalizeRegencies($data);
-        file_put_contents($this->dataPath . DIRECTORY_SEPARATOR . 'regencies.php', $header . var_export($out, true) . ";\n");
     }
 
-    private function writeDistricts(string $sourceDir, string $header): void
+    /**
+     * One row per line; roughly half the size of var_export()'s nested output, which keeps
+     * parsing and OPcache memory down for the large villages file.
+     *
+     * @param array<int, array<string, mixed>> $rows
+     */
+    private function exportRows(array $rows): string
     {
-        $path = $sourceDir . DIRECTORY_SEPARATOR . 'districts.json';
-        if (! is_file($path)) {
-            return;
+        $lines = [];
+        foreach ($rows as $row) {
+            $pairs = [];
+            foreach ($row as $key => $value) {
+                $pairs[] = var_export($key, true) . ' => ' . var_export($value, true);
+            }
+            $lines[] = '    [' . implode(', ', $pairs) . '],';
         }
-        $data = json_decode(file_get_contents($path), true);
-        if (! is_array($data)) {
-            return;
-        }
-        $out = $this->normalizeDistricts($data);
-        file_put_contents($this->dataPath . DIRECTORY_SEPARATOR . 'districts.php', $header . var_export($out, true) . ";\n");
-    }
 
-    private function writeVillages(string $sourceDir, string $header): void
-    {
-        $path = $sourceDir . DIRECTORY_SEPARATOR . 'villages.json';
-        if (! is_file($path)) {
-            return;
-        }
-        $data = json_decode(file_get_contents($path), true);
-        if (! is_array($data)) {
-            return;
-        }
-        $out = $this->normalizeVillages($data);
-        file_put_contents($this->dataPath . DIRECTORY_SEPARATOR . 'villages.php', $header . var_export($out, true) . ";\n");
+        return "[\n" . implode("\n", $lines) . "\n]";
     }
 
     /** @param array<int, array> $data */

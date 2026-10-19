@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Nusantara\Console;
 
 use Illuminate\Console\Command;
+use Nusantara\NusantaraServiceProvider;
 
 class InstallCommand extends Command
 {
@@ -20,8 +21,13 @@ class InstallCommand extends Command
         $this->call('vendor:publish', ['--tag' => 'nusantara-config']);
 
         if ($this->option('migrate')) {
+            if ($this->laravel['config']->get('nusantara.driver') !== 'database') {
+                $this->error('--migrate needs NUSANTARA_DRIVER=database; the tables are only used (and migrated) by the database driver.');
+                return self::FAILURE;
+            }
             $this->info('Running migrations...');
-            $this->call('migrate');
+            // Only the package's migration, so unrelated pending app migrations are not run as a side effect.
+            $this->call('migrate', ['--path' => NusantaraServiceProvider::migrationsPath(), '--realpath' => true]);
         }
 
         if ($this->option('seed') || ($this->option('migrate') && $this->laravel['config']->get('nusantara.driver') === 'database')) {
