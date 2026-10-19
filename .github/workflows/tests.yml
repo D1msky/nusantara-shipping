@@ -47,6 +47,12 @@ jobs:
           key: ${{ runner.os }}-php${{ matrix.php }}-laravel${{ matrix.laravel }}-composer-${{ hashFiles('composer.json') }}
           restore-keys: ${{ runner.os }}-php${{ matrix.php }}-laravel${{ matrix.laravel }}-composer-
 
+      # Laravel 10 and 11 no longer get security fixes, so Composer >= 2.9 refuses to install any of
+      # their releases. Allow them here so compatibility keeps being tested; apps choose their version.
+      - name: Allow end-of-life Laravel releases
+        if: matrix.laravel != '12.*'
+        run: composer config policy.advisories.block false
+
       - name: Install dependencies
         run: |
           composer require "illuminate/support:${{ matrix.laravel }}" "illuminate/database:${{ matrix.laravel }}" --no-interaction --no-update
